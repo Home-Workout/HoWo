@@ -5,20 +5,21 @@
     
     <title>Agregar Ejercicios</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css'  href='..\styles\estiloFormulario.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <h1>Agregar Ejercicios</h1>
+    <h1 id="titulo">Agregar Ejercicios</h1>
     <form name="formularioEjercicio">
         <label for="nombre">Nombre: </label>
         <input class ="controls" type="text" id="nombre" placeholder="Ingrese nombre del Ejercicio" required><br><br>  
         <label for="descripcion">Descripcion: </label>
-        <textarea cols="25" rows="6"></textarea><br><br>
-        <label>Subir imagen</label>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Escriba una descripcion..."></textarea>
+        <label>Subir imagen: </label>
         <input type="file"><br><br>
         <label for="video">Subir Video </label>
-        <input type="file">
+        <input type="file"><br><br>
+        <label for="video">Subir Link Video (Opcional)</label>
         <input type="url" id="video" name="URL video"><br><br>
         <label >Nivel de Entrenamiento:</label>
         <select>
@@ -32,6 +33,7 @@
             <option>Brazos</option>
             <option>Gluteos</option>
         </select><br>
+        <input class="bottons" type="submit" value="Agregar Ejercicio">
         
  
 
