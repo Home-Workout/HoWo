@@ -3,9 +3,23 @@
     <head>
         <meta charset="UTF-8">
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css'  href='..\styles\estiloRegistro.css'> 
         <title>Registrarse</title>
     </head>
     <body>
-		<h1>Registrarse</h1>
+		<h1 id="titulo1">Registrarse</h1>
+        <form name="formularioRegistrarse">
+            <label for="nombre">Nombres y Apellidos: </label>
+            <input class ="controls" type="text" id="nombre" placeholder="Ingrese sus nombres y apellidos" required><br><br> 
+            <label for="correo">Correo Electronico: </label>
+            <input class ="controls" type="email" id="correo" placeholder="Ingrese su correo electronico" required><br><br> 
+            <label for="contrasenia">Contraseña: </label>
+            <input class ="controls" type="password" id="contrasenia" placeholder="Ingrese su contraseña" required><br><br> 
+            <label for="contrasenia">Repite tu Contraseña: </label>
+            <input class ="controls" type="password" id="contrasenia" placeholder="Ingrese su contraseña" required><br><br>
+            <label for="edad">Edad: </label>
+            <input class ="controls" type="number" id="edad" placeholder="Ingrese su edad" required><br><br>
+            <input class="boton" type="submit" value="Registrarse">
+        </form>
 	</body>
 </html>
