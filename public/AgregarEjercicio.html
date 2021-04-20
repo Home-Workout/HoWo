@@ -10,25 +10,25 @@
 </head>
 <body>
     <h1 id="titulo">Agregar Ejercicios</h1>
-    <form name="formularioEjercicio">
+    <form class="forms" name="formularioEjercicio">
         <label for="nombre">Nombre: </label>
         <input class ="controls" type="text" id="nombre" placeholder="Ingrese nombre del Ejercicio" required><br><br>  
         <label for="descripcion">Descripcion: </label>
-        <textarea id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Escriba una descripcion..."></textarea>
+        <textarea id="descripcion" class="controls" name="descripcion" rows="4" cols="50" placeholder="Escriba una descripcion..." required></textarea>
         <label>Subir imagen: </label>
-        <input type="file"><br><br>
+        <input class="controls" type="file" required><br><br>
         <label for="video">Subir Video </label>
-        <input type="file"><br><br>
+        <input class="controls" type="file"><br><br>
         <label for="video">Subir Link Video (Opcional)</label>
-        <input type="url" id="video" name="URL video"><br><br>
+        <input class="controls" type="url" id="video" name="URL video"><br><br>
         <label >Nivel de Entrenamiento:</label>
-        <select>
+        <select class="controls">
             <option>Principiante</option>
             <option>Intermedio</option>
             <option>Avanzado</option>
         </select><br><br>
         <label >Area de Trabajo Corporal:</label>
-        <select>
+        <select class="controls">
             <option>Abdomen</option>
             <option>Brazos</option>
             <option>Gluteos</option>
