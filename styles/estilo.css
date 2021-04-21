@@ -1,6 +1,10 @@
-*{
-    margin:0;
-    padding:0;
+
+body{
+    background: #24303c;
+    padding: 30px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
 }
 .btn1{
     text-align:center;
@@ -29,7 +33,7 @@
     text-decoration: none;
     box-shadow: 0px 3px 0px #373c3c;
     position:absolute;
-    right: 16%;
+    right: 12%;
     top: 0%;
 }
 .btn1 span{
@@ -43,3 +47,74 @@
     margin: 20px;
   
 }
+.conse{
+    background: #1f53c5;
+    text-align:center;
+    color:#fff;
+    font-size: 1.25em;
+    padding: 20 px 0px;
+    width: 95%;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #373c3c;
+    border: none;
+    position: absolute;
+    right: 3%;
+    top: 90%;
+}
+
+.ventana{
+    background: rgba(0, 0, 102,1);
+    width: 30%;
+    color: rgba(255,255,255, 1);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 33px;
+    min-height: 250px;
+    border-radius: 22px;
+    position: absolute;
+    left: 34%;
+    top: 20%;
+    display: none;
+}
+#cerrar{
+    position: absolute;
+    right: 3px;
+    top: 1px;
+}
+#cerrar span{
+    margin-right:10px;
+}
+.contac{
+    background: #1f53c5;
+    text-align:center;
+    color:#fff;
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 16px 0;
+    padding: 20 px 0px;
+    width: 95%;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #373c3c;
+    position:absolute;
+    border: none;
+    top: 92%;
+}
+.ventana2{
+    background: rgba(0, 0, 102,1);
+    width: 30%;
+    color: rgba(255,255,255, 1);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 33px;
+    min-height: 250px;
+    border-radius: 22px;
+    position: absolute;
+    left: 34%;
+    top: 30%;
+    display: none;
+}
+
+  
+  
