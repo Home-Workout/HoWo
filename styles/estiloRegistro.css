@@ -33,3 +33,15 @@ body{
     margin: 16px 0;
     font-size: 16px;
 }
+.peligro{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #806AB3;
+    padding-top: 20px;
+}
+.boton:disabled{
+    background-color: #82a0a2;
+    border: 1px solid #82a0a2;
+    color: lightgray;
+}
