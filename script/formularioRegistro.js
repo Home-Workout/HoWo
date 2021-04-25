@@ -5,11 +5,12 @@
     const contrasenia2 = document.getElementById("contrasenia2");
     const peligro = document.getElementById("peligro");
     const enviar = document.getElementById("enviar");
+    const parrafo = document.getElementById("enviado");
     var val = 0;
     function validarFormulario(){
         //alert("Todo en Orden");
         var formulario = document.forms;
-        var al = 'Ingrese sus Nombres y Apellidos<br>';
+        var al = 'Ingrese sus Nombres y Apellidos';
         var al2 = "Solo se permite Caracteres";
         var al3 = "Favor Ingresar Correo Electronico";
         var al4 = "Ingresar un Correo Valido";
@@ -17,13 +18,13 @@
         var al6 = "Las Contraseñas son distintas";
         if(nombre.value == ""){
             //alert("Favor Ingresar Nombre y Apellido")
-            document.getElementById("alerta").innerHTML = al.fontsize(4).fontcolor("red");
+            document.getElementById("alerta").innerHTML = "Ingrese sus Nombres y Apellidos";
             nombre.style.backgroundColor="red";
             nombre.focus();
             val++;
             return false;
         }else if(validarTexto(nombre.value) == false){
-            document.getElementById("alerta").innerHTML = al2.fontsize(4).fontcolor("red");
+            document.getElementById("alerta").innerHTML = "Solo se permite Caracteres" ;
             nombre.style.backgroundColor="red";
             nombre.value = "";
             nombre.focus();
@@ -36,13 +37,13 @@
         }
         if(correo.value == ""){
             //alert("HOla peep");
-            document.getElementById("alerta").innerHTML= al3.fontsize(4).fontcolor("red");
+            document.getElementById("alerta").innerHTML= "Favor Ingresar Correo Electronico";
             correo.style.backgroundColor="red";
             correo.focus();
             val++;
             return false;
         }else if(validarCorreo(correo.value) == false){
-            document.getElementById("alerta").innerHTML = al4.fontsize(4).fontcolor("red");
+            document.getElementById("alerta").innerHTML = "Ingresar un Correo Valido";
             correo.style.backgroundColor="red";
             correo.value = "";
             correo.focus();
@@ -53,7 +54,7 @@
             document.getElementById("alerta").innerHTML = "";
         }
         if(contrasenia.value == ""){
-            document.getElementById("alerta").innerHTML= al5.fontsize(4).fontcolor("red");
+            document.getElementById("alerta").innerHTML= "Favor Ingresar Contraseña";
             contrasenia.style.backgroundColor="red";
             contrasenia.value = "";
             contrasenia.focus();
@@ -65,7 +66,7 @@
             document.getElementById("alerta").innerHTML = "";
         }
         if(contrasenia2.value == ""){
-            document.getElementById("alerta").innerHTML= al5.fontsize(4).fontcolor("red");
+            document.getElementById("alerta").innerHTML= "Favor Ingresar Contraseña";
             contrasenia2.style.backgroundColor="red";
             contrasenia2.value = "";
             contrasenia2.focus();
@@ -77,7 +78,7 @@
             document.getElementById("alerta").innerHTML = "";
         }
         if(contrasenia.value!= contrasenia2.value){
-            document.getElementById("alerta").innerHTML= al6.fontsize(4).fontcolor("red");
+            document.getElementById("alerta").innerHTML= "Las Contraseñas son distintas";
             contrasenia.style.backgroundColor="red";
             contrasenia2.style.backgroundColor="red";
             contrasenia.value = "";
@@ -112,16 +113,24 @@
     function validacionBoton(){
         if(val == 0){
             enviar.toggleAttribute('disabled',false);
+            return true;
         }else{
             val=0;
             enviar.toggleAttribute('disabled',true);
+            return false;
        }
     }
     document.getElementById("name1").addEventListener("keyup",validacionBoton);
     document.getElementById("correo").addEventListener("keyup",validacionBoton);
     document.getElementById("contrasenia").addEventListener("keyup",validacionBoton);
     document.getElementById("contrasenia2").addEventListener("keyup",validacionBoton);
+   
+    
     document.getElementById("enviar").addEventListener("click",()=>{
-      //aqui tiene que redirigir a la parte principal
-    });
+        //aqui tiene que redirigir a la parte principal por lo pronto solo mostrara un mensaje
+        if(validacionBoton()){
+            parrafo.innerHTML = "Usted se ha registrado correctamente";
+        }
+      });
+   
 
