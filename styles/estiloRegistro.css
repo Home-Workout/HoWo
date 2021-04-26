@@ -41,12 +41,12 @@ body{
 }
 .btnEnviar{
     background: rgba(0, 0, 102,1);
-    width: 44%;
+    width: 60%;
     text-align: center;
-    margin: 13px 0px;
+    margin: 15px 2px;
     color: rgba(255,255,255, 1);
-    position: absolute;
-}
+    right: 50%;
+    }
 .alerta{
     background: red;
     width: 60%;
