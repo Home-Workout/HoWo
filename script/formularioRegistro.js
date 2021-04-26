@@ -95,6 +95,12 @@ function validarFormulario() {
 
 
 }
+function limpiarCampos(){
+    nombre.value = "";
+    correo.value = "";
+    contrasenia.value = "";
+    contrasenia2.value = "";
+}
 
 function validarTexto(parametro) {
     var patron = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
@@ -124,6 +130,15 @@ function validacionBoton() {
         return false;
     }
 }
+function validarCorreo2(){
+    const getTask = () => dbU.collection('Registrar_Usuario').get();
+        const task = getTask();
+        console.log(task);
+        //if(correo = task.correoU){
+        //    return true
+        //}else{return false;}
+}
+
 document.getElementById("name1").addEventListener("keyup", validacionBoton);
 document.getElementById("correo").addEventListener("keyup", validacionBoton);
 document.getElementById("contrasenia").addEventListener("keyup", validacionBoton);
@@ -138,15 +153,35 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
     const nombreU = registroUsuario["name1"].value;
     const correoU = registroUsuario["correo"].value;
     const passU = registroUsuario["contrasenia"].value;
+
     e.preventDefault();
-    if (validacionBoton()) {
-        parrafo.innerHTML = "Usted se ha registrado correctamente";
-        document.forms.reset;
-        const responseU = await dbU.collection('Registrar_Usuario').doc().set({
-            nombreU,
-            correoU,
-            passU
+        if (validacionBoton()) {
+            var usuarios = dbU.collection('Registrar_Usuario')
+            var flag = 0;
+            await dbU.collection('Registrar_Usuario').where("correoU", "==", correoU)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                flag = flag+1;
+            });
         })
-        console.log(responseU)
-    }
+        .catch((error) => {
+        console.log("Error getting documents: ", error);
+        })
+        console.log(flag);
+            if(flag==0){
+                parrafo.innerHTML = "Usted se ha registrado correctamente";
+                limpiarCampos();
+                const responseU = await dbU.collection('Registrar_Usuario').doc().set({
+                    nombreU,
+                    correoU,
+                    passU
+                })
+                console.log(responseU)
+            }else{ 
+                limpiarCampos();
+                parrafo.innerHTML = "Ya existe ese correo";
+            }
+     }
+    
 });
