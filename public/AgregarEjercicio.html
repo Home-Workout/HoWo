@@ -10,48 +10,57 @@
     <title>Agregar Ejercicios</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' href='..\styles\estiloFormulario.css'>
-    
+
 </head>
+
 <body>
     <h1 id="titulo">Agregar Ejercicios</h1>
-    <form class="forms" name="formularioEjercicio" id= "formulario1" method="post">
+    <form class="forms" name="formularioEjercicio" id="formulario1" method="post">
         <label for="nombre">Nombre: </label>
         <input class="controls" type="text" name="eName" id="name1" placeholder="Ingrese nombre del Ejercicio" required><br><br>
         <label for="descripcion">Descripcion: </label>
         <textarea id="descripcion" class="controls" name="descripcion" rows="4" cols="50" placeholder="Escriba una descripcion..." required></textarea>
         <label>Subir imagen: </label>
-        <input class="controls" type="file"  id ="image" ><br><br>
+        <input class="controls" type="file" id="image" required><br><br>
         <label for="video">Subir Video </label>
-        <input class="controls" type="file"  id="video"><br><br>
+        <input class="controls" type="file" id="video"><br><br>
         <label for="video">Subir Link Video (Opcional)</label>
         <input class="controls" type="url" id="linkVideo" name="URL video"><br><br>
         <label>Nivel de Entrenamiento:</label>
-        <select class="controls" id = "nivel">
+        <select class="controls" id="nivel">
             <option>Principiante</option>
             <option>Intermedio</option>
             <option>Avanzado</option>
         </select><br><br>
         <label>Area de Trabajo Corporal:</label>
-        <select class="controls" id= "areaT">
+        <select class="controls" id="areaT">
             <option>Abdomen</option>
             <option>Brazos</option>
             <option>Gluteos</option>
+            <option>Espalda</option>
+            <option>Hombro</option>
+            <option>Piernas</option>
+            <option>Pantorrillas</option>
+            <option>Pectoral</option>
+            <option>Pecho-Brazo</option>
+            <option>Espalda-Brazo</option>
+            <option>Abdomen-Espalda</option>
         </select><br>
-        <input class="bottons" id = "enviarEjercicio" type="button" value="Agregar Ejercicio" onclick="validateForm()">
+        <input class="bottons" id="enviarEjercicio" type="button" value="Agregar Ejercicio" onclick="validateForm()">
 
     </form>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
-    
+
     <!-- TODO: Add SDKs for Firebase products that you want to use
                      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
-    
+
     <!-- TODO: Add SDKs for Firebase products that you want to use
              https://firebase.google.com/docs/web/setup#available-libraries -->
-    
+
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
     <script>
@@ -69,10 +78,9 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-
     </script>
-    
+
     <script src='..\script\validarDatosEjercicio.js'></script>
-</body> 
+</body>
 
 </html>
