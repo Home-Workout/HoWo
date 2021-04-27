@@ -45,6 +45,8 @@ body{
     text-align: center;
     margin: 20px;
     margin-bottom: 1px;
+    color: #fff;
+    font-family: Quicksand; 
   
 }
 
@@ -75,7 +77,7 @@ body{
     border-radius: 22px;
     position: absolute;
     left: 34%;
-    top: 20%;
+    top: 150%;
     display: none;
 }
 #cerrar{
@@ -113,7 +115,7 @@ body{
     border-radius: 22px;
     position: absolute;
     left: 34%;
-    top: 30%;
+    top: 190%;
     display: none;
 }
 
