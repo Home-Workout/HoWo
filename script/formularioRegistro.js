@@ -5,6 +5,24 @@ const contrasenia2 = document.getElementById("contrasenia2");
 const peligro = document.getElementById("peligro");
 const enviar = document.getElementById("enviar");
 const parrafo = document.getElementById("enviado");
+
+
+function mostrar(){
+  var tipo = document.getElementById("contrasenia");
+    if(tipo.type == "password"){
+        tipo.type = "text";
+    }else{
+        tipo.type = "password";
+    }
+}
+function mostrar2(){
+    var tipo2 = document.getElementById("contrasenia2");
+      if(tipo2.type == "password"){
+          tipo2.type = "text";
+      }else{
+          tipo2.type = "password";
+      }
+  }
 var val = 0;
 const dbU = firebase.firestore();
 
