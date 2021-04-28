@@ -77,7 +77,7 @@ body{
     border-radius: 22px;
     position: absolute;
     left: 34%;
-    top: 150%;
+    top: 20%;
     display: none;
 }
 #cerrar{
@@ -115,8 +115,26 @@ body{
     border-radius: 22px;
     position: absolute;
     left: 34%;
-    top: 190%;
+    top: 45%;
     display: none;
+}
+.contenedor{
+   padding: 160px;
+   padding-left: 10px;
+   padding-right: 10px;
+   width: 95%;
+}
+.contenedor img{
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid white;
+}
+.imagen1{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid white;
 }
 
 
