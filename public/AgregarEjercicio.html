@@ -21,9 +21,9 @@
         <label for="descripcion">Descripcion: </label>
         <textarea id="descripcion" class="controls" name="descripcion" rows="4" cols="50" placeholder="Escriba una descripcion..." required></textarea>
         <label>Subir imagen: </label>
-        <input class="controls" type="file" id="image" required><br><br>
+        <input class="controls" type="file" id="image" accept="image/x-png,image/gif,image/jpeg,image/bmp" onchange="validateFileType()" required><br><br>
         <label for="video">Subir Video </label>
-        <input class="controls" type="file" id="video"><br><br>
+        <input class="controls" type="file" id="video" accept="video/x-mp4,video/mkv,video/wmv,video/*" onchange="validateVideo()"><br><br>
         <label for="video">Subir Link Video (Opcional)</label>
         <input class="controls" type="url" id="linkVideo" name="URL video"><br><br>
         <label>Nivel de Entrenamiento:</label>
@@ -46,7 +46,7 @@
             <option>Espalda-Brazo</option>
             <option>Abdomen-Espalda</option>
         </select><br>
-        <input class="bottons" id="enviarEjercicio" type="button" value="Agregar Ejercicio" onclick="validateForm()">
+        <input class="bottons" id="enviarEjercicio" type="button" value="Agregar Ejercicio">
 
     </form>
     <!-- The core Firebase JS SDK is always required and must be listed first -->

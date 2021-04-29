@@ -1,4 +1,6 @@
 const dbE = firebase.firestore();
+var buenaImg = false;
+var buenVideo = false;
 
 function validateForm() {
     var campoNombre = document.forms["formularioEjercicio"]["eName"].value;
@@ -6,15 +8,43 @@ function validateForm() {
     var patt1 = /[0-9]{1,40}$/; //no acepta numeros
     var nombre = true;
     var descripcion = true;
-    if (campoNombre.match(patt1)) {
-        alert("El campo nombre no acepta numeros");
+    if (campoNombre.match(patt1) || campoNombre == "") {
+        alert("El campo nombre no acepta numeros o esta vacio");
         nombre = false;
     }
-    if (campoDescripcion.match(patt1)) {
-        alert("El campo descripcion no acepta numeros");
+    if (campoDescripcion.match(patt1) || campoDescripcion == "") {
+        alert("El campo descripcion no acepta numeros o esta vacio");
         descripcion = false;
     }
     return nombre && descripcion
+}
+
+function validateFileType() {
+    var fileName = document.getElementById("image").value;
+    var idxDot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (extFile == "jpg" || extFile == "jpeg" || extFile == "png" || extFile == "gif" || extFile == "bmp") {
+        buenaImg = true;
+    } else {
+        buenaImg = false;
+        alert("Solo se permiten archivos en formato: jpg,jpeg,png,bmp y gif");
+        document.getElementById("image").value = "";
+    }
+    return buenaImg
+}
+
+function validateVideo() {
+    var fileName = document.getElementById("video").value;
+    var idxDot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (extFile == "mp4" || extFile == "mkv" || extFile == "wmv") {
+        buenVideo = true;
+    } else {
+        buenVideo = false;
+        alert("Solo se permiten archivos en formato: mp4,mkv y wmv");
+        document.getElementById("video").value = "";
+    }
+    return buenaImg
 }
 document.getElementById("enviarEjercicio").addEventListener("click", async(e) => {
     const registroEjercicio = document.getElementById("formulario1");
@@ -28,28 +58,28 @@ document.getElementById("enviarEjercicio").addEventListener("click", async(e) =>
 
 
     e.preventDefault();
-    if (validateForm() && imageRef != " ") {
-        const respuestaE = await dbE.collection("Agregar_Ejercicio").doc().set({
-            nombreE,
-            descripcion,
-            imageRef,
-            videoRef,
-            linkV,
-            nivelE,
-            areaT
-
-
-
-        })
-        alert("Agregado Correctamente");
-        document.getElementById("formulario1").reset();
-        console.log(respuestaE)
-    } else {
-        alert("No se agrego");
+    if (validateForm()) {
+        if (imageRef != " " && buenaImg) {
+            const respuestaE = await dbE.collection("Agregar_Ejercicio").doc().set({
+                nombreE,
+                descripcion,
+                imageRef,
+                videoRef,
+                linkV,
+                nivelE,
+                areaT
+            })
+            alert("Agregado Correctamente");
+            document.getElementById("formulario1").reset();
+            console.log(respuestaE)
+        } else {
+            alert("Debe agregar una imagen");
+        }
     }
 
-
 });
+
+
 
 function subirImagen() {
     var referencia = " ";
