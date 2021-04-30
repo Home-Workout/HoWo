@@ -121,7 +121,7 @@ function limpiarCampos(){
 }
 
 function validarTexto(parametro) {
-    var patron = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+    var patron = /^[a-zA-Z-s]{1,40}$/;
     if (parametro.search(patron)) {
         return false;
     } else {
