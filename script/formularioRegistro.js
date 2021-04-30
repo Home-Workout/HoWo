@@ -156,6 +156,9 @@ function validarCorreo2(){
         //    return true
         //}else{return false;}
 }
+window.onbeforeunload = function() {
+    return "¿Desea recargar la página web?";
+  };
 
 document.getElementById("name1").addEventListener("keyup", validacionBoton);
 document.getElementById("correo").addEventListener("keyup", validacionBoton);
