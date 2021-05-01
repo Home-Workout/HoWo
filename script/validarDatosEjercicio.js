@@ -15,10 +15,10 @@ function validateForm() {
     else if(validarTexto(campoNombre) == false){
         alert("El campo nombre no acepta caracteres especiales");
         nombre = false;  
-    }// else if(campoNombre.value.length >= 150){
-      //  alert("El campo nombre no acepta mas de 150 caracteres");
-      //  nombre = false;   
-    //}
+    }else if(campoNombre.value.length >= 150){
+        alert("El campo nombre no acepta mas de 150 caracteres");
+        nombre = false;   
+    }
     if (campoDescripcion.match(patt1) || campoDescripcion == "") {
         alert("El campo descripcion no acepta numeros o esta vacio");
         descripcion = false;
