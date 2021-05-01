@@ -68,8 +68,8 @@ body{
     text-decoration: none;
     box-shadow: 0px 3px 0px #373c3c;
     position:absolute;
-    right: 27%;
-    top: 52%;
+    right: 430px;
+    top: 400px;
 }
 .mostrarPass span{
     margin-right:10px;
@@ -89,6 +89,6 @@ body{
     text-decoration: none;
     box-shadow: 0px 3px 0px #373c3c;
     position:absolute;
-    right: 27%;
-    top: 65%;
+    right: 430px;
+    top: 490px;
 }
