@@ -68,8 +68,8 @@ body{
     text-decoration: none;
     box-shadow: 0px 3px 0px #373c3c;
     position:absolute;
-    right: 27%;
-    top: 56%;
+    right: 430px;
+    top: 400px;
 }
 
 .mostrarPass2{
@@ -84,6 +84,6 @@ body{
     text-decoration: none;
     box-shadow: 0px 3px 0px #373c3c;
     position:absolute;
-    right: 27%;
-    top: 69%;
+    right: 430px;
+    top: 490px;
 }
