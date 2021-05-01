@@ -30,15 +30,19 @@
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
 	</head>
 	<body>
-		<h1 class="titulo">HoWo
-			<img  src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">	
-			
-		</h1>
+		<div class="t1">
+			<h1 class="titulo">HoWo</h1>
+		</div>
+		<br><br>
+			<div class="imgTitulo">
+			 <img  src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">	
+			</div>
+		
 		<a href="Registrarse.html" class="btn1"> 
 			<span <i class="fas fa-address-card"></i></span>Registrarse</a>
-		<a class="btn2">
+		<a href="" class="btn2">
 			<span <i class="fas fa-user-check"></i></span>Iniciar Sesion</a>
-		<br>
+		<br><br>
 		<div class="carousel">
 			<div class="carousel__contenedor">
 				<button aria-label="Anterior" class="carousel__anterior">
@@ -48,36 +52,38 @@
 				<div class="carousel__lista">
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/1.jpg"  alt="imagen nuemro 1">
-						<p style="color: blanchedalmond;">imagen nuemro 1</p>
+						<p style="color: blanchedalmond;"></p>
 					</div>
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/2.jpg" alt="imagen nuemro 1">
-						<p style="color: blanchedalmond;">imagen nuemro 2</p>
+						<p style="color: blanchedalmond;"></p>
 					</div>
+					
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/3.jpg"  alt="imagen nuemro 1">
-						<p style="color: blanchedalmond;">imagen nuemro 3</p>
+						<p style="color: blanchedalmond;"></p>
 					</div>
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/4.jpg" alt="imagen nuemro 1">
-						<p style="color: blanchedalmond;">imagen nuemro 4</p>
+						<p style="color: blanchedalmond;"></p>
 					</div>
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/5.jpg" alt="imagen nuemro 1">
-						<p style="color: blanchedalmond;">imagen nuemro 5</p>
+						<p style="color: blanchedalmond;"></p>
 					</div>
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/6.jpg" alt="imagen nuemro 1">
-						<p style="color: blanchedalmond;">imagen nuemro 6</p>
+						<p style="color: blanchedalmond;"></p>
 					</div>
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/7.jpeg" alt="imagen nuemro 1">
-						<p style="color: blanchedalmond;">imagen nuemro 6</p>
+						<p style="color: blanchedalmond;"></p>
 					</div>
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/8.jpg" alt="imagen nuemro 1">
-						<p style="color: blanchedalmond;">imagen nuemro 6</p>
+						<p style="color: blanchedalmond;"></p>
 					</div>
+					<!--
 					<div class="carousel__elemento">
 						<img src="../imagenes/V2/9.jpg" alt="imagen nuemro 1">
 						<p style="color: blanchedalmond;">imagen nuemro 6</p>
@@ -126,7 +132,9 @@
 						<img src="../imagenes/V2/8f.jpg" alt="imagen nuemro 1">
 						<p style="color: blanchedalmond;">imagen nuemro 6</p>
 					</div>
+				-->
 				</div>
+				
 				<button aria-label="siguiente" class="carousel__siguiente">
 					<i class="fas fa-chevron-right"></i>
 
@@ -139,79 +147,90 @@
 			<img src="../imagenes/rutinas portada/Rutina por Nivel.png" alt="imagen nuemro 1" style="margin-left: 150px;">
 			<img src="../imagenes/rutinas portada/Rutina por Objetivo.jpg" alt="imagen nuemro 1" style="margin-left: 150px;">
 		</div-->
-
-		<div id="myBtnContainer" style="display: flex; justify-content: center;">
+		<br>
+		<div class="menu" id="myBtnContainer" style="display: flex; justify-content: center;">
+			<!----
 			<button class="btn" onclick="filterSelection('all')"> Todo</button>
+			-->
 			<button class="btn" onclick="filterSelection('nature')"> Nivel</button>
 			<button class="btn" onclick="filterSelection('cars')"> Objetivo</button>
 			<button class="btn" onclick="filterSelection('people')"> Challenge</button>
 		  </div>
-		  
+		  <br><br><br>
 		  <!-- Portfolio Gallery Grid -->
 		  <div class="row">
 			<div class="column nature">
 			  <div class="content">
-				<img src="../imagenes/Rutina por Nivel.png" alt="Mountains" style="width:100%">
-				<h4>Mountains</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input class="imagenes" type="image" src="../imagenes/Rutina por Nivel.png" alt="Mountains" style="width:100%"></input>
+					<center>
+					<h4>Nivel Basico</h4>
+					</center>
 			  </div>
 			</div>
 			<div class="column nature">
 			  <div class="content">
-				<img src="../imagenes/Para Carousel/10.jpg" alt="Lights" style="width:100%">
-				<h4>Lights</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input  class="imagenes" type="image" src="../imagenes/Para Carousel/10.jpg" alt="Lights" style="width:100%"></input>
+					<center>
+					<h4>Nivel Intermedio</h4>
+					</center>
 			  </div>
 			</div>
 			<div class="column nature">
 			  <div class="content">
-				<img src="../imagenes/Para Carousel/11.jpg" alt="Nature" style="width:100%">
-				<h4>Forest</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input  class="imagenes" type="image" src="../imagenes/Para Carousel/11.jpg" alt="Nature" style="width:100% "></input>
+					<center>
+					<h4>Nivel Avanzado</h4>
+					</center>
 			  </div>
 			</div>
 		  
 			<div class="column cars">
 			  <div class="content">
-				<img src="../imagenes/Rutina por Objetivo.jpg" alt="Car" style="width:100%">
-				<h4>Retro</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input   class="imagenes"type="image" src="../imagenes/Rutina por Objetivo.jpg" alt="Car" style="width:100%"></input>
+					<center>
+					<h4>Retro</h4>
+					</center>
 			  </div>
 			</div>
 			<div class="column cars">
 			  <div class="content">
-				<img src="../imagenes/Para Carousel/13.jpg" alt="Car" style="width:100%">
-				<h4>Fast</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input  class="imagenes" type="image" src="../imagenes/Para Carousel/13.jpg" alt="Car" style="width:100%"></input>
+					<center>
+					<h4>Fast</h4>
+					</center>
 			  </div>
 			</div>
 			<div class="column cars">
 			  <div class="content">
-				<img src="../imagenes/Para Carousel/14.jpg" alt="Car" style="width:100%">
-				<h4>Classic</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input  class="imagenes" type="image" src="../imagenes/Para Carousel/14.jpg" alt="Car" style="width:100%"></input>
+					<center>
+					<h4>Classic</h4>
+					</center>
 			  </div>
 			</div>
 		  
 			<div class="column people">
 			  <div class="content">
-				<img src="../imagenes/Rutina por Challenge.jpg" alt="People" style="width:100%">
-				<h4>Girl</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input  class="imagenes" type="image" src="../imagenes/Rutina por Challenge.jpg" alt="People" style="width:100%"></input>
+					<center>
+					<h4>Girl</h4>
+					</center>
 			  </div>
 			</div>
 			<div class="column people">
 			  <div class="content">
-				<img src="../imagenes/Para Carousel/15.jpg" alt="People" style="width:100%">
-				<h4>Man</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input  class="imagenes" type="image" src="../imagenes/Para Carousel/15.jpg" alt="People" style="width:100%"></input>
+					<center>
+					<h4>Man</h4>
+					</center>
 			  </div>
 			</div>
 			<div class="column people">
 			  <div class="content">
-				<img src="../imagenes/Para Carousel/16.jpg" alt="People" style="width:100%">
-				<h4>Woman</h4>
-				<p>Lorem ipsum dolor..</p>
+				<input  class="imagenes" type="image" src="../imagenes/Para Carousel/16.jpg" alt="People" style="width:100%"></input>
+					<center>
+					<h4>Woman</h4>
+					</center>
 			  </div>
 			</div>
 		  <!-- END GRID -->
@@ -224,14 +243,6 @@
 		<br>
 		<br>
 		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		
 		<footer>
 				<div class="ventana"  id="vent">
 					<div id="cerrar"><a href="javascript:cerrar()"><span <i class="far fa-window-close"></i></span></a></div>	

@@ -43,7 +43,7 @@ function cerrar2(){
 
 /*portafolio*/
 
-filterSelection("all")
+filterSelection("nature")
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("column");
