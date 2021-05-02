@@ -13,11 +13,8 @@ function validateForm() {
         nombre = false;
     }
     else if(validarTexto(campoNombre) == false){
-        alert("El campo nombre no acepta caracteres especiales");
+        alert("El campo nombre no acepta caracteres especiales ni mas de 150 caracteres");
         nombre = false;  
-    }else if(campoNombre.value.length >= 150){
-        alert("El campo nombre no acepta mas de 150 caracteres");
-        nombre = false;   
     }
     if (campoDescripcion.match(patt1) || campoDescripcion == "") {
         alert("El campo descripcion no acepta numeros o esta vacio");
@@ -125,7 +122,7 @@ function subirVideo() {
     return referenciaVideo
 }
 function validarTexto(parametro) {
-    var patron = /^[a-zA-Z-s]{1,40}$/;
+    var patron = /^[a-zA-Z-s]{1,150}$/;
     if (parametro.search(patron)) {
         return false;
     } else {

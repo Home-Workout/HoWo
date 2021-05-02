@@ -43,7 +43,7 @@ function validarFormulario() {
         val++;
         return false;
     } else if (validarTexto(nombre.value) == false) {
-        document.getElementById("alerta").innerHTML = "Solo se permite Caracteres";
+        document.getElementById("alerta").innerHTML = "Solo se permite Caracteres y menos de 150 caracteres";
         nombre.style.backgroundColor = "red";
         nombre.value = "";
         nombre.focus();
