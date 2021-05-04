@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang='esp'>
+
 <head>
     <meta charset='utf-8'>
     <title>Agregar Ejercicios</title>
@@ -10,25 +11,31 @@
 
 <body>
     <h1 id="titulo">Agregar Ejercicios</h1>
+    <div class="t1">
+        <h1 class="titulo">HoWo</h1>
+    </div>
+    <div class="imgTitulo">
+        <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">
+    </div>
     <form class="forms" name="formularioEjercicio" id="formulario1" method="post">
-        <label for="nombre">Nombre: </label>
+        <label for="nombre">*Nombre: </label>
         <input class="controls" type="text" name="eName" id="name1" placeholder="Ingrese nombre del Ejercicio" required><br><br>
-        <label for="descripcion">Descripcion: </label>
+        <label for="descripcion">*Descripcion: </label>
         <textarea id="descripcion" class="controls" name="descripcion" rows="4" cols="50" placeholder="Escriba una descripcion..." required></textarea>
-        <label>Subir imagen: </label>
-        <input class="controls" type="file" id="image" accept="image/x-png,image/gif,image/jpeg,image/bmp" onchange="validateFileType()" required><br><br>
+        <label>*Subir imagen: </label>
+        <input class="controls" type="file" id="image" style="cursor: pointer" accept="image/x-png,image/gif,image/jpeg,image/bmp" onchange="validateFileType()" required><br><br>
         <label for="video">Subir Video </label>
-        <input class="controls" type="file" id="video" accept="video/x-mp4,video/mkv,video/wmv,video/*" onchange="validateVideo()"><br><br>
+        <input class="controls" type="file" id="video" style="cursor: pointer" accept="video/x-mp4,video/mkv,video/wmv,video/*" onchange="validateVideo()"><br><br>
         <label for="video">Subir Link Video (Opcional)</label>
         <input class="controls" type="url" id="linkVideo" name="URL video"><br><br>
-        <label>Nivel de Entrenamiento:</label>
-        <select class="controls" id="nivel">
+        <label>*Nivel de Entrenamiento:</label>
+        <select class="controls" id="nivel" style="cursor: pointer">
             <option>Principiante</option>
             <option>Intermedio</option>
             <option>Avanzado</option>
         </select><br><br>
-        <label>Area de Trabajo Corporal:</label>
-        <select class="controls" id="areaT">
+        <label>*Area de Trabajo Corporal:</label>
+        <select class="controls" id="areaT" style="cursor: pointer">
             <option>Abdomen</option>
             <option>Brazos</option>
             <option>Gluteos</option>
@@ -41,7 +48,7 @@
             <option>Espalda-Brazo</option>
             <option>Abdomen-Espalda</option>
         </select><br>
-        <input class="bottons" id="enviarEjercicio" type="button" value="Agregar Ejercicio">
+        <input class="bottons" style="cursor: pointer" id="enviarEjercicio" type="button" value="Agregar Ejercicio">
 
     </form>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
