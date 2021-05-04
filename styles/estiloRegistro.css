@@ -54,12 +54,14 @@ body {
     text-align: center;
     margin: 15px 2px;
     color: rgba(255, 255, 255, 1);
-    right: 50%;
+    position: relative;
+    right: -45px;
+    top: -30px;
 }
 
 .alerta {
     background: #F25E1E;
-    width: 60%;
+    width: 80%;
     text-align: center;
     margin: 13px 0px;
     color: rgba(255, 255, 255, 1);
@@ -99,6 +101,7 @@ body {
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #e2dbdbd2;
+    font-size: 0.75em;
 }
 .imgTitulo {
     position: absolute;

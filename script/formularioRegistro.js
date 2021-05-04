@@ -118,10 +118,14 @@ function limpiarCampos(){
     correo.value = "";
     contrasenia.value = "";
     contrasenia2.value = "";
+    nombre.style.backgroundColor = "#5f6469";
+    correo.style.backgroundColor = "#5f6469";
+    contrasenia.style.backgroundColor = "#5f6469";
+    contrasenia2.style.backgroundColor = "#5f6469";
 }
 
 function validarTexto(parametro) {
-    var patron = /^[a-zA-Z-s]{1,40}$/;
+    var patron = /^[a-zA-Z-\s]{1,150}$/;
     if (parametro.search(patron)) {
         return false;
     } else {
@@ -198,6 +202,7 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                     correoU,
                     passU
                 })
+                parrafo.innerHTML="";
                 console.log(responseU)
             }else{ 
                 limpiarCampos();

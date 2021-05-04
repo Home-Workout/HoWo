@@ -122,7 +122,7 @@ function subirVideo() {
     return referenciaVideo
 }
 function validarTexto(parametro) {
-    var patron = /^[a-zA-Z-s]{1,150}$/;
+    var patron = /^[a-zA-Z-\s]{1,150}$/;
     if (parametro.search(patron)) {
         return false;
     } else {
