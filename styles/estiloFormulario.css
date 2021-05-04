@@ -5,15 +5,15 @@ body {
     margin: auto;
     margin-top: 100px;
     border-radius: 4px;
-    font-family: 'calibri';
-    font-size: 22px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.89);
 }
 
 #titulo {
-    font-family: 'verdana';
-    font-size: 29px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 38px;
     font-weight: bold;
     margin-top: 1px;
     margin-bottom: 50px;
@@ -22,14 +22,14 @@ body {
 }
 
 .controls {
-    width: 90%;
+    width: 100%;
     background: #5f6469;
     padding: 10px;
     padding-left: 15px;
     border-radius: 4px;
     margin-bottom: 16px;
     border: 1px solid #f5f6f7;
-    font-family: 'calibri';
+    font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     color: white;
 }
@@ -68,6 +68,11 @@ body {
 .t1 {
     position: absolute;
     right: 85%;
-    top: 3px;
+    top: 16px;
     font-size: 0.85em;
+}
+
+#enviarEjercicio {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
 }

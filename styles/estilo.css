@@ -2,7 +2,7 @@ body {
     background: #24303c;
     padding: 30px;
     border-radius: 4px;
-    font-family: 'calibri';
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .btn1 {
@@ -54,7 +54,7 @@ body {
     margin: 20px;
     margin-bottom: 1px;
     color: #fff;
-    font-family: Quicksand;
+    font-family: 'Ubuntu', sans-serif;
     user-select: none;
 }
 
@@ -62,6 +62,7 @@ body {
     background: #24303c;
     text-align: center;
     color: #fff;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.25em;
     padding: 11px 0px;
     width: 95%;
@@ -78,7 +79,7 @@ body {
     background: url(../imagenes/fondo_1.jpg);
     width: 30%;
     color: rgba(255, 255, 255, 1);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     text-align: justify;
     padding: 33px;
@@ -106,6 +107,7 @@ body {
     text-align: center;
     color: #fff;
     display: inline-block;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.25em;
     margin: 25px 0;
     padding: 11px 0px;
@@ -122,7 +124,7 @@ body {
     background: url(../imagenes/fondo_1.jpg);
     width: 30%;
     color: rgba(255, 255, 255, 1);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     text-align: justify;
     padding: 33px;
@@ -167,7 +169,7 @@ body {
 }
 
 .contenido-principal__resumen {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     line-height: 30px;
     color: #CFCFCF;
 }
@@ -321,6 +323,7 @@ body {
     background-color: #494E4F;
     color: #fff;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .btn:hover {
@@ -349,10 +352,27 @@ body {
 
 .t1 {
     position: absolute;
-    right: 86%;
+    right: 84%;
     top: 20px;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .content h4 {
     color: white;
+}
+
+.ventana h1 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ventana2 h1 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ventana p {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ventana2 p {
+    font-family: 'Ubuntu', sans-serif;
 }
