@@ -1,6 +1,7 @@
-body{
+body {
     width: 400px;
-    background: #24303c;
+    background-image: url(fondoRegistro.jpg);
+    /*background: #24303c;*/
     padding: 30px;
     margin: auto;
     margin-top: 100px;
@@ -8,12 +9,14 @@ body{
     font-family: 'calibri';
     color: white;
 }
-#titulo{
+
+#titulo {
     font-size: 32px;
     margin-bottom: 50px;
     margin-left: 100px;
 }
-.controls{
+
+.controls {
     width: 100%;
     background: #24303c;
     padding: 10px;
@@ -24,7 +27,8 @@ body{
     font-size: 18px;
     color: white;
 }
-.boton{
+
+.boton {
     width: 100%;
     background: #1f53c5;
     border: none;
@@ -34,32 +38,33 @@ body{
     font-size: 16px;
 }
 
-.boton:disabled{
+.boton:disabled {
     background-color: #82a0a2;
     border: 1px solid #82a0a2;
     color: lightgray;
 }
-.btnEnviar{
-    background: rgba(0, 0, 102,1);
+
+.btnEnviar {
+    background: rgba(0, 0, 102, 1);
     width: 60%;
     text-align: center;
     margin: 15px 2px;
-    color: rgba(255,255,255, 1);
+    color: rgba(255, 255, 255, 1);
     right: 50%;
-    }
-.alerta{
+}
+
+.alerta {
     background: #F25E1E;
     width: 60%;
     text-align: center;
     margin: 13px 0px;
-    color: rgba(255,255,255, 1);
-    
- 
+    color: rgba(255, 255, 255, 1);
 }
-.mostrarPass{
-    text-align:center;
+
+.mostrarPass {
+    text-align: center;
     background: #7f8c8d;
-    color:#fff;
+    color: #fff;
     display: inline-block;
     font-size: 0.88em;
     margin: 20px;
@@ -67,15 +72,15 @@ body{
     width: 100px;
     text-decoration: none;
     box-shadow: 0px 3px 0px #373c3c;
-    position:relative;
+    position: relative;
     right: -400px;
     top: -261px;
 }
 
-.mostrarPass2{
-    text-align:center;
+.mostrarPass2 {
+    text-align: center;
     background: #7f8c8d;
-    color:#fff;
+    color: #fff;
     display: inline-block;
     font-size: 0.88em;
     margin: 20px;
@@ -83,7 +88,7 @@ body{
     width: 100px;
     text-decoration: none;
     box-shadow: 0px 3px 0px #373c3c;
-    position:relative;
+    position: relative;
     right: -260px;
     top: -158px;
 }
