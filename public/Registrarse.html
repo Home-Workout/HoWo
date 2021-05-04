@@ -13,7 +13,15 @@
 </head>
 
 <body>
-    <h1 id="titulo1">Registrarse</h1>
+    <center>
+        <h1 id="titulo1">Registrarse</h1>
+    </center>
+    <div class="t1">
+        <h1 class="titulo">HoWo</h1>
+    </div>
+    <div class="imgTitulo">
+        <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">
+    </div>
     <form class="forms" id="formulario1" method="post">
 
         <div class="alerta" id="alerta"></div>
@@ -26,7 +34,7 @@
         <label for="contrasenia">Repite tu Contraseña: </label>
         <input class="controls" type="password" id="contrasenia2" placeholder="Ingrese su contraseña"><br><br>
 
-        <button class="boton" id="enviar" type="button" onclick="validarFormulario();" disabled>Registrarse</button>
+        <button class="boton" id="enviar" type="button" style="cursor: pointer" onclick="validarFormulario();" disabled>Registrarse</button>
         
         <input type="button" id = "oculta" class="mostrarPass" onclick="mostrar()" value = "Mostrar"></input>
         <input type="button" id = "oculta2" class="mostrarPass2" onclick="mostrar2()" value = "Mostrar"> </input>

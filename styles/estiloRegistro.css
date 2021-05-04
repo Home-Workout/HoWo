@@ -1,41 +1,45 @@
 body {
     width: 400px;
     background-image: url(fondoRegistro.jpg);
-    /*background: #24303c;*/
     padding: 30px;
     margin: auto;
     margin-top: 100px;
     border-radius: 4px;
     font-family: 'calibri';
-    color: white;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.89);
 }
 
 #titulo {
     font-size: 32px;
     margin-bottom: 50px;
     margin-left: 100px;
+    font-size: 22px;
 }
 
 .controls {
-    width: 100%;
-    background: #24303c;
+    width: 90%;
+    background: #5f6469;
     padding: 10px;
+    padding-left: 15px;
     border-radius: 4px;
     margin-bottom: 16px;
-    border: 1px solid #1f53c5;
+    border: 1px solid #f5f6f7;
     font-family: 'calibri';
     font-size: 18px;
     color: white;
+    font-size: 22px;
 }
 
 .boton {
     width: 100%;
-    background: #1f53c5;
+    background: #24303c;
     border: none;
     padding: 12px;
-    color: white;
+    color: rgb(255, 255, 255);
     margin: 16px 0;
     font-size: 16px;
+    border-radius: 15px;
 }
 
 .boton:disabled {
@@ -74,7 +78,7 @@ body {
     box-shadow: 0px 3px 0px #373c3c;
     position: relative;
     right: -400px;
-    top: -261px;
+    top: -275px;
 }
 
 .mostrarPass2 {
@@ -90,5 +94,24 @@ body {
     box-shadow: 0px 3px 0px #373c3c;
     position: relative;
     right: -260px;
-    top: -158px;
+    top: -163px;
+}
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #e2dbdbd2;
+}
+.imgTitulo {
+    position: absolute;
+    top: 13px;
+    left: 92px;
+}
+
+.t1 {
+    position: absolute;
+    right: 85%;
+    top: 3px;
+    font-size: 0.90em;
+}
+.forms label{
+    font-size: 22px;
 }
