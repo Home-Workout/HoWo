@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href='..\styles\estiloIniciarSesion.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <title>Iniciar Sesion</title>
+
+</head>
+
+<body>
+    <center>
+        <h1 id="title1">Iniciar Sesion</h1>
+    </center>
+    <div class="t1">
+        <h1 class="title">HoWo</h1>
+    </div>
+    <div class="imgTitulo">
+        <a href="index.php"><img src="../imagenes/HoWo.jpg" alt="icono howo"
+                style="float: left; width: 52px;height: 52px; border-radius: 50px;"></a>
+    </div>
+    <form class="forms" id="form" method="post">
+
+        <div class="alerta" id="alerta"></div>
+        <label for="correo">Correo Electronico: </label>
+        <input class="controls" type="email" id="correo" placeholder="Ingrese su correo electronico"><br><br>
+        <label for="contrasenia">Contraseña: </label>
+        <input class="controls" type="password" id="contraseña" placeholder="Ingrese su contraseña"><br><br>
+
+        <button class="boton" id="iniciar" type="button" style="cursor: pointer" onclick="validateForm();"
+            disabled>Iniciar</button>
+
+        <input type="button" id="oculta" class="mostrarPass" onclick="mostrar()" value="Mostrar"></input>
+
+
+        <div class="btnIniciar" id="iniciado"> </div>
+    </form>
+    <script src="IniciarSesion.js"></script>
+</body>
+
+</html>
