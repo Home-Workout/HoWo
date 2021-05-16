@@ -52,6 +52,26 @@ function validateForm() {
     }
 
 }
+
+function loginF(){
+
+    var correo = document.getElementById('correo').value;
+    var contraseña = document.getElementById('contraseña').value;
+
+    firebase.auth().signInWithEmailAndPassword(correo, contraseña)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode);
+    console.log(errorMessage);
+  });
+}
+
 function limpiarCampos() {
     correo.value = "";
     contraseña.value = "";
