@@ -288,6 +288,12 @@ body {
     border-radius: 16px;
     box-shadow: 0px 3px 0px #373c3c
 }
+.imagenes img {
+    width: 380px;
+    height: 280px;
+    border-radius: 16px;
+    box-shadow: 0px 3px 0px #373c3c
+}
 
 
 /* Clear floats after rows */
@@ -375,4 +381,136 @@ body {
 
 .ventana2 p {
     font-family: 'Ubuntu', sans-serif;
+}
+/* estilos pop up nivel basico */
+.ventanaNivel {
+    background: url(../imagenes/fondo_1.jpg);
+    width: 40%;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    text-align: justify;
+    padding: 33px;
+    min-height: 600px;
+    border-radius: 22px;
+    position: absolute;
+    left: 400px;
+    bottom: 20%;
+    display: none;
+    top: 198px;
+}
+.rutinas{
+    width: 300px;
+    height: 300px;
+}
+.rutinas h4{
+    color: #CFCFCF;
+}
+.piernaBasico{
+    position: relative;
+    right: 170px;
+    width: 200px;
+}
+.brazoBasico{
+    position: relative;
+    right: 210px;
+    width: 380px;
+    top: 7px;
+}
+.hombroBasico{
+    position: relative;
+    right: 170px;
+    width: 200px;
+    top: 10px;
+}
+.espaldaBasico{
+    position: relative;
+    right: -140px;
+    width: 200px;
+    top: -508px;
+}
+.abdominalBasico{
+    position: relative;
+    right: -143px;
+    width: 200px;
+    top: -510px;
+}
+.gluteoBasico{
+    position: relative;
+    right: -143px;
+    width: 200px;
+    top: -490px;
+}
+/* estilos pop up nivel Intermedio */
+.piernaIntermedio{
+    position: relative;
+    right: 170px;
+    width: 200px;
+}
+.brazoIntermedio{
+    position: relative;
+    right: 210px;
+    width: 380px;
+    top: 7px;
+}
+.hombroIntermedio{
+    position: relative;
+    right: 170px;
+    width: 200px;
+    top: 10px;
+}
+.espaldaIntermedio{
+    position: relative;
+    right: -140px;
+    width: 200px;
+    top: -467px;
+}
+.abdominalIntermedio{
+    position: relative;
+    right: -143px;
+    width: 200px;
+    top: -450px;
+}
+.gluteoIntermedio{
+    position: relative;
+    right: -143px;
+    width: 200px;
+    top: -444px;
+}
+
+/* estilos pop up nivel Avanzado */
+.piernaAvanzado{
+    position: relative;
+    right: 170px;
+    width: 200px;
+}
+.brazoAvanzado{
+    position: relative;
+    right: 210px;
+    width: 380px;
+    top: 7px;
+}
+.hombroAvanzado{
+    position: relative;
+    right: 170px;
+    width: 200px;
+    top: 10px;
+}
+.espaldaAvanzado{
+    position: relative;
+    right: -140px;
+    width: 200px;
+    top: -480px;
+}
+.abdominalAvanzado{
+    position: relative;
+    right: -143px;
+    width: 200px;
+    top: -470px;
+}
+.gluteoAvanzado{
+    position: relative;
+    right: -143px;
+    width: 200px;
+    top: -464px;
 }

@@ -27,6 +27,7 @@ window.addEventListener('load', function(){
 		]
 	});
 });
+
 function abrir(){
     document.getElementById("vent").style.display="block";
     cerrar2();
@@ -41,6 +42,35 @@ function abrir2(){
 function cerrar2(){
     document.getElementById("vent2").style.display="none";
 }
+
+function abrirNivelBasico(){
+   document.getElementById("ventNivel").style.display="block";
+   cerrarNivelInter();
+   cerrarNivelAvan();
+}
+function cerrarNivelBasico(){
+   document.getElementById("ventNivel").style.display="none";
+}
+
+function abrirNivelIntermedio(){
+  document.getElementById("ventNivelI").style.display="block";
+  cerrarNivelBasico();
+  cerrarNivelAvan();
+}
+function cerrarNivelInter(){
+  document.getElementById("ventNivelI").style.display="none";
+}
+
+function abrirNivelAvanzado(){
+  document.getElementById("ventNivelA").style.display="block";
+  cerrarNivelBasico();
+  cerrarNivelInter();
+}
+function cerrarNivelAvan(){
+  document.getElementById("ventNivelA").style.display="none";
+}
+
+
 
 /*portafolio*/
 
