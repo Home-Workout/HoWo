@@ -11,6 +11,25 @@
 
     <title>Iniciar Sesion</title>
 
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyBcxOuwrl0HjsB20NaDgQ67cnbuzVHXKU0",
+        authDomain: "home-workout-f0bc6.firebaseapp.com",
+        databaseURL: "https://home-workout-f0bc6-default-rtdb.firebaseio.com",
+        projectId: "home-workout-f0bc6",
+        storageBucket: "home-workout-f0bc6.appspot.com",
+        messagingSenderId: "657520560191",
+        appId: "1:657520560191:web:c32b3fdbc232c6e4b3d08a",
+        measurementId: "G-0D1GCR0116"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
 </head>
 
 <body>
@@ -29,10 +48,11 @@
         <div class="alerta" id="alerta"></div>
         <label for="correo">Correo Electronico: </label>
         <input class="controls" type="email" id="correo" placeholder="Ingrese su correo electronico"><br><br>
+        
         <label for="contrasenia">Contraseña: </label>
         <input class="controls" type="password" id="contraseña" placeholder="Ingrese su contraseña"><br><br>
 
-        <button class="boton" id="iniciar" type="button" style="cursor: pointer" onclick="validateForm();"
+        <button class="boton" id="iniciar" type="button" style="cursor: pointer" onclick="loginF();"
             disabled>Iniciar</button>
 
         <input type="button" id="oculta" class="mostrarPass" onclick="mostrar()" value="Mostrar"></input>
@@ -41,6 +61,7 @@
         <div class="btnIniciar" id="iniciado"> </div>
     </form>
     <script src= "..\script\IniciarSesion.js"></script>
+    
 </body>
 
 </html>
