@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel='stylesheet' type='text/css' href='..\styles\estiloVerRutinas.css'>
+    <script src='../script/verRutina.js'></script>
     <title>Realizar Rutina</title>
 </head>
 
-<body>
+<body onload="mostrarDatos()">
     <div class="container-fluid">
         <div class="row" id="cabeza">
             <div class="col-1" id="logoID">
@@ -22,7 +23,7 @@
             </div>
 
             <div class="col-9" id="tituloRutina">
-                <h1>Rutina Seleccionada</h1>
+                <h1 id="tipoRutinaID">Rutina Seleccionada</h1>
             </div>
         </div>
 
