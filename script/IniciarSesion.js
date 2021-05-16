@@ -61,7 +61,8 @@ function loginF(){
     firebase.auth().signInWithEmailAndPassword(correo, contraseña)
   .then((userCredential) => {
     // Signed in
-    var user = userCredential.user;
+    alert("autenticacion correcta");
+    //var user = userCredential.user;
     // ...
   })
   .catch((error) => {
