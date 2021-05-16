@@ -1,0 +1,97 @@
+body {
+    background-image: url(fondoVerRutina5.jpg);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.89);
+    /*
+    width: 400px;
+    margin: auto;
+    margin-top: 10%;
+    */
+}
+
+#cabeza {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#logoID {
+    padding-left: 3%;
+}
+
+#howoID {
+    padding-left: 0%;
+}
+
+#tituloRutina {
+    padding-left: 12%;
+}
+
+#tituloID {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 40%;
+}
+
+#controles {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    padding-left: 15%;
+}
+
+#anterior {
+    padding-top: 10%;
+    padding-left: 15%;
+    font-size: 30px;
+}
+
+#imagenG {
+    padding-left: 10%;
+}
+
+#siguiente {
+    padding-top: 10%;
+    padding-left: 20%;
+    font-size: 30px;
+}
+
+#infoEjercicioID {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding-left: 35%;
+    padding-right: 30%;
+}
+
+#botonesVE {
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#botonVideoID {
+    padding-left: 20%;
+}
+
+#botonSalirID {
+    padding-left: 20%;
+}
+
+#botonEmpezarID {
+    padding-left: 7%;
+}
+
+#botonEmpezar {
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/*
+#tituloRutina {
+    padding-left: 50%;
+    padding-top: 0%;
+}
+.row{
+*/

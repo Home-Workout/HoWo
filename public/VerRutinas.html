@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="esp">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel='stylesheet' type='text/css' href='..\styles\estiloVerRutinas.css'>
+    <script src='../script/verRutina.js'></script>
+    <title>Realizar Rutina</title>
+</head>
+
+<body onload="mostrarDatos()">
+    <div class="container-fluid">
+        <div class="row" id="cabeza">
+            <div class="col-1" id="logoID">
+                <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">
+            </div>
+            <div class="col-2" id="howoID">
+                <h1>HoWo</h1>
+            </div>
+
+            <div class="col-9" id="tituloRutina">
+                <h1 id="tipoRutinaID">Rutina Seleccionada</h1>
+            </div>
+        </div>
+
+
+        <div class="row" id="tituloID">
+            <div class="col-auto">
+                <h1>Nombre ejercicio</h1>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center" id="controles">
+            <div class="col-2" id="anterior">
+                <button class="btn btn-light" id="botonAnterior" type="button"><i class="fas fa-chevron-left"></i></button>
+            </div>
+            <div class="col-4" id="imagenG">
+                <img src="../imagenes/ejerciciosImg/ejercicioEjemplo2.gif" alt="imagen ejercicio">
+            </div>
+
+            <div class="col-6" id="siguiente">
+                <button class="btn btn-light" id="botonSiguiente" type="button"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+        </div>
+        <div class="row" id="infoEjercicioID">
+            <div class="col">
+                <div class="bg-dark rounded border border-white">
+                    <p></p>3x8</p>
+                    <p>Descripcion Ejercicio</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row" id="botonesVE">
+            <div class="col-4" id="botonVideoID">
+                <button class="btn-info" id="botonVideo" type="button"><i class="fas fa-video"></i> Video</button>
+            </div>
+            <div class="col-4" id="botonEmpezarID">
+                <button type="button" class="btn-success rounded" id="botonEmpezar">Empezar</button>
+            </div>
+            <div class="col-4" id="botonSalirID">
+                <button class="btn-danger" id="botonSalir" type="button">Salir</button>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
