@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel='stylesheet' type='text/css' href='..\styles\estiloVerRutinas.css'>
     <script src='../script/verRutina.js'></script>
+
     <title>Realizar Rutina</title>
 </head>
 
 <body onload="mostrarDatos()">
+
     <div class="container-fluid">
         <div class="row" id="cabeza">
             <div class="col-1" id="logoID">
-                <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">
+                <a href="index.html"> <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;"></a>
             </div>
             <div class="col-2" id="howoID">
                 <h1>HoWo</h1>
@@ -30,7 +32,7 @@
 
         <div class="row" id="tituloID">
             <div class="col-auto">
-                <h1>Nombre ejercicio</h1>
+                <h1 id="nom">Nombre ejercicio</h1>
             </div>
 
         </div>
@@ -66,7 +68,7 @@
                 <button type="button" class="btn-success rounded" id="botonEmpezar">Empezar</button>
             </div>
             <div class="col-4" id="botonSalirID">
-                <button class="btn-danger" id="botonSalir" type="button">Salir</button>
+                <button class="btn-danger" id="botonSalir" type="button" onclick="home()">Salir</button>
             </div>
         </div>
 

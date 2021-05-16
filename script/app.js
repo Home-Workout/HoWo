@@ -1,73 +1,79 @@
-window.addEventListener('load', function(){
-	new Glider(document.querySelector('.carousel__lista'), {
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		dots: '.carousel__indicadores',
-		arrows: {
-			prev: '.carousel__anterior',
-			next: '.carousel__siguiente'
-		},
-		responsive: [
-			{
-			  // screens greater than >= 775px
-			  breakpoint: 450,
-			  settings: {
-				// Set to `auto` and provide item width to adjust to viewport
-				slidesToShow: 2,
-				slidesToScroll: 2
-			  }
-			},{
-			  // screens greater than >= 1024px
-			  breakpoint: 800,
-			  settings: {
-				slidesToShow: 5,
-				slidesToScroll: 4
-			  }
-			}
-		]
-	});
+//export var tipoRutinaPasar = "";
+
+window.addEventListener('load', function() {
+    new Glider(document.querySelector('.carousel__lista'), {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: '.carousel__indicadores',
+        arrows: {
+            prev: '.carousel__anterior',
+            next: '.carousel__siguiente'
+        },
+        responsive: [{
+            // screens greater than >= 775px
+            breakpoint: 450,
+            settings: {
+                // Set to `auto` and provide item width to adjust to viewport
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }, {
+            // screens greater than >= 1024px
+            breakpoint: 800,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 4
+            }
+        }]
+    });
 });
 
-function abrir(){
-    document.getElementById("vent").style.display="block";
+function abrir() {
+    document.getElementById("vent").style.display = "block";
     cerrar2();
 }
-function cerrar(){
-    document.getElementById("vent").style.display="none";
+
+function cerrar() {
+    document.getElementById("vent").style.display = "none";
 }
-function abrir2(){
-    document.getElementById("vent2").style.display="block";
+
+function abrir2() {
+    document.getElementById("vent2").style.display = "block";
     cerrar();
 }
-function cerrar2(){
-    document.getElementById("vent2").style.display="none";
+
+function cerrar2() {
+    document.getElementById("vent2").style.display = "none";
 }
 
-function abrirNivelBasico(){
-   document.getElementById("ventNivel").style.display="block";
-   cerrarNivelInter();
-   cerrarNivelAvan();
-}
-function cerrarNivelBasico(){
-   document.getElementById("ventNivel").style.display="none";
+function abrirNivelBasico() {
+    document.getElementById("ventNivel").style.display = "block";
+    cerrarNivelInter();
+    cerrarNivelAvan();
 }
 
-function abrirNivelIntermedio(){
-  document.getElementById("ventNivelI").style.display="block";
-  cerrarNivelBasico();
-  cerrarNivelAvan();
-}
-function cerrarNivelInter(){
-  document.getElementById("ventNivelI").style.display="none";
+function cerrarNivelBasico() {
+    document.getElementById("ventNivel").style.display = "none";
 }
 
-function abrirNivelAvanzado(){
-  document.getElementById("ventNivelA").style.display="block";
-  cerrarNivelBasico();
-  cerrarNivelInter();
+function abrirNivelIntermedio() {
+    document.getElementById("ventNivelI").style.display = "block";
+    cerrarNivelBasico();
+    cerrarNivelAvan();
 }
-function cerrarNivelAvan(){
-  document.getElementById("ventNivelA").style.display="none";
+
+function cerrarNivelInter() {
+    document.getElementById("ventNivelI").style.display = "none";
+}
+
+function abrirNivelAvanzado() {
+    document.getElementById("ventNivelA").style.display = "block";
+    cerrarNivelBasico();
+    cerrarNivelInter();
+}
+
+function cerrarNivelAvan() {
+    document.getElementById("ventNivelA").style.display = "none";
 }
 
 
@@ -75,36 +81,40 @@ function cerrarNivelAvan(){
 /*portafolio*/
 
 filterSelection("nature")
+
 function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("column");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
+    var x, i;
+    x = document.getElementsByClassName("column");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
 }
 
 function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+    }
 }
 
 function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
     }
-  }
-  element.className = arr1.join(" ");
+    element.className = arr1.join(" ");
 }
+
+
+
 
 
 // Add active class to the current button (highlight it)
