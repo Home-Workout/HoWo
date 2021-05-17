@@ -62,6 +62,12 @@ function loginF(){
   .then((userCredential) => {
     // Signed in
     alert("autenticacion correcta");
+    console.log(sessionStorage.inicio);
+    sessionStorage.inicio=true;
+    console.log(sessionStorage.inicio);
+    console.log(window.sessionStorage.inicio);
+    window.location.href="index.html";
+    
     //var user = userCredential.user;
     // ...
   })

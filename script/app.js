@@ -77,24 +77,17 @@ function w3RemoveClass(element, name) {
 }
 
 
-// Add active class to the current button (highlight it)
-/*var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    console.log(current.namedItem); 
-    console.log(current[0].className);
-    current[0].className = current[0].className.replace(" active","");
-    console.log(current[0].className);
-    this.className += " active";
-  });
-}*/
+this.sessionStorage.inicio=false;
+function inicioSesion(){
+  if(sessionStorage.inicio==true){
+    console.log(sessionStorage.inicio);
+    alert("mandar al ejercicio");
+    
+    //window.location.href="IniciarSecion.html";
+  }else{
+    console.log(sessionStorage.inicio);
+    window.location.href="IniciarSesion.html";
+    //alert("no inicio secion");
+  }
+}
 
-/*$(function() {
-  var botones = $(".container button");
-  botones.click(function() {
-    botones.removeClass('active');
-    $(this).addClass('active');
-  });
-});*/
