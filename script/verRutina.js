@@ -11,7 +11,7 @@ function mostrarDatos() {
     document.getElementById("tipoRutinaID").innerHTML = nom;
     var repe = "";
     document.getElementById("repeticiones").innerHTML = "";
-    if (nivel == "Basico") {
+    if (nivel == "Principiante") {
         repe = "3x8->3 sets de 8 repeticiones";
     } else {
         if (nivel == "Avanzado") {
