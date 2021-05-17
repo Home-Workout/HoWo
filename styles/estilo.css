@@ -100,6 +100,7 @@ body {
 
 #cerrar span {
     margin-right: 10px;
+    color: #fff;
 }
 
 .contac {
@@ -394,7 +395,7 @@ body {
     min-height: 600px;
     border-radius: 22px;
     position: absolute;
-    left: 400px;
+    left: 430px;
     bottom: 20%;
     display: none;
     top: 198px;
@@ -405,6 +406,7 @@ body {
 }
 .rutinas h4{
     color: #CFCFCF;
+    
 }
 .piernaBasico{
     position: relative;
