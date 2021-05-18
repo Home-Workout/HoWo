@@ -57,7 +57,6 @@ function loginF(){
 
     var correo = document.getElementById('correo').value;
     var contraseña = document.getElementById('contraseña').value;
-
     firebase.auth().signInWithEmailAndPassword(correo, contraseña)
   .then((userCredential) => {
     // Signed in
@@ -77,6 +76,7 @@ function loginF(){
     console.log(errorCode);
     console.log(errorMessage);
   });
+    
 }
 
 function limpiarCampos() {
