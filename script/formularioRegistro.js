@@ -173,6 +173,8 @@ document.getElementById("contrasenia2").addEventListener("keyup", validacionBoto
 
 document.getElementById("enviar").addEventListener("click", async(e) => {
     //aqui tiene que redirigir a la parte principal por lo pronto solo mostrara un mensaje
+    //cambiar base de datos
+    /*
     const registroUsuario = document.getElementById("formulario1");
 
     const nombreU = registroUsuario["name1"].value;
@@ -208,6 +210,6 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                 limpiarCampos();
                 parrafo.innerHTML = "Ya existe ese correo";
             }
-     }
+     }*/
     
 });
