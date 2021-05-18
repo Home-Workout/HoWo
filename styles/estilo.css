@@ -48,6 +48,21 @@ body {
     position: relative;
     margin-right: 10px;
 }
+.cuentaUsuario{
+    position: relative;
+    margin-right: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.25em;
+    margin: 20px;
+    padding: 20 px 0px;
+    width: 150px;
+    height: 0px;
+    text-decoration: none;
+    right: -1200px;
+    top: -10px;
+}
+
 
 .titulo {
     text-align: left;

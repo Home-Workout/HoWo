@@ -1,4 +1,6 @@
 //export var tipoRutinaPasar = "";
+var sesion=false;
+var querystring=window.location.search;
 
 window.addEventListener('load', function() {
     new Glider(document.querySelector('.carousel__lista'), {
@@ -25,7 +27,18 @@ window.addEventListener('load', function() {
                 slidesToScroll: 4
             }
         }]
-    });
+    });  
+    querystring= window.location.search.substr(1);
+    //console.log(querystring) // '?q=pisos+en+barcelona&ciudad=Barcelona'
+
+// usando el querystring, creamos un objeto del tipo URLSearchParams
+    const params = new URLSearchParams(querystring);
+    sesion=params.get('sesion')
+    console.log(sesion);
+    //sesion=false;
+    document.getElementById("iniSesion").style.display = "none";
+    validarInicioSesion();
+    
 });
 
 function abrir() {
@@ -76,6 +89,17 @@ function cerrarNivelAvan() {
     document.getElementById("ventNivelA").style.display = "none";
 }
 
+
+function validarInicioSesion(){
+    if(sesion){
+        console.log(sesion);
+        document.getElementById("botonRegistrarse").style.display = "none";
+        document.getElementById("botonIniciarSesion").style.display = "none";
+        document.getElementById("iniSesion").style.display = "inline";
+
+    }
+         
+}
 
 
 /*portafolio*/
