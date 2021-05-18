@@ -4,6 +4,8 @@ const peligro = document.getElementById("peligro");
 const iniciar = document.getElementById("iniciar");
 //const parrafo = document.getElementById("enviado");
 
+var nombreUsuario="";
+const db = firebase.firestore();
 
 function mostrar() {
     var tipo = document.getElementById("contraseña");
@@ -57,7 +59,35 @@ function loginF(){
 
     var correo = document.getElementById('correo').value;
     var contraseña = document.getElementById('contraseña').value;
-    firebase.auth().signInWithEmailAndPassword(correo, contraseña)
+   /* await db.collection("Registrar_Usuario").where("correoU", "==", correo).where("passU","==",contraseña)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+           // console.log(doc.id, " => ", doc.data());
+            nombreUsuario=doc.data().nombreU;
+            console.log(nombreUsuario);
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });*/
+     db.collection("Registrar_Usuario").where("correoU", "==", correo).where("passU","==",contraseña)
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                nombreUsuario=doc.data().nombreU;
+                console.log(nombreUsuario,"gg");
+                var texto="../public/index.html?sesion=true&nombre="+nombreUsuario;
+                window.location.href = texto;
+            console.log(nombreUsuario,"gg");
+            });
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
+
+
+    /*firebase.auth().signInWithEmailAndPassword(correo, contraseña)
   .then((userCredential) => {
     // Signed in
    // alert("autenticacion correcta");
@@ -76,7 +106,7 @@ function loginF(){
     var errorMessage = error.message;
     console.log(errorCode);
     console.log(errorMessage);
-  });
+  });*/
     
 }
 
@@ -114,5 +144,4 @@ window.onbeforeunload = function () {
 
 document.getElementById("correo").addEventListener("keyup", validacionBoton);
 document.getElementById("contraseña").addEventListener("keyup", validacionBoton);
-
 

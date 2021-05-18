@@ -1,5 +1,6 @@
 //export var tipoRutinaPasar = "";
 var sesion=false;
+var nombreUs="";
 var querystring=window.location.search;
 
 window.addEventListener('load', function() {
@@ -34,6 +35,7 @@ window.addEventListener('load', function() {
 // usando el querystring, creamos un objeto del tipo URLSearchParams
     const params = new URLSearchParams(querystring);
     sesion=params.get('sesion')
+    nombreUs=params.get('nombre');
     console.log(sesion);
     //sesion=false;
     document.getElementById("iniSesion").style.display = "none";
@@ -95,6 +97,7 @@ function validarInicioSesion(){
         console.log(sesion);
         document.getElementById("botonRegistrarse").style.display = "none";
         document.getElementById("botonIniciarSesion").style.display = "none";
+        document.getElementById("iniSesion").innerHTML=nombreUs;
         document.getElementById("iniSesion").style.display = "inline";
 
     }
