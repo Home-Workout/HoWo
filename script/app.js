@@ -39,7 +39,9 @@ window.addEventListener('load', function() {
     console.log(sesion);
     //sesion=false;
     document.getElementById("iniSesion").style.display = "none";
+    if(sesion){
     validarInicioSesion();
+    }
     
 });
 
@@ -100,8 +102,19 @@ function validarInicioSesion(){
         document.getElementById("iniSesion").innerHTML=nombreUs;
         document.getElementById("iniSesion").style.display = "inline";
 
+    }else{
+        window.location.href = "../public/IniciarSesion.html";
     }
          
+}
+
+function irARutina(r){
+    if(sesion){
+        window.location.href = r;
+    }
+    else{
+        window.location.href = "../public/IniciarSesion.html";
+    }
 }
 
 
