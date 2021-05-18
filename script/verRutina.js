@@ -35,6 +35,7 @@ function mostrarDatos() {
 }
 
 async function consulta() {
+    document.getElementById("botonEmpezar").toggleAttribute('disabled', true);
     var i = 0;
     await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel)
         .get()
