@@ -65,10 +65,11 @@ async function consulta() {
     console.log(imgR);
     console.log("Numero ej " + numEjercicios)
     var datosR = [];
-    for (var k = 1; k < numEjercicios; k++) {
-        datosR[k] = datos[k];
+    for (var m = 0; m < numEjercicios; m++) {
+        datosR[m] = datos[m];
     }
     datos = datosR;
+    console.log(datos);
     storageR.getDownloadURL().then(function(url) {
         // `url` is the download URL for 'images/stars.jpg'
 
@@ -84,6 +85,7 @@ async function consulta() {
 function avanzar() {
     if (k < datos.length - 1) {
         k++;
+        console.log(k);
         var nombreSiguiente = datos[k];
         document.getElementById("nomID").innerHTML = nombreSiguiente['nombreE'];
         document.getElementById("descripcionID").innerHTML = nombreSiguiente['descripcion'];
@@ -92,10 +94,6 @@ function avanzar() {
         var storageR = storage.ref(imgR);
         console.log(imgR);
         storageR.getDownloadURL().then(function(url) {
-            // `url` is the download URL for 'images/stars.jpg'
-
-            // This can be downloaded directly:
-
 
             // Or inserted into an <img> element:
             var img = document.getElementById('imgID');
@@ -112,6 +110,7 @@ function avanzar() {
 function retroceder() {
     if (k > 0) {
         k--;
+        console.log(k);
         var nombreAnterior = datos[k];
         document.getElementById("nomID").innerHTML = nombreAnterior['nombreE'];
         document.getElementById("descripcionID").innerHTML = nombreAnterior['descripcion'];
