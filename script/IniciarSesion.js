@@ -59,18 +59,7 @@ function loginF(){
 
     var correo = document.getElementById('correo').value;
     var contraseña = document.getElementById('contraseña').value;
-   /* await db.collection("Registrar_Usuario").where("correoU", "==", correo).where("passU","==",contraseña)
-    .get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-           // console.log(doc.id, " => ", doc.data());
-            nombreUsuario=doc.data().nombreU;
-            console.log(nombreUsuario);
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });*/
+
      db.collection("Registrar_Usuario").where("correoU", "==", correo).where("passU","==",contraseña)
         .get()
         .then((querySnapshot) => {
@@ -79,7 +68,7 @@ function loginF(){
                 console.log(nombreUsuario,"gg");
                 var texto="../public/index.html?sesion=true&nombre="+nombreUsuario;
                 window.location.href = texto;
-            console.log(nombreUsuario,"gg");
+            console.log(nombreUsuario);
             });
         })
         .catch((error) => {
