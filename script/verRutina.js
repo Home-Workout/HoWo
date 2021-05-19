@@ -1,11 +1,14 @@
 const dbE = firebase.firestore();
 var dataE = "";
 var datos = [];
+var imagesBD = []
 var nivel = "";
 var k = 0;
 const sig = document.getElementById("botonSiguiente");
 const ant = document.getElementById("botonAnterior");
 var storage = firebase.storage();
+var numEjercicios = 0;
+var areaF = "";
 
 function mostrarDatos() {
 
@@ -13,20 +16,23 @@ function mostrarDatos() {
     var para = window.location.search.substr(1);
     var noms = para.split("=");
     var nombreEjercicios = noms[1].split("_");
-    var nombreEjercicio = nombreEjercicios[0];
     nivel = nombreEjercicios[1];
     var nom = noms[1].replace("_", " ");
+    areaF = nombreEjercicios[0];
 
     document.getElementById("tipoRutinaID").innerHTML = nom;
     var repe = "";
     document.getElementById("repeticiones").innerHTML = "";
     if (nivel == "Principiante") {
         repe = "3x8->3 sets de 8 repeticiones";
+        numEjercicios = 4;
     } else {
         if (nivel == "Avanzado") {
             repe = "4x12->4 sets de 12 repeticiones";
+            numEjercicios = 6;
         } else {
             repe = "4x10->4 sets de 10 repeticiones";
+            numEjercicios = 5;
         }
     }
 
@@ -37,11 +43,10 @@ function mostrarDatos() {
 async function consulta() {
     document.getElementById("botonEmpezar").toggleAttribute('disabled', true);
     var i = 0;
-    await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel)
+    await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel).where("areaT", "==", areaF)
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data());
                 datos[i] = doc.data();
                 i++;
             });
@@ -58,11 +63,14 @@ async function consulta() {
     var imgR = pru['imageRef'].replace(" ", "");
     var storageR = storage.ref(imgR);
     console.log(imgR);
+    console.log("Numero ej " + numEjercicios)
+    var datosR = [];
+    for (var k = 1; k < numEjercicios; k++) {
+        datosR[k] = datos[k];
+    }
+    datos = datosR;
     storageR.getDownloadURL().then(function(url) {
         // `url` is the download URL for 'images/stars.jpg'
-
-        // This can be downloaded directly:
-        
 
         // Or inserted into an <img> element:
         var img = document.getElementById('imgID');
@@ -87,7 +95,7 @@ function avanzar() {
             // `url` is the download URL for 'images/stars.jpg'
 
             // This can be downloaded directly:
-            
+
 
             // Or inserted into an <img> element:
             var img = document.getElementById('imgID');
@@ -115,7 +123,7 @@ function retroceder() {
             // `url` is the download URL for 'images/stars.jpg'
 
             // This can be downloaded directly:
-            
+
 
             // Or inserted into an <img> element:
             var img = document.getElementById('imgID');
