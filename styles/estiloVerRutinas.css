@@ -25,13 +25,13 @@ body {
 }
 
 #tituloRutina {
-    padding-left: 16%;
+    padding-left: 14%;
 }
 
 #tituloID {
     margin-top: 1%;
     margin-bottom: 1%;
-    margin-left: 40%;
+    margin-left: 43%;
 }
 
 #controles {
@@ -47,7 +47,7 @@ body {
 }
 
 #imagenG {
-    padding-left: 10%;
+    padding-left: 5%;
 }
 
 #siguiente {
@@ -77,14 +77,16 @@ body {
 }
 
 #botonEmpezarID {
-    padding-left: 7%;
+    padding-left: 12%;
 }
 
 #botonEmpezar {
-    width: 100%;
+    width: 65%;
+    height: 130%;
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     font-weight: bold;
+
 }
 
 
