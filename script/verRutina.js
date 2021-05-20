@@ -8,36 +8,32 @@ var k = 0;
 const sig = document.getElementById("botonSiguiente");
 const ant = document.getElementById("botonAnterior");
 var storage = firebase.storage();
+var areaF = "";
+var sesion = false;
+var nombreUs = "";
+var querystring = window.location.search;
 
-var sesion=false;
-var nombreUs="";
-var querystring=window.location.search;
 const params = new URLSearchParams(querystring);
 window.addEventListener('load', function() {
-    querystring= window.location.search.substr(1);
+    querystring = window.location.search.substr(1);
     //console.log(querystring) // '?q=pisos+en+barcelona&ciudad=Barcelona'
 
-// usando el querystring, creamos un objeto del tipo URLSearchParams
-   // const params = new URLSearchParams(querystring);
-    sesion=params.get('sesion');
-    nombreUs=params.get('nombre');
-    document.getElementById("nombre").innerHTML=nombreUs;
+    // usando el querystring, creamos un objeto del tipo URLSearchParams
+    // const params = new URLSearchParams(querystring);
+    sesion = params.get('sesion');
+    nombreUs = params.get('nombre');
+    document.getElementById("nombre").innerHTML = nombreUs;
 });
 
 function mostrarDatos() {
-    
 
-    //var para = window.location.search.substr(1);//../public/VerRutinas.html?sesion=Piernas_Principiante
-    //var noms = para.split("=");//Piernas_Principiante
-    //var noms=params.get('ruti');
-
-   // var nombreEjercicios = noms.split("_");//Piernas_Principiante
-    //var nombreEjercicio = nombreEjercicios[0];//Piernas_Principiante
-    nivel = params.get('nivel');//nombreEjercicios[1];
-    var nom =params.get('ruti'); //noms[1].replace("_", " "); //Piernas Principiante
-    var noms=nom.replace("_", " ");
+    nivel = params.get('nivel');
+    var nom = params.get('ruti');
+    var nombresI = nom.split(' ');
+    areaF = nombresI[0];
+    var noms = nom.replace("_", " ");
     document.getElementById("tipoRutinaID").innerHTML = noms;
-  
+
     var repe = "";
     document.getElementById("repeticiones").innerHTML = "";
     if (nivel == "Principiante") {
@@ -65,6 +61,7 @@ async function consulta() {
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 datos[i] = doc.data();
+                console.log(doc.data)
                 i++;
             });
         })
@@ -104,16 +101,13 @@ async function consulta() {
 function avanzar() {
     if (k < datos.length - 1) {
         k++;
-        q++;
-        abrirLink();
-        console.log(k);
+        cerrarLink();
         var nombreSiguiente = datos[k];
         document.getElementById("nomID").innerHTML = nombreSiguiente['nombreE'];
         document.getElementById("descripcionID").innerHTML = nombreSiguiente['descripcion'];
         document.getElementById("botonAnterior").toggleAttribute('disabled', false);
         var imgR = nombreSiguiente['imageRef'].replace(" ", "");
         var storageR = storage.ref(imgR);
-        console.log(imgR);
         storageR.getDownloadURL().then(function(url) {
 
             // Or inserted into an <img> element:
@@ -131,8 +125,7 @@ function avanzar() {
 function retroceder() {
     if (k > 0) {
         k--;
-        q--;
-        abrirLink();
+        cerrarLink();
         console.log(k);
         var nombreAnterior = datos[k];
         document.getElementById("nomID").innerHTML = nombreAnterior['nombreE'];
@@ -140,12 +133,7 @@ function retroceder() {
         document.getElementById("botonSiguiente").toggleAttribute('disabled', false);
         var imgR = nombreAnterior['imageRef'].replace(" ", "");
         var storageR = storage.ref(imgR);
-        console.log(imgR);
         storageR.getDownloadURL().then(function(url) {
-            // `url` is the download URL for 'images/stars.jpg'
-
-            // This can be downloaded directly:
-
 
             // Or inserted into an <img> element:
             var img = document.getElementById('imgID');
@@ -160,29 +148,18 @@ function retroceder() {
 }
 
 function home() {
-    var r="?sesion=true&nombre="+nombreUs;
-    window.location.href = "../public/index.html"+r;
+    var r = "?sesion=true&nombre=" + nombreUs;
+    window.location.href = "../public/index.html" + r;
 }
 
 
 async function abrirLink() {
     document.getElementById("linkVideo").style.display = "block";
-    var i = 0;
-    await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel).where("areaT", "==", areaF)
-        .get()
-        .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                datos2[i] = doc.data().linkV;
-                i++;
-            });
-        })
-        //console.log(datos2[0]);
-    linkVideo = datos2[q]; 
-    document.getElementById("videoLink").innerHTML = linkVideo;
-    
+    var linkVideo = datos[k];
+    document.getElementById("videoLink").innerHTML = linkVideo['linkV'];
+
 }
 
 function cerrarLink() {
     document.getElementById("linkVideo").style.display = "none";
 }
-
