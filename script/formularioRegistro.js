@@ -203,7 +203,8 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                     passU
                 })
                 parrafo.innerHTML="";
-                console.log(responseU)
+                console.log(responseU);
+                window.location.href = "IniciarSesion.php";
             }else{ 
                 limpiarCampos();
                 parrafo.innerHTML = "Ya existe ese correo";
