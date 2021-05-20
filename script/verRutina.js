@@ -60,6 +60,8 @@ async function consulta() {
     document.getElementById("descripcionID").innerHTML = pru['descripcion'];
 
     document.getElementById("botonSiguiente").toggleAttribute('disabled', false);
+    document.getElementById("botonVideo").toggleAttribute('disabled', false);
+
     var imgR = pru['imageRef'].replace(" ", "");
     var storageR = storage.ref(imgR);
     console.log(imgR);
@@ -138,4 +140,14 @@ function retroceder() {
 
 function home() {
     window.location.href = "../public/index.html"
+}
+
+function abrirLink() {
+    document.getElementById("linkVideo").style.display = "block";
+    var linkVideo = datos[0]; 
+    document.getElementById("videoLink").innerHTML = linkVideo['linkV'];
+}
+
+function cerrarLink() {
+    document.getElementById("linkVideo").style.display = "none";
 }

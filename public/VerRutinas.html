@@ -95,7 +95,7 @@
         </div>
         <div class="row" id="botonesVE">
             <div class="col-4" id="botonVideoID">
-                <button class="btn btn-info" id="botonVideo" type="button" disabled><i class="fas fa-video" ></i> Video</button>
+                <button onclick="abrirLink()" class="btn btn-info" id="botonVideo" type="button" disabled><i class="fas fa-video" ></i> Video</button>
             </div>
             <div class="col-4" id="botonEmpezarID">
                 <button type="button" class="btn-dark rounded" id="botonEmpezar" onclick="consulta()">Empezar</button>
@@ -106,6 +106,10 @@
         </div>
 
 
+    </div>
+    <div class="ventanaLink" id="linkVideo">
+     <div id="cerrarLink"><a href="javascript:cerrarLink()"><span <i class="far fa-window-close"></i></span></a></div>
+        <h5 id="videoLink">Link Video</h5>
     </div>
 
 </body>

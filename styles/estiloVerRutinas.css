@@ -88,7 +88,29 @@ body {
     font-weight: bold;
 
 }
-
+.video{
+    width: 30%;
+    height: 40%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    right: -290px;
+    top: -100px;
+    
+}
+.ventanaLink{
+    width: 30%;
+    height: 40%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    right: -300px;
+    top: -140px;
+    display: none;
+    
+}
 
 /*
 #tituloRutina {
