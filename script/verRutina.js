@@ -1,181 +1,69 @@
-const dbE = firebase.firestore();
-var dataE = "";
-var datos = [];
-var datos2 = [];
-var imagesBD = []
-var nivel = "";
-var k = 0;
-const sig = document.getElementById("botonSiguiente");
-const ant = document.getElementById("botonAnterior");
-var storage = firebase.storage();
-var areaF = "";
-var sesion = false;
-var nombreUs = "";
-var querystring = window.location.search;
-
+var _0xf227 = ['3xgwABB', 'where', 'sesion', '7619IvXloo', '4x12->4\x20sets\x20de\x2012\x20repeticiones', 'ref', 'src', 'ruti', 'repeticiones', 'block', 'imageRef', '3x8->3\x20sets\x20de\x208\x20repeticiones', 'botonSiguiente', 'display', 'log', 'Numero\x20ej\x20', 'descripcionID', 'open', 'href', 'then', 'style', 'toggleAttribute', 'Agregar_Ejercicio', 'innerHTML', '253504iUhsOj', 'storage', 'linkV', 'imgID', 'firestore', '14818EypKUf', '1YfbcIL', 'Principiante', '180703PJLBhP', 'split', '5BkmGNR', 'Termino\x20la\x20Rutina!', '4173NNOHNW', 'descripcion', 'nomID', 'nombreE', 'collection', 'load', 'catch', 'botonVideo', 'botonEmpezar', 'linkVideo', '?sesion=true&nombre=', 'search', 'replace', 'tipoRutinaID', 'nivel', 'botonAnterior', 'Avanzado', 'location', 'getDownloadURL', 'nivelE', '1KxuIkx', 'length', 'areaT', 'Video', 'get', 'disabled', '1008VRXbJo', 'nombre', '166814CcuwRH', 'getElementById', 'none', 'data'];
+var _0x18cc35 = _0x7ef5;
+(function(_0xa4fb9, _0x1509f9) { var _0x2afe1a = _0x7ef5; while (!![]) { try { var _0x466468 = parseInt(_0x2afe1a(0x1a2)) + parseInt(_0x2afe1a(0x1a8)) * -parseInt(_0x2afe1a(0x1ab)) + parseInt(_0x2afe1a(0x1c0)) + parseInt(_0x2afe1a(0x1ca)) * -parseInt(_0x2afe1a(0x1c5)) + -parseInt(_0x2afe1a(0x1e0)) * parseInt(_0x2afe1a(0x1c8)) + parseInt(_0x2afe1a(0x1a4)) + -parseInt(_0x2afe1a(0x1cc)) * parseInt(_0x2afe1a(0x1c6)); if (_0x466468 === _0x1509f9) break;
+            else _0xa4fb9['push'](_0xa4fb9['shift']()); } catch (_0x2140bb) { _0xa4fb9['push'](_0xa4fb9['shift']()); } } }(_0xf227, 0x220ef));
+const dbE = firebase[_0x18cc35(0x1c4)]();
+var dataE = '',
+    datos = [],
+    datos2 = [],
+    imagesBD = [],
+    nivel = '',
+    k = 0x0;
+const sig = document['getElementById'](_0x18cc35(0x1b4)),
+    ant = document[_0x18cc35(0x1a5)](_0x18cc35(0x1db));
+var storage = firebase[_0x18cc35(0x1c1)](),
+    areaF = '',
+    sesion = ![],
+    nombreUs = '',
+    querystring = window[_0x18cc35(0x1dd)]['search'];
 const params = new URLSearchParams(querystring);
-window.addEventListener('load', function() {
-    querystring = window.location.search.substr(1);
-    //console.log(querystring) // '?q=pisos+en+barcelona&ciudad=Barcelona'
+window['addEventListener'](_0x18cc35(0x1d1), function() { var _0x498f9c = _0x18cc35;
+    querystring = window[_0x498f9c(0x1dd)][_0x498f9c(0x1d7)]['substr'](0x1), sesion = params[_0x498f9c(0x1a0)](_0x498f9c(0x1aa)), nombreUs = params[_0x498f9c(0x1a0)](_0x498f9c(0x1a3)), document['getElementById'](_0x498f9c(0x1a3))[_0x498f9c(0x1bf)] = nombreUs; });
 
-    // usando el querystring, creamos un objeto del tipo URLSearchParams
-    // const params = new URLSearchParams(querystring);
-    sesion = params.get('sesion');
-    nombreUs = params.get('nombre');
-    document.getElementById("nombre").innerHTML = nombreUs;
-});
+function mostrarDatos() { var _0x448330 = _0x18cc35;
+    nivel = params[_0x448330(0x1a0)](_0x448330(0x1da)); var _0x105ea1 = params['get'](_0x448330(0x1af)),
+        _0x172adf = _0x105ea1[_0x448330(0x1c9)]('\x20');
+    areaF = _0x172adf[0x0]; var _0xf02bff = _0x105ea1[_0x448330(0x1d8)]('_', '\x20');
+    document[_0x448330(0x1a5)](_0x448330(0x1d9))[_0x448330(0x1bf)] = _0xf02bff; var _0x5143e5 = '';
+    document[_0x448330(0x1a5)](_0x448330(0x1b0))[_0x448330(0x1bf)] = '', nivel == _0x448330(0x1c7) ? (_0x5143e5 = _0x448330(0x1b3), numEjercicios = 0x4) : nivel == _0x448330(0x1dc) ? (_0x5143e5 = _0x448330(0x1ac), numEjercicios = 0x4) : (_0x5143e5 = '4x10->4\x20sets\x20de\x2010\x20repeticiones', numEjercicios = 0x4), document['getElementById'](_0x448330(0x1b0))[_0x448330(0x1bf)] = _0x5143e5; }
+async function consulta() { var _0x223a53 = _0x18cc35;
+    document['getElementById']('botonEmpezar')[_0x223a53(0x1bd)]('disabled', !![]); var _0x3e5cc9 = 0x0;
+    await dbE[_0x223a53(0x1d0)](_0x223a53(0x1be))[_0x223a53(0x1a9)](_0x223a53(0x1df), '==', nivel)[_0x223a53(0x1a9)](_0x223a53(0x19e), '==', areaF)[_0x223a53(0x1a0)]()[_0x223a53(0x1bb)](_0x3b1792 => { _0x3b1792['forEach'](_0x3a9291 => { var _0x3bac09 = _0x7ef5;
+            datos[_0x3e5cc9] = _0x3a9291[_0x3bac09(0x1a7)](), console[_0x3bac09(0x1b6)](_0x3a9291[_0x3bac09(0x1a7)]), _0x3e5cc9++; }); }), console[_0x223a53(0x1b6)](datos); var _0x30de6c = datos[0x0];
+    document['getElementById']('nomID')[_0x223a53(0x1bf)] = _0x30de6c[_0x223a53(0x1cf)], document[_0x223a53(0x1a5)](_0x223a53(0x1b8))[_0x223a53(0x1bf)] = _0x30de6c[_0x223a53(0x1cd)], document['getElementById'](_0x223a53(0x1b4))[_0x223a53(0x1bd)](_0x223a53(0x1a1), ![]), document[_0x223a53(0x1a5)](_0x223a53(0x1d3))[_0x223a53(0x1bd)]('disabled', ![]); var _0x2da4e4 = _0x30de6c[_0x223a53(0x1b2)]['replace']('\x20', ''),
+        _0x1c0705 = storage[_0x223a53(0x1ad)](_0x2da4e4);
+    console[_0x223a53(0x1b6)](_0x2da4e4), console[_0x223a53(0x1b6)](_0x223a53(0x1b7) + numEjercicios); var _0x1d44b2 = []; for (var _0x3380e4 = 0x0; _0x3380e4 < numEjercicios; _0x3380e4++) { _0x1d44b2[_0x3380e4] = datos[_0x3380e4]; }
+    datos = _0x1d44b2, console[_0x223a53(0x1b6)](datos), await _0x1c0705[_0x223a53(0x1de)]()[_0x223a53(0x1bb)](function(_0x28c566) { var _0x5bc407 = _0x223a53,
+            _0x16c320 = document[_0x5bc407(0x1a5)]('imgID');
+        _0x16c320[_0x5bc407(0x1ae)] = _0x28c566; })[_0x223a53(0x1d2)](function(_0x1de73a) {}), document[_0x223a53(0x1a5)](_0x223a53(0x1d4))[_0x223a53(0x1bc)]['display'] = _0x223a53(0x1a6); }
 
-function mostrarDatos() {
+function _0x7ef5(_0x5eb85d, _0x5e771b) { _0x5eb85d = _0x5eb85d - 0x19d; var _0xf227a1 = _0xf227[_0x5eb85d]; return _0xf227a1; }
+async function avanzar() { var _0x537843 = _0x18cc35; if (k < datos[_0x537843(0x19d)] - 0x1) { k++, cerrarLink(); var _0x1b1c86 = datos[k];
+        document['getElementById'](_0x537843(0x1ce))[_0x537843(0x1bf)] = _0x1b1c86[_0x537843(0x1cf)], document[_0x537843(0x1a5)](_0x537843(0x1b8))['innerHTML'] = _0x1b1c86['descripcion'], document[_0x537843(0x1a5)]('botonAnterior')[_0x537843(0x1bd)](_0x537843(0x1a1), ![]); var _0x4415af = _0x1b1c86[_0x537843(0x1b2)][_0x537843(0x1d8)]('\x20', ''),
+            _0x38dfd6 = storage['ref'](_0x4415af);
+        await _0x38dfd6[_0x537843(0x1de)]()[_0x537843(0x1bb)](function(_0x5e2905) { var _0x33640a = _0x537843,
+                _0x571b1a = document['getElementById'](_0x33640a(0x1c3));
+            _0x571b1a[_0x33640a(0x1ae)] = _0x5e2905; })['catch'](function(_0x59dae5) {}); } else document[_0x537843(0x1a5)](_0x537843(0x1b4))['toggleAttribute'](_0x537843(0x1a1), !![]), document[_0x537843(0x1a5)]('alertaRuti')[_0x537843(0x1bf)] = _0x537843(0x1cb), alert('Rutina\x20terminada'), home(); }
+async function retroceder() { var _0x3b6bed = _0x18cc35; if (k > 0x0) { k--, cerrarLink(), console[_0x3b6bed(0x1b6)](k); var _0x3a7351 = datos[k];
+        document[_0x3b6bed(0x1a5)](_0x3b6bed(0x1ce))['innerHTML'] = _0x3a7351['nombreE'], document['getElementById'](_0x3b6bed(0x1b8))[_0x3b6bed(0x1bf)] = _0x3a7351[_0x3b6bed(0x1cd)], document[_0x3b6bed(0x1a5)](_0x3b6bed(0x1b4))[_0x3b6bed(0x1bd)]('disabled', ![]); var _0x3d1995 = _0x3a7351['imageRef'][_0x3b6bed(0x1d8)]('\x20', ''),
+            _0x37ef1d = storage[_0x3b6bed(0x1ad)](_0x3d1995);
+        await _0x37ef1d[_0x3b6bed(0x1de)]()[_0x3b6bed(0x1bb)](function(_0x381b6c) { var _0x32e79c = _0x3b6bed,
+                _0x56c245 = document['getElementById'](_0x32e79c(0x1c3));
+            _0x56c245[_0x32e79c(0x1ae)] = _0x381b6c; })[_0x3b6bed(0x1d2)](function(_0x9a2243) {}), k == 0x0 && document[_0x3b6bed(0x1a5)](_0x3b6bed(0x1db))['toggleAttribute']('disabled', !![]); } }
 
-    nivel = params.get('nivel');
-    var nom = params.get('ruti');
-    var nombresI = nom.split(' ');
-    areaF = nombresI[0];
-    var noms = nom.replace("_", " ");
-    document.getElementById("tipoRutinaID").innerHTML = noms;
+function home() { var _0x40dbcc = _0x18cc35,
+        _0x41dd5d = _0x40dbcc(0x1d6) + nombreUs;
+    window[_0x40dbcc(0x1dd)][_0x40dbcc(0x1ba)] = 'index.php' + _0x41dd5d; }
+async function abrirLink() { var _0x52510c = _0x18cc35;
+    document['getElementById']('linkVideo')[_0x52510c(0x1bc)][_0x52510c(0x1b5)] = _0x52510c(0x1b1); var _0xa98de5 = datos[k];
+    document[_0x52510c(0x1a5)]('videoLink')['innerHTML'] = _0xa98de5[_0x52510c(0x1c2)]; }
 
-    var repe = "";
-    document.getElementById("repeticiones").innerHTML = "";
-    if (nivel == "Principiante") {
-        repe = "3x8->3 sets de 8 repeticiones";
-        numEjercicios = 4;
-    } else {
-        if (nivel == "Avanzado") {
-            repe = "4x12->4 sets de 12 repeticiones";
-            numEjercicios = 4;
-        } else {
-            repe = "4x10->4 sets de 10 repeticiones";
-            numEjercicios = 4;
-        }
-    }
+function getLink() { var _0x17c7ea = _0x18cc35,
+        _0xc1bc55 = datos[k]; return _0xc1bc55[_0x17c7ea(0x1c2)]; }
 
-    document.getElementById("repeticiones").innerHTML = repe;
+function irLinkV() { var _0x33e043 = _0x18cc35,
+        _0x5e050b = datos[k];
+    window[_0x33e043(0x1b9)](_0x5e050b[_0x33e043(0x1c2)], _0x33e043(0x19f)); }
 
-}
-
-async function consulta() {
-    document.getElementById("botonEmpezar").toggleAttribute('disabled', true);
-    var i = 0;
-    await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel).where("areaT", "==", areaF)
-        .get()
-        .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                datos[i] = doc.data();
-                console.log(doc.data)
-                i++;
-            });
-        })
-    console.log(datos);
-    /*for(var j=0;j<datos.length;j++){
-
-    }*/
-    var pru = datos[0];
-    document.getElementById("nomID").innerHTML = pru['nombreE'];
-    document.getElementById("descripcionID").innerHTML = pru['descripcion'];
-
-    document.getElementById("botonSiguiente").toggleAttribute('disabled', false);
-    document.getElementById("botonVideo").toggleAttribute('disabled', false);
-
-    var imgR = pru['imageRef'].replace(" ", "");
-    var storageR = storage.ref(imgR);
-    console.log(imgR);
-    console.log("Numero ej " + numEjercicios)
-    var datosR = [];
-    for (var m = 0; m < numEjercicios; m++) {
-        datosR[m] = datos[m];
-    }
-    datos = datosR;
-    console.log(datos);
-    await storageR.getDownloadURL().then(function(url) {
-        // `url` is the download URL for 'images/stars.jpg'
-
-        // Or inserted into an <img> element:
-        var img = document.getElementById('imgID');
-        img.src = url;
-    }).catch(function(error) {
-        // Handle any errors
-    });
-    document.getElementById("botonEmpezar").style.display = "none";
-
-}
-
-async function avanzar() {
-    if (k < datos.length - 1) {
-        k++;
-        cerrarLink();
-        var nombreSiguiente = datos[k];
-        document.getElementById("nomID").innerHTML = nombreSiguiente['nombreE'];
-        document.getElementById("descripcionID").innerHTML = nombreSiguiente['descripcion'];
-        document.getElementById("botonAnterior").toggleAttribute('disabled', false);
-        var imgR = nombreSiguiente['imageRef'].replace(" ", "");
-        var storageR = storage.ref(imgR);
-        await storageR.getDownloadURL().then(function(url) {
-
-            // Or inserted into an <img> element:
-            var img = document.getElementById('imgID');
-            img.src = url;
-        }).catch(function(error) {
-            // Handle any errors
-        });
-
-    } else {
-        document.getElementById("botonSiguiente").toggleAttribute('disabled', true);
-        document.getElementById("alertaRuti").innerHTML = "Termino la Rutina!";
-        alert("Rutina terminada");
-        home();
-    }
-}
-
-async function retroceder() {
-    if (k > 0) {
-        k--;
-        cerrarLink();
-        console.log(k);
-        var nombreAnterior = datos[k];
-        document.getElementById("nomID").innerHTML = nombreAnterior['nombreE'];
-        document.getElementById("descripcionID").innerHTML = nombreAnterior['descripcion'];
-        document.getElementById("botonSiguiente").toggleAttribute('disabled', false);
-        var imgR = nombreAnterior['imageRef'].replace(" ", "");
-        var storageR = storage.ref(imgR);
-        await storageR.getDownloadURL().then(function(url) {
-
-            // Or inserted into an <img> element:
-            var img = document.getElementById('imgID');
-            img.src = url;
-        }).catch(function(error) {
-            // Handle any errors
-        });
-        if (k == 0) {
-            document.getElementById("botonAnterior").toggleAttribute('disabled', true);
-        }
-    }
-}
-
-function home() {
-    var r = "?sesion=true&nombre=" + nombreUs;
-    window.location.href = "index.php" + r;
-}
-
-
-async function abrirLink() {
-    document.getElementById("linkVideo").style.display = "block";
-    var linkVideo = datos[k];
-    document.getElementById("videoLink").innerHTML = linkVideo['linkV'];
-    //window.open(linkVideo['linkV'], 'Video');
-
-}
-
-function getLink() {
-    var linkVideo = datos[k];
-    //window.open(linkVideo['linkV'], 'Video');
-    return linkVideo['linkV'];
-}
-
-function irLinkV() {
-    var linkVideo = datos[k];
-    window.open(linkVideo['linkV'], 'Video');
-}
-
-function cerrarLink() {
-    document.getElementById("linkVideo").style.display = "none";
-}
+function cerrarLink() { var _0x1294bc = _0x18cc35;
+    document[_0x1294bc(0x1a5)](_0x1294bc(0x1d5))['style']['display'] = _0x1294bc(0x1a6); }

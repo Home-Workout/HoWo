@@ -1,214 +1,61 @@
-const nombre = document.getElementById("name1");
-const correo = document.getElementById("correo");
-const contrasenia = document.getElementById("contrasenia");
-const contrasenia2 = document.getElementById("contrasenia2");
-const peligro = document.getElementById("peligro");
-const enviar = document.getElementById("enviar");
-const parrafo = document.getElementById("enviado");
+const _0x224c = ['style', 'peligro', '644218aiGNuP', 'value', 'red', 'forms', 'getElementById', '¿Desea\x20recargar\x20la\x20página\x20web?', 'Registrar_Usuario', 'onbeforeunload', 'focus', '1094PiojIX', 'backgroundColor', 'Error\x20getting\x20documents:\x20', '296eddMMN', 'disabled', '#5f6469', 'name1', 'toggleAttribute', 'collection', '189509opWPJv', 'href', 'Ingrese\x20sus\x20Nombres\x20y\x20Apellidos', '5tCIMkZ', 'keyup', 'click', 'addEventListener', 'IniciarSesion.php', 'doc', 'log', 'test', 'Ingresar\x20un\x20Correo\x20Valido', '1659395RwKTEA', 'alerta', 'text', 'correoU', 'contrasenia2', 'innerHTML', 'forEach', 'Ya\x20existe\x20ese\x20correo', 'search', 'green', 'Las\x20Contraseñas\x20son\x20distintas', '2038305MkYJsJ', 'formulario1', '132819hywnYt', 'type', 'password', 'enviado', 'contrasenia', 'firestore', 'Favor\x20Ingresar\x20Correo\x20Electronico', 'correo', 'Solo\x20se\x20permite\x20Caracteres\x20y\x20menos\x20de\x20150\x20caracteres', 'get', '689685duoJyr', 'Usted\x20se\x20ha\x20registrado\x20correctamente', 'Favor\x20Ingresar\x20Contraseña', 'set', '1mCUqoJ'];
 
+function _0x133b(_0x443941, _0x4d111c) { _0x443941 = _0x443941 - 0x1ed; let _0x224ca1 = _0x224c[_0x443941]; return _0x224ca1; }
+const _0x2fb4d6 = _0x133b;
+(function(_0x490dac, _0x1a3eee) { const _0x552004 = _0x133b; while (!![]) { try { const _0x486610 = -parseInt(_0x552004(0x1f7)) + parseInt(_0x552004(0x1f0)) + parseInt(_0x552004(0x215)) + -parseInt(_0x552004(0x209)) * -parseInt(_0x552004(0x1f4)) + parseInt(_0x552004(0x222)) * parseInt(_0x552004(0x20c)) + parseInt(_0x552004(0x200)) * parseInt(_0x552004(0x203)) + -parseInt(_0x552004(0x220)); if (_0x486610 === _0x1a3eee) break;
+            else _0x490dac['push'](_0x490dac['shift']()); } catch (_0x3ed3a3) { _0x490dac['push'](_0x490dac['shift']()); } } }(_0x224c, 0xce0d1));
+const nombre = document[_0x2fb4d6(0x1fb)](_0x2fb4d6(0x206)),
+    correo = document[_0x2fb4d6(0x1fb)](_0x2fb4d6(0x1ed)),
+    contrasenia = document[_0x2fb4d6(0x1fb)](_0x2fb4d6(0x226)),
+    contrasenia2 = document['getElementById'](_0x2fb4d6(0x219)),
+    peligro = document['getElementById'](_0x2fb4d6(0x1f6)),
+    enviar = document[_0x2fb4d6(0x1fb)]('enviar'),
+    parrafo = document[_0x2fb4d6(0x1fb)](_0x2fb4d6(0x225));
 
-function mostrar(){
-  var tipo = document.getElementById("contrasenia");
-    if(tipo.type == "password"){
-        tipo.type = "text";
-    }else{
-        tipo.type = "password";
-    }
-}
-function mostrar2(){
-    var tipo2 = document.getElementById("contrasenia2");
-      if(tipo2.type == "password"){
-          tipo2.type = "text";
-      }else{
-          tipo2.type = "password";
-      }
-  }
-var val = 0;
-const dbU = firebase.firestore();
+function mostrar() { const _0x423f26 = _0x2fb4d6; var _0x1775b2 = document[_0x423f26(0x1fb)]('contrasenia');
+    _0x1775b2[_0x423f26(0x223)] == _0x423f26(0x224) ? _0x1775b2[_0x423f26(0x223)] = _0x423f26(0x217) : _0x1775b2[_0x423f26(0x223)] = _0x423f26(0x224); }
 
-function validarFormulario() {
-    //alert("Todo en Orden");
-    var formulario = document.forms;
-    var al = 'Ingrese sus Nombres y Apellidos';
-    var al2 = "Solo se permite Caracteres";
-    var al3 = "Favor Ingresar Correo Electronico";
-    var al4 = "Ingresar un Correo Valido";
-    var al5 = "Favor Ingresar Contraseña";
-    var al6 = "Las Contraseñas son distintas";
-    if (nombre.value == "") {
-        //alert("Favor Ingresar Nombre y Apellido")
-        document.getElementById("alerta").innerHTML = "Ingrese sus Nombres y Apellidos";
-        nombre.style.backgroundColor = "red";
-        nombre.focus();
-        val++;
-        return false;
-    } else if (validarTexto(nombre.value) == false) {
-        document.getElementById("alerta").innerHTML = "Solo se permite Caracteres y menos de 150 caracteres";
-        nombre.style.backgroundColor = "red";
-        nombre.value = "";
-        nombre.focus();
-        val++;
-        return false;
-    } else {
-        error1 = false;
-        nombre.style.backgroundColor = "green";
-        document.getElementById("alerta").innerHTML = "";
-    }
-    if (correo.value == "") {
-        //alert("HOla peep");
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Correo Electronico";
-        correo.style.backgroundColor = "red";
-        correo.focus();
-        val++;
-        return false;
-    } else if (validarCorreo(correo.value) == false) {
-        document.getElementById("alerta").innerHTML = "Ingresar un Correo Valido";
-        correo.style.backgroundColor = "red";
-        correo.value = "";
-        correo.focus();
-        val++;
-        return false;
-    } else {
-        correo.style.backgroundColor = "green";
-        document.getElementById("alerta").innerHTML = "";
-    }
-    if (contrasenia.value == "") {
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña";
-        contrasenia.style.backgroundColor = "red";
-        contrasenia.value = "";
-        contrasenia.focus();
-        val++;
-        return false;
+function mostrar2() { const _0x2155f2 = _0x2fb4d6; var _0x1d3c6c = document[_0x2155f2(0x1fb)](_0x2155f2(0x219));
+    _0x1d3c6c[_0x2155f2(0x223)] == _0x2155f2(0x224) ? _0x1d3c6c[_0x2155f2(0x223)] = 'text' : _0x1d3c6c[_0x2155f2(0x223)] = _0x2155f2(0x224); }
+var val = 0x0;
+const dbU = firebase[_0x2fb4d6(0x227)]();
 
-    } else {
-        contrasenia.style.backgroundColor = "green";
-        document.getElementById("alerta").innerHTML = "";
-    }
-    if (contrasenia2.value == "") {
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña";
-        contrasenia2.style.backgroundColor = "red";
-        contrasenia2.value = "";
-        contrasenia2.focus();
-        val++;
-        return false;
+function validarFormulario() { const _0x3c0c4a = _0x2fb4d6; var _0x2eddd8 = document[_0x3c0c4a(0x1fa)],
+        _0x3551de = _0x3c0c4a(0x20b),
+        _0xb49d53 = 'Solo\x20se\x20permite\x20Caracteres',
+        _0x19b2a8 = _0x3c0c4a(0x228),
+        _0x1dd47c = _0x3c0c4a(0x214),
+        _0x3160c9 = _0x3c0c4a(0x1f2),
+        _0x428dea = _0x3c0c4a(0x21f); if (nombre[_0x3c0c4a(0x1f8)] == '') return document[_0x3c0c4a(0x1fb)](_0x3c0c4a(0x216))[_0x3c0c4a(0x21a)] = _0x3c0c4a(0x20b), nombre[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = _0x3c0c4a(0x1f9), nombre['focus'](), val++, ![];
+    else { if (validarTexto(nombre['value']) == ![]) return document[_0x3c0c4a(0x1fb)](_0x3c0c4a(0x216))['innerHTML'] = _0x3c0c4a(0x1ee), nombre[_0x3c0c4a(0x1f5)]['backgroundColor'] = _0x3c0c4a(0x1f9), nombre['value'] = '', nombre[_0x3c0c4a(0x1ff)](), val++, ![];
+        else error1 = ![], nombre[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = _0x3c0c4a(0x21e), document[_0x3c0c4a(0x1fb)](_0x3c0c4a(0x216))['innerHTML'] = ''; } if (correo['value'] == '') return document[_0x3c0c4a(0x1fb)](_0x3c0c4a(0x216))[_0x3c0c4a(0x21a)] = 'Favor\x20Ingresar\x20Correo\x20Electronico', correo[_0x3c0c4a(0x1f5)]['backgroundColor'] = _0x3c0c4a(0x1f9), correo[_0x3c0c4a(0x1ff)](), val++, ![];
+    else { if (validarCorreo(correo[_0x3c0c4a(0x1f8)]) == ![]) return document[_0x3c0c4a(0x1fb)](_0x3c0c4a(0x216))[_0x3c0c4a(0x21a)] = _0x3c0c4a(0x214), correo[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = _0x3c0c4a(0x1f9), correo[_0x3c0c4a(0x1f8)] = '', correo[_0x3c0c4a(0x1ff)](), val++, ![];
+        else correo[_0x3c0c4a(0x1f5)]['backgroundColor'] = _0x3c0c4a(0x21e), document[_0x3c0c4a(0x1fb)]('alerta')[_0x3c0c4a(0x21a)] = ''; } if (contrasenia[_0x3c0c4a(0x1f8)] == '') return document[_0x3c0c4a(0x1fb)]('alerta')[_0x3c0c4a(0x21a)] = _0x3c0c4a(0x1f2), contrasenia[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = _0x3c0c4a(0x1f9), contrasenia[_0x3c0c4a(0x1f8)] = '', contrasenia['focus'](), val++, ![];
+    else contrasenia[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = _0x3c0c4a(0x21e), document['getElementById'](_0x3c0c4a(0x216))['innerHTML'] = ''; if (contrasenia2[_0x3c0c4a(0x1f8)] == '') return document['getElementById'](_0x3c0c4a(0x216))['innerHTML'] = _0x3c0c4a(0x1f2), contrasenia2[_0x3c0c4a(0x1f5)]['backgroundColor'] = _0x3c0c4a(0x1f9), contrasenia2[_0x3c0c4a(0x1f8)] = '', contrasenia2[_0x3c0c4a(0x1ff)](), val++, ![];
+    else contrasenia2[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = 'green', document[_0x3c0c4a(0x1fb)]('alerta')[_0x3c0c4a(0x21a)] = ''; if (contrasenia[_0x3c0c4a(0x1f8)] != contrasenia2['value']) return document[_0x3c0c4a(0x1fb)](_0x3c0c4a(0x216))[_0x3c0c4a(0x21a)] = 'Las\x20Contraseñas\x20son\x20distintas', contrasenia[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = _0x3c0c4a(0x1f9), contrasenia2[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = _0x3c0c4a(0x1f9), contrasenia[_0x3c0c4a(0x1f8)] = '', contrasenia2['value'] = '', contrasenia[_0x3c0c4a(0x1ff)](), val++, ![];
+    else contrasenia[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = _0x3c0c4a(0x21e), contrasenia2[_0x3c0c4a(0x1f5)][_0x3c0c4a(0x201)] = 'green', document[_0x3c0c4a(0x1fb)](_0x3c0c4a(0x216))[_0x3c0c4a(0x21a)] = ''; }
 
-    } else {
-        contrasenia2.style.backgroundColor = "green";
-        document.getElementById("alerta").innerHTML = "";
-    }
-    if (contrasenia.value != contrasenia2.value) {
-        document.getElementById("alerta").innerHTML = "Las Contraseñas son distintas";
-        contrasenia.style.backgroundColor = "red";
-        contrasenia2.style.backgroundColor = "red";
-        contrasenia.value = "";
-        contrasenia2.value = "";
-        contrasenia.focus();
-        val++;
-        return false;
-    } else {
-        contrasenia.style.backgroundColor = "green";
-        contrasenia2.style.backgroundColor = "green";
-        document.getElementById("alerta").innerHTML = "";
-    }
+function limpiarCampos() { const _0x4bd223 = _0x2fb4d6;
+    nombre['value'] = '', correo[_0x4bd223(0x1f8)] = '', contrasenia[_0x4bd223(0x1f8)] = '', contrasenia2['value'] = '', nombre['style'][_0x4bd223(0x201)] = _0x4bd223(0x205), correo[_0x4bd223(0x1f5)][_0x4bd223(0x201)] = '#5f6469', contrasenia[_0x4bd223(0x1f5)][_0x4bd223(0x201)] = '#5f6469', contrasenia2[_0x4bd223(0x1f5)][_0x4bd223(0x201)] = '#5f6469'; }
 
+function validarTexto(_0x1a1ca8) { const _0x405317 = _0x2fb4d6; var _0x427cfa = /^[a-zA-Z-\s]{1,150}$/; return _0x1a1ca8[_0x405317(0x21d)](_0x427cfa) ? ![] : !![]; }
 
-}
-function limpiarCampos(){
-    nombre.value = "";
-    correo.value = "";
-    contrasenia.value = "";
-    contrasenia2.value = "";
-    nombre.style.backgroundColor = "#5f6469";
-    correo.style.backgroundColor = "#5f6469";
-    contrasenia.style.backgroundColor = "#5f6469";
-    contrasenia2.style.backgroundColor = "#5f6469";
-}
+function validarCorreo(_0xc920cd) { const _0x54015e = _0x2fb4d6; var _0x45fafb = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/; return !_0x45fafb[_0x54015e(0x213)](_0xc920cd) ? ![] : !![]; }
 
-function validarTexto(parametro) {
-    var patron = /^[a-zA-Z-\s]{1,150}$/;
-    if (parametro.search(patron)) {
-        return false;
-    } else {
-        return true;
-    }
-}
+function validacionBoton() { const _0x270d98 = _0x2fb4d6; return val == 0x0 ? (enviar[_0x270d98(0x207)](_0x270d98(0x204), ![]), !![]) : (val = 0x0, enviar[_0x270d98(0x207)](_0x270d98(0x204), !![]), ![]); }
 
-function validarCorreo(parametro) {
-    var patron = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    if (!patron.test(parametro)) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-function validacionBoton() {
-    if (val == 0) {
-        enviar.toggleAttribute('disabled', false);
-        return true;
-    } else {
-        val = 0;
-        enviar.toggleAttribute('disabled', true);
-        return false;
-    }
-}
-function validarCorreo2(){
-    const getTask = () => dbU.collection('Registrar_Usuario').get();
-        const task = getTask();
-        console.log(task);
-        //if(correo = task.correoU){
-        //    return true
-        //}else{return false;}
-}
-window.onbeforeunload = function() {
-    return "¿Desea recargar la página web?";
-  };
-
-document.getElementById("name1").addEventListener("keyup", validacionBoton);
-document.getElementById("correo").addEventListener("keyup", validacionBoton);
-document.getElementById("contrasenia").addEventListener("keyup", validacionBoton);
-document.getElementById("contrasenia2").addEventListener("keyup", validacionBoton);
-
-
-
-document.getElementById("enviar").addEventListener("click", async(e) => {
-    //aqui tiene que redirigir a la parte principal por lo pronto solo mostrara un mensaje
-    const registroUsuario = document.getElementById("formulario1");
-
-    const nombreU = registroUsuario["name1"].value;
-    const correoU = registroUsuario["correo"].value;
-    const passU = registroUsuario["contrasenia"].value;
-
-    e.preventDefault();
-        if (validacionBoton()) {
-            var usuarios = dbU.collection('Registrar_Usuario')
-            var flag = 0;
-            await dbU.collection('Registrar_Usuario').where("correoU", "==", correoU)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                flag = flag+1;
-            });
-        })
-        .catch((error) => {
-        console.log("Error getting documents: ", error);
-        })
-        console.log(flag);
-            if(flag==0){
-                parrafo.innerHTML = "Usted se ha registrado correctamente";
-                limpiarCampos();
-                const responseU = await dbU.collection('Registrar_Usuario').doc().set({
-                    nombreU,
-                    correoU,
-                    passU
-                })
-                parrafo.innerHTML="";
-                console.log(responseU);
-                window.location.href = "IniciarSesion.php";
-            }else{ 
-                limpiarCampos();
-                parrafo.innerHTML = "Ya existe ese correo";
-            }
-     }
-    
-});
+function validarCorreo2() { const _0x4a9797 = _0x2fb4d6,
+        _0x4fa2af = () => dbU[_0x4a9797(0x208)](_0x4a9797(0x1fd))[_0x4a9797(0x1ef)](),
+        _0x14e3c6 = _0x4fa2af();
+    console[_0x4a9797(0x212)](_0x14e3c6); }
+window[_0x2fb4d6(0x1fe)] = function() { const _0x34ad5e = _0x2fb4d6; return _0x34ad5e(0x1fc); }, document[_0x2fb4d6(0x1fb)]('name1')[_0x2fb4d6(0x20f)](_0x2fb4d6(0x20d), validacionBoton), document['getElementById'](_0x2fb4d6(0x1ed))[_0x2fb4d6(0x20f)]('keyup', validacionBoton), document[_0x2fb4d6(0x1fb)](_0x2fb4d6(0x226))['addEventListener']('keyup', validacionBoton), document[_0x2fb4d6(0x1fb)](_0x2fb4d6(0x219))[_0x2fb4d6(0x20f)](_0x2fb4d6(0x20d), validacionBoton), document['getElementById']('enviar')[_0x2fb4d6(0x20f)](_0x2fb4d6(0x20e), async _0x37031a => { const _0x53af62 = _0x2fb4d6,
+        _0x45037e = document[_0x53af62(0x1fb)](_0x53af62(0x221)),
+        _0x333d40 = _0x45037e[_0x53af62(0x206)][_0x53af62(0x1f8)],
+        _0xa231ce = _0x45037e['correo'][_0x53af62(0x1f8)],
+        _0x43dc4f = _0x45037e[_0x53af62(0x226)][_0x53af62(0x1f8)];
+    _0x37031a['preventDefault'](); if (validacionBoton()) { var _0x54a9a1 = dbU[_0x53af62(0x208)](_0x53af62(0x1fd)),
+            _0x5d3a4e = 0x0;
+        await dbU[_0x53af62(0x208)]('Registrar_Usuario')['where'](_0x53af62(0x218), '==', _0xa231ce)[_0x53af62(0x1ef)]()['then'](_0x7b7623 => { const _0x229ebe = _0x53af62;
+            _0x7b7623[_0x229ebe(0x21b)](_0x4c15cc => { _0x5d3a4e = _0x5d3a4e + 0x1; }); })['catch'](_0x37f8ea => { const _0x2e838c = _0x53af62;
+            console[_0x2e838c(0x212)](_0x2e838c(0x202), _0x37f8ea); }), console['log'](_0x5d3a4e); if (_0x5d3a4e == 0x0) { parrafo[_0x53af62(0x21a)] = _0x53af62(0x1f1), limpiarCampos(); const _0x4d5f10 = await dbU[_0x53af62(0x208)]('Registrar_Usuario')[_0x53af62(0x211)]()[_0x53af62(0x1f3)]({ 'nombreU': _0x333d40, 'correoU': _0xa231ce, 'passU': _0x43dc4f });
+            parrafo['innerHTML'] = '', console[_0x53af62(0x212)](_0x4d5f10), window['location'][_0x53af62(0x20a)] = _0x53af62(0x210); } else limpiarCampos(), parrafo[_0x53af62(0x21a)] = _0x53af62(0x21c); } });

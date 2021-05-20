@@ -1,180 +1,62 @@
-//export var tipoRutinaPasar = "";
-var sesion=false;
-var nombreUs="";
-var querystring=window.location.search;
+var _0x5c30 = ['log', 'iniSesion', '1HorYpU', 'vent2', 'length', 'display', '851598zorhoE', '&sesion=true&nombre=', 'addEventListener', 'join', 'href', 'sesion', '1041693tHLNuh', 'ventNivel', 'style', 'querySelector', 'vent', 'none', 'search', '18psLZGB', 'botonIniciarSesion', '786039gTSHGU', 'inline', '924382zBzpre', 'ventNivelI', '257739XVyHSg', 'getElementById', 'IniciarSesion.php', '40142duNJuq', '1825279iomSrx', '.carousel__siguiente', 'block', 'nature', 'indexOf', 'column', '.carousel__lista', 'className', 'botonRegistrarse', 'split', 'all', 'get', 'substr', 'getElementsByClassName', 'location', '.carousel__indicadores', 'show'];
+var _0x4d95d0 = _0x48ad;
+(function(_0x5001bc, _0x326a2d) { var _0x162169 = _0x48ad; while (!![]) { try { var _0x502481 = -parseInt(_0x162169(0xd1)) + parseInt(_0x162169(0xde)) * parseInt(_0x162169(0xe7)) + -parseInt(_0x162169(0xd7)) + -parseInt(_0x162169(0xe0)) + -parseInt(_0x162169(0xe4)) + parseInt(_0x162169(0xe2)) + parseInt(_0x162169(0xfb)) * parseInt(_0x162169(0xe8)); if (_0x502481 === _0x326a2d) break;
+            else _0x5001bc['push'](_0x5001bc['shift']()); } catch (_0x1fc442) { _0x5001bc['push'](_0x5001bc['shift']()); } } }(_0x5c30, 0x82a6c));
+var sesion = ![],
+    nombreUs = '',
+    querystring = window[_0x4d95d0(0xf6)][_0x4d95d0(0xdd)];
+window[_0x4d95d0(0xd3)]('load', function() { var _0x53e9cc = _0x4d95d0;
+    new Glider(document[_0x53e9cc(0xda)](_0x53e9cc(0xee)), { 'slidesToShow': 0x1, 'slidesToScroll': 0x1, 'dots': _0x53e9cc(0xf7), 'arrows': { 'prev': '.carousel__anterior', 'next': _0x53e9cc(0xe9) }, 'responsive': [{ 'breakpoint': 0x1c2, 'settings': { 'slidesToShow': 0x2, 'slidesToScroll': 0x2 } }, { 'breakpoint': 0x320, 'settings': { 'slidesToShow': 0x5, 'slidesToScroll': 0x4 } }] }), querystring = window[_0x53e9cc(0xf6)]['search'][_0x53e9cc(0xf4)](0x1); const _0x52868e = new URLSearchParams(querystring);
+    sesion = _0x52868e[_0x53e9cc(0xf3)](_0x53e9cc(0xd6)), nombreUs = _0x52868e['get']('nombre'), console['log'](sesion), document[_0x53e9cc(0xe5)]('iniSesion')[_0x53e9cc(0xd9)]['display'] = _0x53e9cc(0xdc), sesion && validarInicioSesion(); });
 
-window.addEventListener('load', function() {
-    new Glider(document.querySelector('.carousel__lista'), {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: '.carousel__indicadores',
-        arrows: {
-            prev: '.carousel__anterior',
-            next: '.carousel__siguiente'
-        },
-        responsive: [{
-            // screens greater than >= 775px
-            breakpoint: 450,
-            settings: {
-                // Set to `auto` and provide item width to adjust to viewport
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }, {
-            // screens greater than >= 1024px
-            breakpoint: 800,
-            settings: {
-                slidesToShow: 5,
-                slidesToScroll: 4
-            }
-        }]
-    });  
-    querystring= window.location.search.substr(1);
-    //console.log(querystring) // '?q=pisos+en+barcelona&ciudad=Barcelona'
+function abrir() { var _0x527f65 = _0x4d95d0;
+    document['getElementById']('vent')[_0x527f65(0xd9)][_0x527f65(0xfe)] = 'block', cerrar2(); }
 
-// usando el querystring, creamos un objeto del tipo URLSearchParams
-    const params = new URLSearchParams(querystring);
-    sesion=params.get('sesion')
-    nombreUs=params.get('nombre');
-    console.log(sesion);
-    //sesion=false;
-    document.getElementById("iniSesion").style.display = "none";
-    if(sesion){
-    validarInicioSesion();
-    }
-    
-});
+function cerrar() { var _0x56a863 = _0x4d95d0;
+    document[_0x56a863(0xe5)](_0x56a863(0xdb))[_0x56a863(0xd9)]['display'] = _0x56a863(0xdc); }
 
-function abrir() {
-    document.getElementById("vent").style.display = "block";
-    cerrar2();
-}
+function abrir2() { var _0x4f10d7 = _0x4d95d0;
+    document['getElementById'](_0x4f10d7(0xfc))[_0x4f10d7(0xd9)][_0x4f10d7(0xfe)] = _0x4f10d7(0xea), cerrar(); }
 
-function cerrar() {
-    document.getElementById("vent").style.display = "none";
-}
+function cerrar2() { var _0x131bc9 = _0x4d95d0;
+    document['getElementById'](_0x131bc9(0xfc))[_0x131bc9(0xd9)][_0x131bc9(0xfe)] = 'none'; }
 
-function abrir2() {
-    document.getElementById("vent2").style.display = "block";
-    cerrar();
-}
+function abrirNivelBasico() { var _0x5d98e4 = _0x4d95d0;
+    document[_0x5d98e4(0xe5)](_0x5d98e4(0xd8))[_0x5d98e4(0xd9)][_0x5d98e4(0xfe)] = 'block', cerrarNivelInter(), cerrarNivelAvan(); }
 
-function cerrar2() {
-    document.getElementById("vent2").style.display = "none";
-}
+function cerrarNivelBasico() { var _0x2af12e = _0x4d95d0;
+    document['getElementById'](_0x2af12e(0xd8))[_0x2af12e(0xd9)]['display'] = _0x2af12e(0xdc); }
 
-function abrirNivelBasico() {
-    document.getElementById("ventNivel").style.display = "block";
-    cerrarNivelInter();
-    cerrarNivelAvan();
-}
+function abrirNivelIntermedio() { var _0xf3bdd5 = _0x4d95d0;
+    document[_0xf3bdd5(0xe5)](_0xf3bdd5(0xe3))[_0xf3bdd5(0xd9)][_0xf3bdd5(0xfe)] = _0xf3bdd5(0xea), cerrarNivelBasico(), cerrarNivelAvan(); }
 
-function cerrarNivelBasico() {
-    document.getElementById("ventNivel").style.display = "none";
-}
+function cerrarNivelInter() { var _0x48e2cc = _0x4d95d0;
+    document[_0x48e2cc(0xe5)](_0x48e2cc(0xe3))[_0x48e2cc(0xd9)]['display'] = _0x48e2cc(0xdc); }
 
-function abrirNivelIntermedio() {
-    document.getElementById("ventNivelI").style.display = "block";
-    cerrarNivelBasico();
-    cerrarNivelAvan();
-}
+function abrirNivelAvanzado() { var _0x3cd8ce = _0x4d95d0;
+    document['getElementById']('ventNivelA')[_0x3cd8ce(0xd9)][_0x3cd8ce(0xfe)] = _0x3cd8ce(0xea), cerrarNivelBasico(), cerrarNivelInter(); }
 
-function cerrarNivelInter() {
-    document.getElementById("ventNivelI").style.display = "none";
-}
+function _0x48ad(_0xc238ea, _0x2cff8e) { _0xc238ea = _0xc238ea - 0xd1; var _0x5c30c0 = _0x5c30[_0xc238ea]; return _0x5c30c0; }
 
-function abrirNivelAvanzado() {
-    document.getElementById("ventNivelA").style.display = "block";
-    cerrarNivelBasico();
-    cerrarNivelInter();
-}
+function cerrarNivelAvan() { var _0x3b63b0 = _0x4d95d0;
+    document[_0x3b63b0(0xe5)]('ventNivelA')['style']['display'] = _0x3b63b0(0xdc); }
 
-function cerrarNivelAvan() {
-    document.getElementById("ventNivelA").style.display = "none";
-}
+function validarInicioSesion() { var _0x195d73 = _0x4d95d0;
+    sesion ? (console[_0x195d73(0xf9)](sesion), document[_0x195d73(0xe5)](_0x195d73(0xf0))[_0x195d73(0xd9)][_0x195d73(0xfe)] = _0x195d73(0xdc), document[_0x195d73(0xe5)](_0x195d73(0xdf))[_0x195d73(0xd9)][_0x195d73(0xfe)] = 'none', document['getElementById'](_0x195d73(0xfa))['innerHTML'] = nombreUs, document[_0x195d73(0xe5)](_0x195d73(0xfa))[_0x195d73(0xd9)][_0x195d73(0xfe)] = _0x195d73(0xe1)) : window[_0x195d73(0xf6)][_0x195d73(0xd5)] = _0x195d73(0xe6); }
 
+function irARutina(_0x3f578f) { var _0x11e91c = _0x4d95d0;
+    sesion ? window[_0x11e91c(0xf6)][_0x11e91c(0xd5)] = _0x3f578f + _0x11e91c(0xd2) + nombreUs : window[_0x11e91c(0xf6)][_0x11e91c(0xd5)] = 'IniciarSesion.php'; }
+filterSelection(_0x4d95d0(0xeb));
 
-function validarInicioSesion(){
-    if(sesion){
-        console.log(sesion);
-        document.getElementById("botonRegistrarse").style.display = "none";
-        document.getElementById("botonIniciarSesion").style.display = "none";
-        document.getElementById("iniSesion").innerHTML=nombreUs;
-        document.getElementById("iniSesion").style.display = "inline";
+function filterSelection(_0x56e44b) { var _0x4faf3c = _0x4d95d0,
+        _0xf8adf6, _0x1bd70d;
+    _0xf8adf6 = document[_0x4faf3c(0xf5)](_0x4faf3c(0xed)); if (_0x56e44b == _0x4faf3c(0xf2)) _0x56e44b = ''; for (_0x1bd70d = 0x0; _0x1bd70d < _0xf8adf6[_0x4faf3c(0xfd)]; _0x1bd70d++) { w3RemoveClass(_0xf8adf6[_0x1bd70d], _0x4faf3c(0xf8)); if (_0xf8adf6[_0x1bd70d][_0x4faf3c(0xef)]['indexOf'](_0x56e44b) > -0x1) w3AddClass(_0xf8adf6[_0x1bd70d], _0x4faf3c(0xf8)); } }
 
-    }else{
-        window.location.href = "IniciarSesion.php";
-    }
-         
-}
+function w3AddClass(_0x34c364, _0x5c7854) { var _0x346d07 = _0x4d95d0,
+        _0x54a6b3, _0x5bb228, _0x37a35f;
+    _0x5bb228 = _0x34c364[_0x346d07(0xef)][_0x346d07(0xf1)]('\x20'), _0x37a35f = _0x5c7854['split']('\x20'); for (_0x54a6b3 = 0x0; _0x54a6b3 < _0x37a35f['length']; _0x54a6b3++) { _0x5bb228[_0x346d07(0xec)](_0x37a35f[_0x54a6b3]) == -0x1 && (_0x34c364['className'] += '\x20' + _0x37a35f[_0x54a6b3]); } }
 
-function irARutina(r){
-    if(sesion){
-        window.location.href = r+"&sesion=true&nombre="+nombreUs;
-    }
-    else{
-        window.location.href = "IniciarSesion.php";
-    }
-}
-
-
-/*portafolio*/
-
-filterSelection("nature")
-
-function filterSelection(c) {
-    var x, i;
-    x = document.getElementsByClassName("column");
-    if (c == "all") c = "";
-    for (i = 0; i < x.length; i++) {
-        w3RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-    }
-}
-
-function w3AddClass(element, name) {
-    var i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-    }
-}
-
-function w3RemoveClass(element, name) {
-    var i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);
-        }
-    }
-    element.className = arr1.join(" ");
-}
-
-
-
-
-
-// Add active class to the current button (highlight it)
-/*var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    console.log(current.namedItem); 
-    console.log(current[0].className);
-    current[0].className = current[0].className.replace(" active","");
-    console.log(current[0].className);
-    this.className += " active";
-  });
-}*/
-
-/*$(function() {
-  var botones = $(".container button");
-  botones.click(function() {
-    botones.removeClass('active');
-    $(this).addClass('active');
-  });
-});*/
+function w3RemoveClass(_0x8f6daa, _0x34f39b) { var _0x3d4732 = _0x4d95d0,
+        _0x54fcb4, _0x3671f5, _0x5c6df7;
+    _0x3671f5 = _0x8f6daa['className'][_0x3d4732(0xf1)]('\x20'), _0x5c6df7 = _0x34f39b[_0x3d4732(0xf1)]('\x20'); for (_0x54fcb4 = 0x0; _0x54fcb4 < _0x5c6df7[_0x3d4732(0xfd)]; _0x54fcb4++) { while (_0x3671f5[_0x3d4732(0xec)](_0x5c6df7[_0x54fcb4]) > -0x1) { _0x3671f5['splice'](_0x3671f5[_0x3d4732(0xec)](_0x5c6df7[_0x54fcb4]), 0x1); } }
+    _0x8f6daa['className'] = _0x3671f5[_0x3d4732(0xd4)]('\x20'); }
