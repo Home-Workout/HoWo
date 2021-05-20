@@ -95,6 +95,7 @@ async function consulta() {
     }).catch(function(error) {
         // Handle any errors
     });
+    document.getElementById("botonEmpezar").style.display = "none";
 
 }
 
