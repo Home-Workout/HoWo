@@ -1,6 +1,7 @@
 const dbE = firebase.firestore();
 var dataE = "";
 var datos = [];
+var datos2 = [];
 var imagesBD = []
 var nivel = "";
 var k = 0;
@@ -9,7 +10,8 @@ const ant = document.getElementById("botonAnterior");
 var storage = firebase.storage();
 var numEjercicios = 0;
 var areaF = "";
-
+var q = 0;
+var linkVideo = "";
 function mostrarDatos() {
 
 
@@ -87,6 +89,8 @@ async function consulta() {
 function avanzar() {
     if (k < datos.length - 1) {
         k++;
+        q++;
+        abrirLink();
         console.log(k);
         var nombreSiguiente = datos[k];
         document.getElementById("nomID").innerHTML = nombreSiguiente['nombreE'];
@@ -112,6 +116,8 @@ function avanzar() {
 function retroceder() {
     if (k > 0) {
         k--;
+        q--;
+        abrirLink();
         console.log(k);
         var nombreAnterior = datos[k];
         document.getElementById("nomID").innerHTML = nombreAnterior['nombreE'];
@@ -142,10 +148,21 @@ function home() {
     window.location.href = "../public/index.html"
 }
 
-function abrirLink() {
+async function abrirLink() {
     document.getElementById("linkVideo").style.display = "block";
-    var linkVideo = datos[0]; 
-    document.getElementById("videoLink").innerHTML = linkVideo['linkV'];
+    var i = 0;
+    await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel).where("areaT", "==", areaF)
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                datos2[i] = doc.data().linkV;
+                i++;
+            });
+        })
+        //console.log(datos2[0]);
+    linkVideo = datos2[q]; 
+    document.getElementById("videoLink").innerHTML = linkVideo;
+    
 }
 
 function cerrarLink() {

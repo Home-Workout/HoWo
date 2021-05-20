@@ -69,7 +69,7 @@ body {
 }
 
 #botonVideoID {
-    padding-left: 20%;
+    padding-left: 12%;
 }
 
 #botonSalirID {
@@ -92,25 +92,44 @@ body {
     width: 30%;
     height: 40%;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
+    font-size: 10px;
     font-weight: bold;
     position: relative;
     right: -290px;
-    top: -100px;
+    top: -200px;
+    
     
 }
+#videoLink{
+    font-size: 14px;
+    text-align: center;
+}
 .ventanaLink{
+    background:black;
     width: 30%;
-    height: 40%;
+    height: 100px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     font-weight: bold;
     position: relative;
-    right: -300px;
-    top: -140px;
+    right: -30px;
+    top: -200px;
     display: none;
+    border-radius: 22px;
+   
     
 }
+#cerrarLink {
+    position: relative;
+    right: -440px;
+    top: -30px;
+}
+
+#cerrarLink span {
+    margin-right: 10px;
+    color: #fff;
+}
+
 
 /*
 #tituloRutina {
