@@ -103,7 +103,7 @@ function validarInicioSesion(){
         document.getElementById("iniSesion").style.display = "inline";
 
     }else{
-        window.location.href = "../public/IniciarSesion.html";
+        window.location.href = "../public/IniciarSesion.php";
     }
          
 }
@@ -113,7 +113,7 @@ function irARutina(r){
         window.location.href = r+"&sesion=true&nombre="+nombreUs;
     }
     else{
-        window.location.href = "../public/IniciarSesion.html";
+        window.location.href = "../public/IniciarSesion.php";
     }
 }
 

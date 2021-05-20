@@ -55,61 +55,42 @@ function validateForm() {
 
 }
 
-function loginF(){
-
+document.getElementById("iniciar").addEventListener("click", async(e) => {
+    var flag=false;
     var correo = document.getElementById('correo').value;
     var contraseña = document.getElementById('contraseña').value;
-   /* await db.collection("Registrar_Usuario").where("correoU", "==", correo).where("passU","==",contraseña)
-    .get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-           // console.log(doc.id, " => ", doc.data());
-            nombreUsuario=doc.data().nombreU;
-            console.log(nombreUsuario);
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });*/
-     db.collection("Registrar_Usuario").where("correoU", "==", correo).where("passU","==",contraseña)
+    if(validacionBoton()){
+     await db.collection("Registrar_Usuario").where("correoU", "==", correo)
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                nombreUsuario=doc.data().nombreU;
-                console.log(nombreUsuario,"gg");
-                var texto="../public/index.html?sesion=true&nombre="+nombreUsuario;
-                window.location.href = texto;
-            console.log(nombreUsuario,"gg");
+                if(doc.data().passU == contraseña){
+                    flag=true;
+                    nombreUsuario=doc.data().nombreU;
+                }
             });
         })
         .catch((error) => {
             console.log("Error getting documents: ", error);
         });
+        console.log(flag);
+        if(flag){
+            console.log(nombreUsuario,"gg");
+            var texto="../public/index.php?sesion=true&nombre="+nombreUsuario;
+            window.location.href = texto;
+            console.log(nombreUsuario,"gg");
+            document.getElementById("correo").style.backgroundColor = "MEDIUMSEAGREEN";
+            document.getElementById("contraseña").style.backgroundColor = "MEDIUMSEAGREEN";
+            document.getElementById("alerta").innerHTML = "";
+        }else{
+            document.getElementById("correo").style.backgroundColor = "red";
+            document.getElementById("contraseña").style.backgroundColor = "red";
+            document.getElementById("alerta").innerHTML = "Correo o Contraseña Incorrecta";
 
-
-    /*firebase.auth().signInWithEmailAndPassword(correo, contraseña)
-  .then((userCredential) => {
-    // Signed in
-   // alert("autenticacion correcta");
-    //console.log(sessionStorage.inicio);
-    //sessionStorage.inicio=true;
-   // console.log(sessionStorage.inicio);
-    //console.log(window.sessionStorage.inicio);
-    //window.location.href="index.html";
-    window.location.href = "../public/index.html?sesion=true"
+        }
+    }
+});
     
-    //var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage);
-  });*/
-    
-}
-
 function limpiarCampos() {
     correo.value = "";
     contraseña.value = "";
