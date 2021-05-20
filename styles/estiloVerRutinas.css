@@ -136,10 +136,12 @@ body {
 }
 .alertaRutina {
     background: green;
-    width: 80%;
+    width: 50%;
     text-align: center;
     margin: 13px 0px;
     color: rgba(255, 255, 255, 1);
+    position: relative;
+    right: -50px;
 }
 
 /*
