@@ -25,13 +25,13 @@ body {
 }
 
 #tituloRutina {
-    padding-left: 16%;
+    padding-left: 14%;
 }
 
 #tituloID {
     margin-top: 1%;
     margin-bottom: 1%;
-    margin-left: 40%;
+    margin-left: 43%;
 }
 
 #controles {
@@ -47,7 +47,7 @@ body {
 }
 
 #imagenG {
-    padding-left: 10%;
+    padding-left: 5%;
 }
 
 #siguiente {
@@ -69,7 +69,7 @@ body {
 }
 
 #botonVideoID {
-    padding-left: 20%;
+    padding-left: 12%;
 }
 
 #botonSalirID {
@@ -77,14 +77,57 @@ body {
 }
 
 #botonEmpezarID {
-    padding-left: 7%;
+    padding-left: 12%;
 }
 
 #botonEmpezar {
-    width: 100%;
+    width: 65%;
+    height: 130%;
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     font-weight: bold;
+
+}
+.video{
+    width: 30%;
+    height: 40%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    position: relative;
+    right: -290px;
+    top: -200px;
+    
+    
+}
+#videoLink{
+    font-size: 14px;
+    text-align: center;
+}
+.ventanaLink{
+    background:black;
+    width: 30%;
+    height: 100px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    right: -30px;
+    top: -200px;
+    display: none;
+    border-radius: 22px;
+   
+    
+}
+#cerrarLink {
+    position: relative;
+    right: -440px;
+    top: -30px;
+}
+
+#cerrarLink span {
+    margin-right: 10px;
+    color: #fff;
 }
 .usu {
     position:relative ;

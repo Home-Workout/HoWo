@@ -64,27 +64,29 @@
 
         <div class="row" id="tituloID">
             <div class="col-auto">
-                <h1 id="nomID">Presione Empezar</h1>
+                <h3 id="nomID">Presione Empezar</h3>
             </div>
 
         </div>
 
         <div class="row justify-content-center" id="controles">
             <div class="col-2" id="anterior">
-                <button class="btn btn-light" id="botonAnterior" type="button" onclick="retroceder()" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="btn btn-light btn-lg " id="botonAnterior" type="button" onclick="retroceder()" style="width: auto; height: 10ex;" disabled><i class="fad fa-angle-double-left"></i>
+                </button>
             </div>
             <div class="col-4" id="imagenG">
-                <img id="imgID" src="../imagenes/ejerciciosImg/ejercicioEjemplo2.gif" alt="imagen ejercicio">
+                <img id="imgID" src="../imagenes/ejerciciosImg/ejercicioEjemplo2.gif" alt="imagen ejercicio" width="550" height="350" >
             </div>
 
             <div class="col-6" id="siguiente">
-                <button class="btn btn-light" id="botonSiguiente" type="button" onclick="avanzar()" disabled><i class="fas fa-chevron-right"></i></button>
+                <button class="btn btn-light btn-lg" id="botonSiguiente" type="button" onclick="avanzar()" style="width: auto; height: 10ex;" disabled><i class="fad fa-angle-double-right"></i>
+                </button>
             </div>
 
         </div>
         <div class="row" id="infoEjercicioID">
             <div class="col">
-                <div class="bg-dark rounded border border-white">
+                <div class="btn-light rounded border border-white">
                     <center>
                         <p id="repeticiones"></p>
                         <p id="descripcionID">Descripcion Ejercicio</p>
@@ -96,10 +98,10 @@
         </div>
         <div class="row" id="botonesVE">
             <div class="col-4" id="botonVideoID">
-                <button class="btn-info" id="botonVideo" type="button"><i class="fas fa-video"></i> Video</button>
+                <button onclick="abrirLink()" class="btn btn-info" id="botonVideo" type="button" disabled><i class="fas fa-video" ></i> Video</button>
             </div>
             <div class="col-4" id="botonEmpezarID">
-                <button type="button" class="btn-success rounded" id="botonEmpezar" onclick="consulta()">Empezar</button>
+                <button type="button" class="btn-dark rounded" id="botonEmpezar" onclick="consulta()">Empezar</button>
             </div>
             <div class="col-4" id="botonSalirID">
                 <button class="btn-danger" id="botonSalir" type="button" onclick="home()">Salir</button>
@@ -107,6 +109,11 @@
         </div>
 
 
+    </div>
+    
+    <div class="ventanaLink" id="linkVideo">
+     <div id="cerrarLink"><a href="javascript:cerrarLink()"><span <i class="far fa-window-close"></i></span></a></div>
+        <h5 id="videoLink">Link Video</h5>
     </div>
 
 </body>
