@@ -150,7 +150,7 @@ function retroceder() {
 
 function home() {
     var r = "?sesion=true&nombre=" + nombreUs;
-    window.location.href = "../public/index.php" + r;
+    window.location.href = "index.php" + r;
 }
 
 

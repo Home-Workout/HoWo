@@ -76,7 +76,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
         console.log(flag);
         if(flag){
             console.log(nombreUsuario,"gg");
-            var texto="../public/index.php?sesion=true&nombre="+nombreUsuario;
+            var texto="index.php?sesion=true&nombre="+nombreUsuario;
             window.location.href = texto;
             console.log(nombreUsuario,"gg");
             document.getElementById("correo").style.backgroundColor = "MEDIUMSEAGREEN";
