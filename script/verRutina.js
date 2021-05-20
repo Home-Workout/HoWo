@@ -120,6 +120,7 @@ function avanzar() {
         if (k == datos.length - 1) {
             document.getElementById("botonSiguiente").toggleAttribute('disabled', true);
             document.getElementById("alertaRuti").innerHTML="Termino la Rutina!";
+            home();
         }
     }
 }
