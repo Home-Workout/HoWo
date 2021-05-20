@@ -18,6 +18,12 @@ function mostrar() {
 
 var val = 0;
 
+function iniciarF() {
+    if (validateForm()) {
+        loginF();
+    }
+}
+
 function validateForm() {
     var form = document.forms;
     var al = "Favor Ingresar Correo Electronico";
