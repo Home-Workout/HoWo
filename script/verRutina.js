@@ -161,6 +161,11 @@ async function abrirLink() {
 
 }
 
+function getLink() {
+    var linkVideo = datos[k];
+    return linkVideo['linkV'];
+}
+
 function cerrarLink() {
     document.getElementById("linkVideo").style.display = "none";
 }
