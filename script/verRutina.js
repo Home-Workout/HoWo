@@ -119,7 +119,7 @@ function avanzar() {
         });
         if (k == datos.length - 1) {
             document.getElementById("botonSiguiente").toggleAttribute('disabled', true);
-            document.getElementById("alertaRuti").innerHTML="Termino la Rutina!";
+            document.getElementById("alertaRuti").innerHTML = "Termino la Rutina!";
             home();
         }
     }
@@ -160,12 +160,19 @@ async function abrirLink() {
     document.getElementById("linkVideo").style.display = "block";
     var linkVideo = datos[k];
     document.getElementById("videoLink").innerHTML = linkVideo['linkV'];
+    //window.open(linkVideo['linkV'], 'Video');
 
 }
 
 function getLink() {
     var linkVideo = datos[k];
+    //window.open(linkVideo['linkV'], 'Video');
     return linkVideo['linkV'];
+}
+
+function irLinkV() {
+    var linkVideo = datos[k];
+    window.open(linkVideo['linkV'], 'Video');
 }
 
 function cerrarLink() {
