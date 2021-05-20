@@ -4,8 +4,9 @@ const peligro = document.getElementById("peligro");
 const iniciar = document.getElementById("iniciar");
 //const parrafo = document.getElementById("enviado");
 
-var nombreUsuario="";
+var nombreUsuario = "";
 const db = firebase.firestore();
+var flag = false;
 
 function mostrar() {
     var tipo = document.getElementById("contraseña");
@@ -23,7 +24,7 @@ function validateForm() {
     var al = "Favor Ingresar Correo Electronico";
     var al2 = "Favor Ingresar Contraseña";
 
-    if (correo.value == "" || correo.value.length>30 ) {
+    if (correo.value == "" || correo.value.length > 30) {
         document.getElementById("alerta").innerHTML = "Favor Ingresar Correo Electronico o con menos de 30 caracteres";
         correo.style.backgroundColor = "lightcoral";
         correo.focus();
@@ -40,7 +41,7 @@ function validateForm() {
         correo.style.backgroundColor = "MEDIUMSEAGREEN";
         document.getElementById("alerta").innerHTML = "";
     }
-    if (contraseña.value == "" || contraseña.value.length>30) {
+    if (contraseña.value == "" || contraseña.value.length > 30) {
         document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña o con menos de 30 caracteres";
         contraseña.style.backgroundColor = "lightcoral";
         contraseña.value = "";
@@ -56,33 +57,33 @@ function validateForm() {
 }
 
 document.getElementById("iniciar").addEventListener("click", async(e) => {
-    var flag=false;
+
     var correo = document.getElementById('correo').value;
     var contraseña = document.getElementById('contraseña').value;
-    if(validacionBoton()){
-     await db.collection("Registrar_Usuario").where("correoU", "==", correo)
-        .get()
-        .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                if(doc.data().passU == contraseña){
-                    flag=true;
-                    nombreUsuario=doc.data().nombreU;
-                }
+    if (validacionBoton()) {
+        await db.collection("Registrar_Usuario").where("correoU", "==", correo)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    if (doc.data().passU == contraseña) {
+                        flag = true;
+                        nombreUsuario = doc.data().nombreU;
+                    }
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
             });
-        })
-        .catch((error) => {
-            console.log("Error getting documents: ", error);
-        });
         console.log(flag);
-        if(flag){
-            console.log(nombreUsuario,"gg");
-            var texto="index.php?sesion=true&nombre="+nombreUsuario;
+        if (flag) {
+            console.log(nombreUsuario, "gg");
+            var texto = "index.php?sesion=true&nombre=" + nombreUsuario;
             window.location.href = texto;
-            console.log(nombreUsuario,"gg");
+            console.log(nombreUsuario, "gg");
             document.getElementById("correo").style.backgroundColor = "MEDIUMSEAGREEN";
             document.getElementById("contraseña").style.backgroundColor = "MEDIUMSEAGREEN";
             document.getElementById("alerta").innerHTML = "";
-        }else{
+        } else {
             document.getElementById("correo").style.backgroundColor = "red";
             document.getElementById("contraseña").style.backgroundColor = "red";
             document.getElementById("alerta").innerHTML = "Correo o Contraseña Incorrecta";
@@ -90,7 +91,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
         }
     }
 });
-    
+
 function limpiarCampos() {
     correo.value = "";
     contraseña.value = "";
@@ -119,10 +120,12 @@ function validacionBoton() {
     }
 }
 
-window.onbeforeunload = function () {
-    return "¿Desea recargar la página web?";
+window.onbeforeunload = function() {
+    if (!flag) {
+        return "¿Desea recargar la página web?";
+    }
+
 };
 
 document.getElementById("correo").addEventListener("keyup", validacionBoton);
 document.getElementById("contraseña").addEventListener("keyup", validacionBoton);
-
