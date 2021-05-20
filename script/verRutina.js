@@ -86,7 +86,7 @@ async function consulta() {
     }
     datos = datosR;
     console.log(datos);
-    storageR.getDownloadURL().then(function(url) {
+    await storageR.getDownloadURL().then(function(url) {
         // `url` is the download URL for 'images/stars.jpg'
 
         // Or inserted into an <img> element:
@@ -99,7 +99,7 @@ async function consulta() {
 
 }
 
-function avanzar() {
+async function avanzar() {
     if (k < datos.length - 1) {
         k++;
         cerrarLink();
@@ -109,7 +109,7 @@ function avanzar() {
         document.getElementById("botonAnterior").toggleAttribute('disabled', false);
         var imgR = nombreSiguiente['imageRef'].replace(" ", "");
         var storageR = storage.ref(imgR);
-        storageR.getDownloadURL().then(function(url) {
+        await storageR.getDownloadURL().then(function(url) {
 
             // Or inserted into an <img> element:
             var img = document.getElementById('imgID');
@@ -117,15 +117,17 @@ function avanzar() {
         }).catch(function(error) {
             // Handle any errors
         });
-        if (k == datos.length - 1) {
-            document.getElementById("botonSiguiente").toggleAttribute('disabled', true);
-            document.getElementById("alertaRuti").innerHTML = "Termino la Rutina!";
-            home();
-        }
+
+    } else {
+        document.getElementById("botonSiguiente").toggleAttribute('disabled', true);
+        document.getElementById("alertaRuti").innerHTML = "Termino la Rutina!";
+
+        alert("Rutina terminada");
+        home();
     }
 }
 
-function retroceder() {
+async function retroceder() {
     if (k > 0) {
         k--;
         cerrarLink();
@@ -136,7 +138,7 @@ function retroceder() {
         document.getElementById("botonSiguiente").toggleAttribute('disabled', false);
         var imgR = nombreAnterior['imageRef'].replace(" ", "");
         var storageR = storage.ref(imgR);
-        storageR.getDownloadURL().then(function(url) {
+        await storageR.getDownloadURL().then(function(url) {
 
             // Or inserted into an <img> element:
             var img = document.getElementById('imgID');
