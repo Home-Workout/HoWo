@@ -110,7 +110,7 @@ function validarInicioSesion(){
 
 function irARutina(r){
     if(sesion){
-        window.location.href = r;
+        window.location.href = r+"&sesion=true&nombre="+nombreUs;
     }
     else{
         window.location.href = "../public/IniciarSesion.html";

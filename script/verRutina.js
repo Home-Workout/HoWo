@@ -7,17 +7,34 @@ const sig = document.getElementById("botonSiguiente");
 const ant = document.getElementById("botonAnterior");
 var storage = firebase.storage();
 
+var sesion=false;
+var nombreUs="";
+var querystring=window.location.search;
+const params = new URLSearchParams(querystring);
+window.addEventListener('load', function() {
+    querystring= window.location.search.substr(1);
+    //console.log(querystring) // '?q=pisos+en+barcelona&ciudad=Barcelona'
+
+// usando el querystring, creamos un objeto del tipo URLSearchParams
+   // const params = new URLSearchParams(querystring);
+    sesion=params.get('sesion');
+    nombreUs=params.get('nombre');
+    document.getElementById("nombre").innerHTML=nombreUs;
+});
+
 function mostrarDatos() {
+    
 
+    //var para = window.location.search.substr(1);//../public/VerRutinas.html?sesion=Piernas_Principiante
+    //var noms = para.split("=");//Piernas_Principiante
+    //var noms=params.get('ruti');
 
-    var para = window.location.search.substr(1);
-    var noms = para.split("=");
-    var nombreEjercicios = noms[1].split("_");
-    var nombreEjercicio = nombreEjercicios[0];
-    nivel = nombreEjercicios[1];
-    var nom = noms[1].replace("_", " ");
-
-    document.getElementById("tipoRutinaID").innerHTML = nom;
+   // var nombreEjercicios = noms.split("_");//Piernas_Principiante
+    //var nombreEjercicio = nombreEjercicios[0];//Piernas_Principiante
+    nivel = params.get('nivel');//nombreEjercicios[1];
+    var nom =params.get('ruti'); //noms[1].replace("_", " "); //Piernas Principiante
+    var noms=nom.replace("_", " ");
+    document.getElementById("tipoRutinaID").innerHTML = noms;
     var repe = "";
     document.getElementById("repeticiones").innerHTML = "";
     if (nivel == "Principiante") {
@@ -148,5 +165,6 @@ function retroceder() {
 }
 
 function home() {
-    window.location.href = "../public/index.html"
+    var r="?sesion=true&nombre="+nombreUs;
+    window.location.href = "../public/index.html"+r;
 }
