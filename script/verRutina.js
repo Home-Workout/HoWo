@@ -42,10 +42,10 @@ function mostrarDatos() {
     } else {
         if (nivel == "Avanzado") {
             repe = "4x12->4 sets de 12 repeticiones";
-            numEjercicios = 6;
+            numEjercicios = 4;
         } else {
             repe = "4x10->4 sets de 10 repeticiones";
-            numEjercicios = 5;
+            numEjercicios = 4;
         }
     }
 
