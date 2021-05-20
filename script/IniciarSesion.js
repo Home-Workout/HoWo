@@ -23,14 +23,14 @@ function validateForm() {
     var al = "Favor Ingresar Correo Electronico";
     var al2 = "Favor Ingresar Contraseña";
 
-    if (correo.value == "") {
+    if (correo.value == "" ) {
         document.getElementById("alerta").innerHTML = "Favor Ingresar Correo Electronico";
         correo.style.backgroundColor = "lightcoral";
         correo.focus();
         val++;
         return false;
     } else if (validarCorreo(correo.value) == false) {
-        document.getElementById("alerta").innerHTML = "Ingresar un Correo Valido";
+        document.getElementById("alerta").innerHTML = "Ingresar un Correo Valido o con menos de 30 caracteres";
         correo.style.backgroundColor = "lightcoral";
         correo.value = "";
         correo.focus();
@@ -40,8 +40,8 @@ function validateForm() {
         correo.style.backgroundColor = "MEDIUMSEAGREEN";
         document.getElementById("alerta").innerHTML = "";
     }
-    if (contraseña.value == "") {
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña";
+    if (contraseña.value == "" && contraseña.value.length<=30) {
+        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña o con menos de 30 caractere";
         contraseña.style.backgroundColor = "lightcoral";
         contraseña.value = "";
         contraseña.focus();
@@ -100,7 +100,7 @@ function limpiarCampos() {
 }
 
 function validarCorreo(parametro) {
-    var patron = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    var patron = /^[a-zA-Z0-9_.+-]{1,30}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     if (!patron.test(parametro)) {
         return false;
     } else {

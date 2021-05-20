@@ -134,7 +134,13 @@ body {
     right: -1300px;
     top: -1px;
 }
-
+.alertaRutina {
+    background: green;
+    width: 80%;
+    text-align: center;
+    margin: 13px 0px;
+    color: rgba(255, 255, 255, 1);
+}
 
 /*
 #tituloRutina {
