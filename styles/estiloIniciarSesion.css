@@ -50,6 +50,17 @@ body {
     border: 1px solid #82a0a2;
     color: lightgray;
 }
+.botonR {
+    width: 97%;
+    background: #24303c;
+    border: none;
+    padding: 12px;
+    color: rgb(255, 255, 255);
+    margin: 20px 0;
+    font-size: 20px;
+    border-radius: 15px;
+    font-family: 'Ubuntu', sans-serif;
+}
 
 .btnIniciar {
     background: rgba(0, 0, 102, 1);
@@ -84,7 +95,7 @@ body {
     box-shadow: 0px 3px 0px #373c3c;
     position: relative;
     right: -280px;
-    top: -275px;
+    top: -367px;
     font-family: 'Ubuntu', sans-serif;
 }
 
