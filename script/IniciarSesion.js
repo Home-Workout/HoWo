@@ -120,6 +120,9 @@ function validacionBoton() {
         return false;
     }
 }
+function irARegistrarse(){
+    window.location.href = "registrarse.php";
+}
 
 window.onbeforeunload = function() {
     if (!flag) {
