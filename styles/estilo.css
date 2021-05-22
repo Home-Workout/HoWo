@@ -406,14 +406,14 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     text-align: justify;
-    padding: 33px;
+    /*justify-content: center;*/
     min-height: 600px;
     border-radius: 22px;
-    position: absolute;
-    left: 430px;
+    position: relative;
+    /*left: 430px;*/
     bottom: 20%;
+    top:-540px;
     display: none;
-    top: 198px;
 }
 .rutinas{
     width: 300px;
