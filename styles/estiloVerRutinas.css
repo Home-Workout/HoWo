@@ -47,12 +47,12 @@ body {
 }
 
 #imagenG {
-    padding-left: 4%;
+    padding-left: 5%;
 }
 
 #siguiente {
     padding-top: 10%;
-    padding-left: 15%;
+    padding-left: 5%;
     font-size: 30px;
 }
 
@@ -86,9 +86,9 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     font-weight: bold;
-
 }
-.video{
+
+.video {
     width: 30%;
     height: 40%;
     font-family: 'Ubuntu', sans-serif;
@@ -97,15 +97,15 @@ body {
     position: relative;
     right: -290px;
     top: -200px;
-    
-    
 }
-#videoLink{
+
+#videoLink {
     font-size: 14px;
     text-align: center;
 }
-.ventanaLink{
-    background:black;
+
+.ventanaLink {
+    background: black;
     width: 30%;
     height: 100px;
     font-family: 'Ubuntu', sans-serif;
@@ -116,9 +116,8 @@ body {
     top: -200px;
     display: none;
     border-radius: 22px;
-   
-    
 }
+
 #cerrarLink {
     position: relative;
     right: -440px;
@@ -129,11 +128,13 @@ body {
     margin-right: 10px;
     color: #fff;
 }
+
 .usu {
-    position:relative ;
+    position: relative;
     right: -1300px;
     top: -1px;
 }
+
 .alertaRutina {
     background: green;
     width: 50%;
@@ -143,6 +144,7 @@ body {
     position: relative;
     right: -50px;
 }
+
 
 /*
 #tituloRutina {
