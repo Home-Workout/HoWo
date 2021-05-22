@@ -87,6 +87,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
             document.getElementById("correo").style.backgroundColor = "red";
             document.getElementById("contraseña").style.backgroundColor = "red";
             document.getElementById("alerta").innerHTML = "Correo o Contraseña Incorrecta";
+            swal("Oops!", "Usted no esta registrado", "error");
 
         }
     }
