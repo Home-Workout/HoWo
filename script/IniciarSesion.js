@@ -6,7 +6,6 @@ const iniciar = document.getElementById("iniciar");
 
 var nombreUsuario = "";
 const db = firebase.firestore();
-var flag = false;
 
 function mostrar() {
     var tipo = document.getElementById("contraseña");
@@ -37,10 +36,10 @@ function validateForm() {
         correo.focus();
         val++;
         return false;
-    } else {
-        correo.style.backgroundColor = "MEDIUMSEAGREEN";
-        document.getElementById("alerta").innerHTML = "";
-    }
+    } //else {
+      //  correo.style.backgroundColor = "MEDIUMSEAGREEN";
+      //  document.getElementById("alerta").innerHTML = "";
+   // }
     if (contraseña.value == "" || contraseña.value.length > 30) {
         document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña o con menos de 30 caracteres";
         contraseña.style.backgroundColor = "lightcoral";
@@ -49,15 +48,16 @@ function validateForm() {
         val++;
         return false;
 
-    } else {
-        contraseña.style.backgroundColor = "MEDIUMSEAGREEN";
-        document.getElementById("alerta").innerHTML = "";
-    }
+    } //else {
+      //  contraseña.style.backgroundColor = "MEDIUMSEAGREEN";
+      //  document.getElementById("alerta").innerHTML = "";
+    //}
 
 }
 
 document.getElementById("iniciar").addEventListener("click", async(e) => {
-
+    var flag = false;
+    var passUsuario = "";
     var correo = document.getElementById('correo').value;
     var contraseña = document.getElementById('contraseña').value;
     if (validacionBoton()) {
@@ -65,10 +65,9 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    if (doc.data().passU == contraseña) {
                         flag = true;
+                        passUsuario = doc.data().passU;
                         nombreUsuario = doc.data().nombreU;
-                    }
                 });
             })
             .catch((error) => {
@@ -76,21 +75,25 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
             });
         console.log(flag);
         if (flag) {
-            console.log(nombreUsuario, "gg");
-            var texto = "index.php?sesion=true&nombre=" + nombreUsuario;
-            window.location.href = texto;
-            console.log(nombreUsuario, "gg");
-            document.getElementById("correo").style.backgroundColor = "MEDIUMSEAGREEN";
-            document.getElementById("contraseña").style.backgroundColor = "MEDIUMSEAGREEN";
-            document.getElementById("alerta").innerHTML = "";
+            if(passUsuario==contraseña){
+                console.log(nombreUsuario, "gg");
+                var texto = "index.php?sesion=true&nombre=" + nombreUsuario;
+                window.location.href = texto;
+                console.log(nombreUsuario, "gg");
+                document.getElementById("correo").style.backgroundColor = "MEDIUMSEAGREEN";
+                document.getElementById("contraseña").style.backgroundColor = "MEDIUMSEAGREEN";
+                document.getElementById("alerta").innerHTML = "";
+            }else{
+                document.getElementById("contraseña").style.backgroundColor = "red";
+                document.getElementById("alerta").innerHTML = "Contraseña Incorrecta";
+                document.getElementById("contraseña").value = "";
+            }
         } else {
             document.getElementById("correo").style.backgroundColor = "red";
-            document.getElementById("contraseña").style.backgroundColor = "red";
-            document.getElementById("alerta").innerHTML = "Correo o Contraseña Incorrecta";
-            swal("Oops!", "Usted no esta registrado", "error");
-
+            swal("Oops!", "Usted no esta registrado", "error");  
+            limpiarCampos();
+            }        
         }
-    }
 });
 
 function limpiarCampos() {
@@ -122,6 +125,10 @@ function validacionBoton() {
 }
 function irARegistrarse(){
     window.location.href = "registrarse.php";
+}
+function limpiarAlertaPass(){
+    document.getElementById("alerta").innerHTML = "";
+    contraseña.style.backgroundColor = "#5f6469";
 }
 
 window.onbeforeunload = function() {

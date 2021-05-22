@@ -52,7 +52,7 @@
         <input class="controls" type="email" id="correo" placeholder="Ingrese su correo electronico"><br><br>
         
         <label for="contrasenia">Contraseña: </label>
-        <input class="controls" type="password" id="contraseña" placeholder="Ingrese su contraseña"><br><br>
+        <input class="controls" type="password" id="contraseña" onInput="limpiarAlertaPass()" placeholder="Ingrese su contraseña"><br><br>
 
         <button class="boton" id="iniciar" type="button" style="cursor: pointer" onclick="validateForm()"
             disabled>Iniciar Sesion</button>
