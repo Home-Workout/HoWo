@@ -121,7 +121,7 @@ async function avanzar() {
     } else {
         document.getElementById("botonSiguiente").toggleAttribute('disabled', true);
         document.getElementById("alertaRuti").innerHTML = "Termino la Rutina!";
-        alert("Rutina terminada");
+        await swal("Yeah!", "Rutina Terminada", "success");
         home();
     }
 }
