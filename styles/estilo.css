@@ -7,10 +7,10 @@ body {
 
 .btnCerrarSesion {
     text-align: center;
-    background: #7f8c8d;
+    /*background: #7f8c8d;*/
     color: #fff;
     display: inline-block;
-    font-size: 1.25em;
+    font-size: 1.00em;
     margin: 0px;
     padding: 20 px 0px;
     width: 150px;
@@ -75,7 +75,7 @@ body {
     margin-right: 10px;
     text-align: center;
     color: #fff;
-    font-size: 1.25em;
+    font-size: 1.10sem;
     margin: 20px;
     padding: 20 px 0px;
     width: 150px;
