@@ -5,6 +5,23 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.btnCerrarSesion {
+    text-align: center;
+    /*background: #7f8c8d;*/
+    color: #fff;
+    display: inline-block;
+    font-size: 1.00em;
+    margin: 0px;
+    padding: 20 px 0px;
+    width: 150px;
+    height: 0px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #373c3c;
+    position: relative;
+    right: -1200px;
+    top: -10px;
+}
+
 .btn1 {
     text-align: center;
     background: #7f8c8d;
@@ -38,6 +55,11 @@ body {
     right: -750px;
     top: -68px;
 }
+.btnCerrarSesion span{
+    position: relative;
+    margin-right: 10px;
+    
+}
 
 .btn1 span {
     position: relative;
@@ -53,7 +75,7 @@ body {
     margin-right: 10px;
     text-align: center;
     color: #fff;
-    font-size: 1.25em;
+    font-size: 1.10sem;
     margin: 20px;
     padding: 20 px 0px;
     width: 150px;

@@ -39,6 +39,7 @@ window.addEventListener('load', function() {
     console.log(sesion);
     //sesion=false;
     document.getElementById("iniSesion").style.display = "none";
+    document.getElementById("botonSerrarSesion").style.display = "none";
     if(sesion){
     validarInicioSesion();
     }
@@ -100,7 +101,9 @@ function validarInicioSesion(){
         document.getElementById("botonRegistrarse").style.display = "none";
         document.getElementById("botonIniciarSesion").style.display = "none";
         document.getElementById("iniSesion").innerHTML=nombreUs;
-        document.getElementById("iniSesion").style.display = "inline";
+        document.getElementById("iniSesion").style.display = "inline"; 
+        document.getElementById("botonSerrarSesion").style.display ="inline";
+
 
     }else{
         window.location.href = "IniciarSesion.php";
