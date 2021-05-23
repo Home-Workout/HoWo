@@ -16,10 +16,6 @@ var querystring = window.location.search;
 const params = new URLSearchParams(querystring);
 window.addEventListener('load', function() {
     querystring = window.location.search.substr(1);
-    //console.log(querystring) // '?q=pisos+en+barcelona&ciudad=Barcelona'
-
-    // usando el querystring, creamos un objeto del tipo URLSearchParams
-    // const params = new URLSearchParams(querystring);
     sesion = params.get('sesion');
     nombreUs = params.get('nombre');
     document.getElementById("nombre").innerHTML = nombreUs;
@@ -70,8 +66,7 @@ async function consulta() {
 
     }*/
     var pru = datos[0];
-    document.getElementById("nomID").innerHTML = pru['nombreE'];
-    document.getElementById("descripcionID").innerHTML = pru['descripcion'];
+
 
     document.getElementById("botonSiguiente").toggleAttribute('disabled', false);
     document.getElementById("botonVideo").toggleAttribute('disabled', false);
@@ -95,6 +90,8 @@ async function consulta() {
     }).catch(function(error) {
         // Handle any errors
     });
+    document.getElementById("nomID").innerHTML = pru['nombreE'];
+    document.getElementById("descripcionID").innerHTML = pru['descripcion'];
     document.getElementById("botonEmpezar").style.display = "none";
 
 }
@@ -104,19 +101,23 @@ async function avanzar() {
         k++;
         cerrarLink();
         var nombreSiguiente = datos[k];
-        document.getElementById("nomID").innerHTML = nombreSiguiente['nombreE'];
-        document.getElementById("descripcionID").innerHTML = nombreSiguiente['descripcion'];
+
         document.getElementById("botonAnterior").toggleAttribute('disabled', false);
         var imgR = nombreSiguiente['imageRef'].replace(" ", "");
         var storageR = storage.ref(imgR);
         await storageR.getDownloadURL().then(function(url) {
 
             // Or inserted into an <img> element:
+            document.getElementById("botonSiguiente").toggleAttribute('disabled', true);
             var img = document.getElementById('imgID');
             img.src = url;
+
         }).catch(function(error) {
             // Handle any errors
         });
+        document.getElementById("botonSiguiente").toggleAttribute('disabled', false);
+        document.getElementById("nomID").innerHTML = nombreSiguiente['nombreE'];
+        document.getElementById("descripcionID").innerHTML = nombreSiguiente['descripcion'];
 
     } else {
         document.getElementById("botonSiguiente").toggleAttribute('disabled', true);
@@ -132,19 +133,21 @@ async function retroceder() {
         cerrarLink();
         console.log(k);
         var nombreAnterior = datos[k];
-        document.getElementById("nomID").innerHTML = nombreAnterior['nombreE'];
-        document.getElementById("descripcionID").innerHTML = nombreAnterior['descripcion'];
+
         document.getElementById("botonSiguiente").toggleAttribute('disabled', false);
         var imgR = nombreAnterior['imageRef'].replace(" ", "");
         var storageR = storage.ref(imgR);
         await storageR.getDownloadURL().then(function(url) {
-
+            document.getElementById("botonAnterior").toggleAttribute('disabled', true);
             // Or inserted into an <img> element:
             var img = document.getElementById('imgID');
             img.src = url;
         }).catch(function(error) {
             // Handle any errors
         });
+        document.getElementById("nomID").innerHTML = nombreAnterior['nombreE'];
+        document.getElementById("descripcionID").innerHTML = nombreAnterior['descripcion'];
+        document.getElementById("botonAnterior").toggleAttribute('disabled', false);
         if (k == 0) {
             document.getElementById("botonAnterior").toggleAttribute('disabled', true);
         }
