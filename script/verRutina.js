@@ -166,9 +166,10 @@ function home() {
 function homeSalir() {
     swal({
             title: "¿Está seguro de salir?",
-            text: "No completó la rutina",
+            text: "No completó la rutina!",
             icon: "warning",
-            buttons: true,
+            buttons:['No','Si'],          
+            //buttons: true,
             dangerMode: true,
             closeOnClickOutside: false,
         })
