@@ -447,72 +447,72 @@ body {
 }
 .piernaBasico{
     position: relative;
-    right: 170px;
+    right: 145px;
     width: 200px;
 }
 .brazoBasico{
     position: relative;
-    right: 210px;
+    right: 185px;
     width: 380px;
     top: 7px;
 }
 .hombroBasico{
     position: relative;
-    right: 170px;
+    right: 145px;
     width: 200px;
     top: 10px;
 }
 .espaldaBasico{
     position: relative;
-    right: -140px;
+    right: -115px;
     width: 200px;
     top: -508px;
 }
 .abdominalBasico{
     position: relative;
-    right: -143px;
+    right: -115px;
     width: 200px;
     top: -510px;
 }
 .gluteoBasico{
     position: relative;
-    right: -143px;
+    right: -115px;
     width: 200px;
     top: -490px;
 }
 /* estilos pop up nivel Intermedio */
 .piernaIntermedio{
     position: relative;
-    right: 170px;
+    right: 145px;
     width: 200px;
 }
 .brazoIntermedio{
     position: relative;
-    right: 210px;
+    right: 185px;
     width: 380px;
     top: 7px;
 }
 .hombroIntermedio{
     position: relative;
-    right: 170px;
+    right: 145px;
     width: 200px;
     top: 10px;
 }
 .espaldaIntermedio{
     position: relative;
-    right: -140px;
+    right: -115px;
     width: 200px;
     top: -467px;
 }
 .abdominalIntermedio{
     position: relative;
-    right: -143px;
+    right: -115px;
     width: 200px;
     top: -450px;
 }
 .gluteoIntermedio{
     position: relative;
-    right: -143px;
+    right: -115px;
     width: 200px;
     top: -444px;
 }
@@ -520,36 +520,36 @@ body {
 /* estilos pop up nivel Avanzado */
 .piernaAvanzado{
     position: relative;
-    right: 170px;
+    right: 145px;
     width: 200px;
 }
 .brazoAvanzado{
     position: relative;
-    right: 210px;
+    right: 185px;
     width: 380px;
     top: 7px;
 }
 .hombroAvanzado{
     position: relative;
-    right: 170px;
+    right: 145px;
     width: 200px;
     top: 10px;
 }
 .espaldaAvanzado{
     position: relative;
-    right: -140px;
+    right: -115px;
     width: 200px;
     top: -480px;
 }
 .abdominalAvanzado{
     position: relative;
-    right: -143px;
+    right: -115px;
     width: 200px;
     top: -470px;
 }
 .gluteoAvanzado{
     position: relative;
-    right: -143px;
+    right: -115px;
     width: 200px;
     top: -464px;
 }
