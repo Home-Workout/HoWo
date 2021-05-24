@@ -163,6 +163,25 @@ function home() {
     window.location.href = "index.php" + r;
 }
 
+function homeSalir() {
+    swal({
+            title: "¿Está seguro de salir?",
+            text: "No completó la rutina",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            closeOnClickOutside: false,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                var r = "?sesion=true&nombre=" + nombreUs;
+                window.location.href = "index.php" + r;
+            } else {
+
+            }
+        });
+
+}
 
 async function abrirLink() {
     document.getElementById("linkVideo").style.display = "block";
