@@ -16,6 +16,14 @@ function mostrar() {
     }
 }
 
+function validarTecleado(){
+    //var evento_key = window.event.keyCode;
+        var contra=document.getElementById("contraseña").value;
+        contra=contra.split(" ").join("");  
+        var aux=document.getElementById("contraseña");
+        aux.value=contra;
+}
+
 var val = 0;
 
 function validateForm() {

@@ -27,7 +27,11 @@ body {
 #tituloRutina {
     padding-left: 12%;
 }
-
+.tit1{
+    background: black;
+    color: #fff;
+    display: inline-block;
+}
 
 /*
 #tituloID {
