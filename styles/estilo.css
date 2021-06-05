@@ -553,3 +553,20 @@ body {
     width: 200px;
     top: -464px;
 }
+/* pop up de Desafios*/
+.ventanaDesafio {
+    background: url(../imagenes/fondo_1.jpg);
+    width: 40%;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    text-align: justify;
+    /*justify-content: center;*/
+    min-height: 700px;
+    border-radius: 22px;
+    position: relative;
+    /*left: 430px;*/
+    bottom: 20%;
+    top:-700px;
+    display: none;
+}

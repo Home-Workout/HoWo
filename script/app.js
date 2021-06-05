@@ -94,6 +94,32 @@ function cerrarNivelAvan() {
     document.getElementById("ventNivelA").style.display = "none";
 }
 
+function abrirDesafioI(){
+    document.getElementById("ventDesfI").style.display = "block";
+    cerrarDesafII();
+    cerrarDesafIII();
+}
+function cerrarDesafI(){
+    document.getElementById("ventDesfI").style.display = "none";
+}
+function abrirDesafioII(){
+    document.getElementById("ventDesfII").style.display = "block";
+    cerrarDesafI();
+    cerrarDesafIII();
+}
+function cerrarDesafII(){
+    document.getElementById("ventDesfII").style.display = "none";
+}
+function abrirDesafioIII(){
+    document.getElementById("ventDesfIII").style.display = "block";
+    cerrarDesafI();
+    cerrarDesafII();
+}
+function cerrarDesafIII(){
+    document.getElementById("ventDesfIII").style.display = "none";
+}
+
+
 
 function validarInicioSesion(){
     if(sesion){
