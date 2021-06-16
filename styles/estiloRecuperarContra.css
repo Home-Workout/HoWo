@@ -1,0 +1,35 @@
+body{
+    width: 400px;
+    background: #191b1e;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+}
+#titulo{
+    font-size: 32px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+.controls{
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #b0bbd1;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+}
+.boton{
+    width: 100%;
+    background: #5b616f;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
