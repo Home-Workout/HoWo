@@ -1,0 +1,166 @@
+body {
+    background-image: url(pexels-lukas2.jpg);
+    padding: 30px;
+    border-radius: 4px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btnCerrarSesion {
+    text-align: center;
+    color: rgb(10, 10, 10);
+    display: inline-block;
+    font-size: 1.20em;
+    margin: 30px;
+    padding: 20 px 0px;
+    width: 180px;
+    height: 0px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #373c3c;
+    position: relative;
+    right: -1250px;
+    top: -5px;
+}
+
+.imgTitulo {
+    position: absolute;
+    top: 40px;
+    left: 72px;
+}
+
+.t1 {
+    position: absolute;
+    right: 85%;
+    top: 30px;
+    font-size: 1.00em;
+    color:#fff
+}
+
+.forms label {
+    font-size: 18px;
+}
+
+.cuentaUsuario{
+    position: relative;
+    margin-right: 10px;
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    margin: 20px;
+    padding: 20 px 0px;
+    width: 180px;
+    height: 0px;
+    text-decoration: none;
+    right: -480px;
+    top: 110px;
+}
+
+.nivel{
+    position: relative;
+    margin-right: 10px;
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    margin: 20px;
+    padding: 20 px 0px;
+    width: 180px;
+    height: 0px;
+    text-decoration: none;
+    right: -415px;
+    top: 150px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    background-color: #7a838523;
+    color: rgb(10, 10, 10);
+    cursor: pointer;
+    font-weight: bold;
+   
+}
+
+.btn:hover {
+    background-color: #b8bbbb7e;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+.menu {
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    right: 50%;
+    width: 20px;
+    font-size: 1,30em;
+    top: 285px;
+    
+}
+
+.entrenamiento{
+    position: relative;
+    margin-right: 10px;
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    margin: 20px;
+    padding: 20 px 0px;
+    width: 180px;
+    height: 0px;
+    text-decoration: none;
+    right: -460px;
+    top: 190px;
+}
+
+.fechaRegistro{
+    position: relative;
+    margin-right: 10px;
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    margin: 100px;
+    padding: 20 px 0px;
+    width: 180px;
+    height: 0px;
+    text-decoration: none;
+    right: -395px;
+    top: 150px;
+}
+
+.Rutinas{
+    position: relative;
+    margin-right: 10px;
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    margin: 150px;
+    padding: 0px 0px;
+    width: 180px;
+    height: 0px;
+    text-decoration: none;
+    right: -530px;
+    top: 90px;
+}
+
+#main-container{
+    margin: 150px auto;
+    width:1000px;
+    
+}
+
+table{
+    background-color: rgba(167, 164, 164, 0.404);
+    text-align:left;
+    width:100%; 
+}
+
+th,td{
+    padding:15px
+}
+
+
+
+
