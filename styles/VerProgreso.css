@@ -130,37 +130,32 @@ body {
     top: 150px;
 }
 
-.Rutinas{
-    position: relative;
-    margin-right: 10px;
-    text-align: center;
-    color: rgb(10, 10, 10);
-    font-size: 1.30em;
-    margin: 150px;
-    padding: 0px 0px;
-    width: 180px;
-    height: 0px;
-    text-decoration: none;
-    right: -530px;
-    top: 90px;
-}
-
-#main-container{
-    margin: 150px auto;
-    width:1000px;
-    
-}
-
 table{
     background-color: rgba(167, 164, 164, 0.404);
     text-align:left;
-    width:100%; 
+    width:10%; 
+    height: 50px;
+    margin: 220px auto;
+    color: rgb(255, 255, 255);
+    
+}
+
+caption{
+    background-color:#001d3d;
+    padding: 12;px
+    text-align: center;
+    font-size: 1.30em;
+    margin: px;
+    width: 900px;
+    height: 30px;
+    text-decoration: none;
+    top: 0px;
+}
+
+th{
+    background-color:#003566;
 }
 
 th,td{
-    padding:15px
+    padding:12px
 }
-
-
-
-
