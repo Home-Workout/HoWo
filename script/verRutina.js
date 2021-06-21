@@ -11,6 +11,7 @@ var storage = firebase.storage();
 var areaF = "";
 var sesion = false;
 var nombreUs = "";
+var correoUs = "";
 var querystring = window.location.search;
 
 const params = new URLSearchParams(querystring);
@@ -18,6 +19,7 @@ window.addEventListener('load', function() {
     querystring = window.location.search.substr(1);
     sesion = params.get('sesion');
     nombreUs = params.get('nombre');
+    correoUs = params.get('correo');
     document.getElementById("nombre").innerHTML = nombreUs;
 });
 
@@ -52,6 +54,12 @@ function mostrarDatos() {
 async function consulta() {
     document.getElementById("botonEmpezar").toggleAttribute('disabled', true);
     var i = 0;
+    var realizados = [];
+    var nom="";
+    var corr=correoUs;
+    var fec= new Date();
+    var con="";
+    var numEn=0;
     await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel).where("areaT", "==", areaF)
         .get()
         .then((querySnapshot) => {
@@ -60,7 +68,41 @@ async function consulta() {
                 console.log(doc.data)
                 i++;
             });
+        });
+        await dbE.collection("Registrar_Usuario").where("correoU", "==", corr)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                        con = doc.data().passU;
+                        nom = doc.data().nombreU;
+                        fec= doc.data().fecRegistro;
+                        numEn=doc.data().numEntrenamiento;
+                        realizados=doc.data().Ejercicio;
+                        doc.set({
+                            
+                        });
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+            realizados[numEn]={area : areaF,fecha : new Date(),nivel :nivel};
+            print(realizados.type);
+        const responseU = await dbE.collection('Registrar_Usuario').doc(corr).set({
+            nombreU: nom,
+            correoU:corr,
+            passU:con,
+            numEntrenamiento:numEn+1,
+            fecRegistro:fec,
+            Ejercicio: realizados
+            
         })
+        .then(() => {
+            console.log("Document successfully written!");
+        })
+        .catch((error) => {
+            console.error("Error writing document: ", error);
+        });
     console.log(datos);
     /*for(var j=0;j<datos.length;j++){
 

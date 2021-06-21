@@ -203,12 +203,8 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
             if(flag==0){
                 parrafo.innerHTML = "Usted se ha registrado correctamente";
                 limpiarCampos();
-                /*const realizados = await dbU.collection('Registrar_Usuario').doc().collection('Realizados').doc().set({
-                    area,
-                    fecha,
-                    nivel
-                });*/
-                const responseU = await dbU.collection('Registrar_Usuario').doc().set({
+               
+                const responseU = await dbU.collection('Registrar_Usuario').doc(correoU).set({
                     nombreU,
                     correoU,
                     passU,
@@ -222,12 +218,7 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                     }]
                     
                 });
-                /*responseU.collection('Realizados').doc().set({
-                    area,
-                    fecha,
-                    nivel
-
-                });*/
+                
     
                 parrafo.innerHTML="";
                 //console.log(responseU._userDataWriter.id);
