@@ -1,10 +1,13 @@
 body {
     background-image: url(pexels-lukas2.jpg);
-    padding: 30px;
-    border-radius: 4px;
     font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.89);
 }
 
+
+/*
 .btnCerrarSesion {
     text-align: center;
     color: rgb(10, 10, 10);
@@ -20,53 +23,44 @@ body {
     right: -1250px;
     top: -5px;
 }
+*/
 
+
+/*
 .imgTitulo {
     position: absolute;
     top: 40px;
     left: 72px;
 }
+*/
 
 .t1 {
     position: absolute;
     right: 85%;
     top: 30px;
     font-size: 1.00em;
-    color:#fff
+    color: #fff
 }
 
 .forms label {
     font-size: 18px;
 }
 
-.cuentaUsuario{
-    position: relative;
-    margin-right: 10px;
-    text-align: center;
+.cuentaUsuario {
+    text-align: left;
     color: rgb(10, 10, 10);
     font-size: 1.30em;
-    margin: 20px;
-    padding: 20 px 0px;
-    width: 180px;
-    height: 0px;
-    text-decoration: none;
-    right: -480px;
-    top: 110px;
+    padding-top: 70%;
 }
 
-.nivel{
-    position: relative;
-    margin-right: 10px;
+#usuario {
+    padding-left: 35%;
+}
+
+.nivel {
     text-align: center;
     color: rgb(10, 10, 10);
     font-size: 1.30em;
-    margin: 20px;
-    padding: 20 px 0px;
-    width: 180px;
-    height: 0px;
-    text-decoration: none;
-    right: -415px;
-    top: 150px;
 }
 
 .btn {
@@ -77,7 +71,6 @@ body {
     color: rgb(10, 10, 10);
     cursor: pointer;
     font-weight: bold;
-   
 }
 
 .btn:hover {
@@ -89,73 +82,47 @@ body {
     color: white;
 }
 
-.menu {
-    justify-content: center;
-    display: flex;
-    position: absolute;
-    right: 50%;
-    width: 20px;
-    font-size: 1,30em;
-    top: 285px;
-    
-}
-
-.entrenamiento{
-    position: relative;
-    margin-right: 10px;
+.entrenamiento {
     text-align: center;
     color: rgb(10, 10, 10);
     font-size: 1.30em;
-    margin: 20px;
-    padding: 20 px 0px;
-    width: 180px;
-    height: 0px;
-    text-decoration: none;
-    right: -460px;
-    top: 190px;
 }
 
-.fechaRegistro{
-    position: relative;
-    margin-right: 10px;
+.fechaRegistro {
     text-align: center;
     color: rgb(10, 10, 10);
     font-size: 1.30em;
-    margin: 100px;
-    padding: 20 px 0px;
-    width: 180px;
-    height: 0px;
-    text-decoration: none;
-    right: -395px;
-    top: 150px;
 }
 
-table{
+table {
+    overflow: scroll;
     background-color: rgba(167, 164, 164, 0.404);
-    text-align:left;
-    width:10%; 
-    height: 50px;
-    margin: 220px auto;
-    color: rgb(255, 255, 255);
-    
-}
-
-caption{
-    background-color:#001d3d;
-    padding: 12;px
     text-align: center;
-    font-size: 1.30em;
-    margin: px;
-    width: 900px;
-    height: 30px;
-    text-decoration: none;
-    top: 0px;
+    width: 10%;
+    height: 50px;
+    color: rgb(255, 255, 255);
 }
 
-th{
-    background-color:#003566;
+th {
+    background-color: #003566;
 }
 
-th,td{
-    padding:12px
+
+/*
+th,
+td {
+    padding: 12px
+}
+*/
+
+#cerrarID {
+    padding-left: 85%;
+}
+
+#cabeza {
+    padding-top: 2%;
+}
+
+#logoID {
+    padding-left: 50%;
 }
