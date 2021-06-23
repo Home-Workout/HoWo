@@ -1,35 +1,54 @@
 body{
     width: 400px;
-    background: #191b1e;
-    padding: 30px;
+    background-image: url('../imagenes/216088.jpg');
+    padding: 60px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 110px;
     border-radius: 4px;
-    font-family: 'calibri';
-    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 18px;
 }
-#titulo{
-    font-size: 32px;
-    margin-bottom: 50px;
-    margin-left: 100px;
+#tituloP{
+    font-size: 40px;
+    margin-bottom: 70px;
+    margin-left: 0px;
+    font-size:40 px;
 }
 .controls{
-    width: 100%;
-    background: #24303c;
+    width: 95%;
+    background: #1d2227;
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 16px;
     border: 1px solid #b0bbd1;
-    font-family: 'calibri';
-    font-size: 18px;
-    color: white;
+    font-family: 'Ubuntu', sans-serif;
 }
 .boton{
     width: 100%;
-    background: #5b616f;
+    background: #24303c;
     border: none;
     padding: 12px;
-    color: white;
-    margin: 16px 0;
+    color: rgb(255, 255, 255);
+    margin: 20px 0;
+    font-size: 20px;
+    border-radius: 15px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.imgTitulo {
+    position: absolute;
+    top: 13px;
+    left: 92px;
+}
+.t1 {
+    position: absolute;
+    right: 82%;
+    top: 3px;
+    font-size: 0.90em;
+}
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #e2dbdbd2;
     font-size: 16px;
 }

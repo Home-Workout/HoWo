@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\styles\recuperarContra.css">
+    <link rel="stylesheet" href="..\styles\estiloRecuperarContra.css">
     <title> Recuperar Contraseña </title>
+    <style>
+        body {
+            background-image: url('../imagenes/216088.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
 </head>
 <body>
+    <div class="t1">
+        <h1 class="titulo">HoWo</h1>
+    </div>
+    <div class="imgTitulo">
+        <a href="IniciarSesion.html">
+            <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">
+        </a>
+    </div>
     <h1 id="tituloP"> Recuperar Contraseña</h1>
     <form id="formularioRec" class="forms" method="post" action="" >
         <div id="alerta" class="alerta"></div>
@@ -15,7 +31,7 @@
         <h2></h2>
         <input type="text" id="correo" class="controls" placeholder="Correo electrónico"><br><br>
         <button class="boton" id="enviar" type="button"> Enviar </button>
-        <button class="boton" id="volver" type="button"> Volver </button>
     </form>
+    
 </body>
 </html>
