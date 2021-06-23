@@ -38,7 +38,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-    <script src='../script/verRutina.js'></script>
+    <script src='../script/rutinaDesafio.js'></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Realizar Rutina</title>
 </head>
@@ -68,15 +68,26 @@
 
         <div class="row justify-content-center" id="tituloID">
             <div class="col-12">
-                <h3 id="nomID" class="text-center">Presione Empezar</h3>
+                <h3 id="nomID" class="text-center">Presione Iniciar</h3>
             </div>
 
         </div>
 
         <div class="row justify-content-center" id="controles">
+            <div class="col-3"></div>
+            <div class="col-6" id="imagenG">
+                <center>
+                    <img id="imgID" src="../imagenes/ejerciciosImg/estasListo.jpg" alt="imagen ejercicio" width="550" height="350">
+                </center>
+            </div>
+            <div class="col-3" id="contador">
+                <p id="ordenID">
 
-            <div class="col-auto" id="imagenG">
-                <img id="imgID" src="../imagenes/ejerciciosImg/estasListo.jpg" alt="imagen ejercicio" width="550" height="350">
+                </p>
+                <br>
+                <p id="contadorID">
+
+                </p>
             </div>
 
 
@@ -85,7 +96,7 @@
             <div class="col">
                 <div class="btn-light rounded border border-dark">
                     <center>
-                        <p id="repeticiones">¡Preparate para comenzar!</p>
+
                         <p id="descripcionID">Descripcion Ejercicio</p>
                     </center>
                 </div>
@@ -95,7 +106,7 @@
         </div>
         <div class="row justify-content-center" id="botonesVE">
             <div class="col-8" id="botonEmpezarID">
-                <button type="button" class="rounded" id="botonEmpezar" onclick="consulta()">Empezar</button>
+                <button type="button" class="rounded" id="botonEmpezar" onclick="presionarBoton()">Iniciar</button>
             </div>
             <div class="col-4" id="botonSalirID">
                 <button class="rounded" id="botonSalir" type="button" onclick="homeSalir()">Salir</button>
