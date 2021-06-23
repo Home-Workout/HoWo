@@ -18,6 +18,8 @@ var counter;
 var ind = 10;
 var ordenText = "Preparate";
 var inicio = 0;
+var descanso = 0;
+var listaArea = [];
 const params = new URLSearchParams(querystring);
 window.addEventListener('load', function() {
     querystring = window.location.search.substr(1);
@@ -35,23 +37,34 @@ function mostrarDatos() {
     var noms = nom.replace("_", " ");
     document.getElementById("tipoRutinaID").innerHTML = noms;
     numEjercicios = 4;
-    var repe = "";
-    document.getElementById("repeticiones").innerHTML = "";
     if (nivel == "Principiante") {
-        repe = "3x8->3 sets de 8 repeticiones";
+        descanso=20;
         numEjercicios = 4;
     } else {
         if (nivel == "Avanzado") {
-            repe = "4x12->4 sets de 12 repeticiones";
+            descanso = 10;
             numEjercicios = 4;
         } else {
-            repe = "4x10->4 sets de 10 repeticiones";
+            descanso = 15;
             numEjercicios = 4;
         }
     }
-
-    document.getElementById("repeticiones").innerHTML = repe;
-
+    if(noms == "Brazos"){
+        listaArea[0]="Brazos";
+        listaArea[1]="Hombro";
+    }else{
+        if(noms == "Piernas"){
+            listaArea[0]="Piernas";
+            listaArea[1]="Gluteos";
+        }else{
+            listaArea[0]="Espalda";
+            listaArea[1]="Abdomen";
+            listaArea[2]="Brazos";
+            listaArea[3]="Piernas";
+        }
+    }
+    console.log("prueba: "+noms);
+    console.log("Lista Area: " +listaArea.length);
 }
 
 async function presionarBoton() {
@@ -65,7 +78,7 @@ async function presionarBoton() {
     var boton = document.getElementById("botonEmpezar");
     if (boton.innerHTML == "Iniciar") {
         boton.innerHTML = "Pausar"
-        counter = setInterval(timer, 400);
+        counter = setInterval(timer, 1000);
     } else {
         boton.innerHTML = "Iniciar";
         pause();
@@ -76,20 +89,33 @@ async function presionarBoton() {
 
 async function consulta() {
     var i = 0;
-    await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", "Principiante").where("areaT", "==", "Brazos")
+    var areaC;
+    for(var m=0;m<numEjercicios;m++){
+        var j = m;
+        if(listaArea.length == 2 && m==1){
+            j=0;
+        }
+        if(listaArea.length == 2 && m>=2 ){
+            j=1;
+        }
+        areaC = listaArea[j];
+        console.log("areaC: " +areaC);
+        var flag = 0;
+        await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel).where("areaT", "==", areaC)
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                datos[i] = doc.data();
-                console.log(doc.data)
-                i++;
+                if(flag==0){
+                    datos[i] = doc.data();
+                    i++;
+                    flag++;   
+                }
             });
-        })
+        })  
+    }
+  
     console.log(datos);
-
     var pru = datos[0];
-
-
 
     var imgR = pru['imageRef'].replace(" ", "");
     var storageR = storage.ref(imgR);
@@ -117,10 +143,7 @@ async function consulta() {
 
 }
 
-function timer() {
-
-
-
+async function timer() {
     if (ind >= 0) {
         document.getElementById("ordenID").innerHTML = ordenText;
         document.getElementById("contadorID").innerHTML = ind;
@@ -137,18 +160,16 @@ function timer() {
                 orden++;
             } else {
                 if (orden == 2) {
-
                     ordenText = "Descansa";
                     document.getElementById('nomID').innerHTML = "¡Respira!";
                     document.getElementById('descripcionID').innerHTML = "Prepárate para el siguiente ejercicio";
                     var imag = document.getElementById('imgID');
                     imag.src = "../imagenes/ejerciciosImg/descansar.gif";
-
-                    ind = 12;
+                    ind = descanso;
                     orden++;
 
                 } else {
-                    avanzar();
+                    await avanzar();
                     ordenText = "Preparate";
                     orden = 0;
                     ind = 10;
