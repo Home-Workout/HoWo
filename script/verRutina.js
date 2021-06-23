@@ -201,7 +201,7 @@ async function retroceder() {
 }
 
 function home() {
-    var r = "?sesion=true&nombre=" + nombreUs;
+    var r = "?sesion=true&nombre=" + nombreUs+"&correo="+correoUs;
     window.location.href = "index.php" + r;
 }
 
@@ -217,7 +217,7 @@ function homeSalir() {
         })
         .then((willDelete) => {
             if (willDelete) {
-                var r = "?sesion=true&nombre=" + nombreUs;
+                var r = "?sesion=true&nombre=" + nombreUs+"&correo="+correoUs;
                 window.location.href = "index.php" + r;
             } else {
 
