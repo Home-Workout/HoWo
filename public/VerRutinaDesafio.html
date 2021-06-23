@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="esp">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel='stylesheet' type='text/css' href='../styles/estiloRutinaDesafio.css'>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+              https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBcxOuwrl0HjsB20NaDgQ67cnbuzVHXKU0",
+            authDomain: "home-workout-f0bc6.firebaseapp.com",
+            databaseURL: "https://home-workout-f0bc6-default-rtdb.firebaseio.com",
+            projectId: "home-workout-f0bc6",
+            storageBucket: "home-workout-f0bc6.appspot.com",
+            messagingSenderId: "657520560191",
+            appId: "1:657520560191:web:10023e3a24657b91b3d08a",
+            measurementId: "G-0HVG2VKE2B"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src='../script/rutinaDesafio.js'></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Realizar Rutina</title>
+</head>
+
+<body onload="mostrarDatos()">
+
+    <div class="container-fluid">
+        <div class="row justify-content-center" id="cabeza">
+            <div class="col-1" id="logoID">
+                <a href='javascript:homeSalir()'> <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;"></a>
+            </div>
+            <div class="col-2" id="howoID">
+                <a href='javascript:homeSalir()'>
+                    <h2 class="tit1">HoWo</h2>
+                </a>
+            </div>
+
+            <div class="col-7" id="tituloRutina">
+                <h1 id="tipoRutinaID">Rutina Desafío</h1>
+            </div>
+            <div class="col-2" id="Usuario">
+                <h5 id="nombre">
+                </h5>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center" id="tituloID">
+            <div class="col-12">
+                <h3 id="nomID" class="text-center">Presione Iniciar</h3>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center" id="controles">
+            <div class="col-3"></div>
+            <div class="col-6" id="imagenG">
+                <center>
+                    <img id="imgID" src="../imagenes/ejerciciosImg/estasListo.jpg" alt="imagen ejercicio" width="550" height="350">
+                </center>
+            </div>
+            <div class="col-3" id="contador">
+                <p id="ordenID">
+
+                </p>
+                <br>
+                <p id="contadorID">
+
+                </p>
+            </div>
+
+
+        </div>
+        <div class="row justify-content-center" id="infoEjercicioID">
+            <div class="col">
+                <div class="btn-light rounded border border-dark">
+                    <center>
+
+                        <p id="descripcionID">Descripcion Ejercicio</p>
+                    </center>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row justify-content-center" id="botonesVE">
+            <div class="col-8" id="botonEmpezarID">
+                <button type="button" class="rounded" id="botonEmpezar" onclick="presionarBoton()">Iniciar</button>
+            </div>
+            <div class="col-4" id="botonSalirID">
+                <button class="rounded" id="botonSalir" type="button" onclick="homeSalir()">Salir</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

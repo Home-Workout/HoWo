@@ -1,0 +1,162 @@
+body {
+    background-image: url(fondoVerRutina5.jpg);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.89);
+    /*
+    width: 400px;
+    margin: auto;
+    margin-top: 10%;
+    */
+}
+
+#cabeza {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#logoID {
+    padding-left: 3%;
+}
+
+#howoID {
+    padding-left: 0%;
+}
+
+#tituloRutina {
+    padding-left: 17%;
+}
+
+.tit1 {
+    background: black;
+    color: #fff;
+    display: inline-block;
+}
+
+
+/*
+#tituloID {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 43%;
+}*/
+
+#infoEjercicioID {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding-left: 30%;
+    padding-right: 30%;
+    height: 110px;
+    font-size: 20px;
+}
+
+#botonesVE {
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#botonSalirID {
+    padding-left: 20%;
+}
+
+#botonEmpezarID {
+    padding-left: 42%;
+}
+
+#botonEmpezar {
+    width: 65%;
+    height: 100%;
+    background: #24303c;
+    color: rgb(255, 255, 255);
+    border-color: antiquewhite;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#botonSalir {
+    background: #24303c;
+    color: rgb(255, 255, 255);
+    border-color: antiquewhite;
+}
+
+#botonSalirID {
+    padding-top: 1%;
+}
+
+
+/*
+.video {
+    width: 30%;
+    height: 40%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    position: relative;
+    right: -290px;
+    top: -200px;
+}
+
+#videoLink {
+    font-size: 14px;
+    text-align: center;
+}*/
+
+.ventanaLink {
+    background: black;
+    width: 30%;
+    height: 100px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    right: -30px;
+    top: -200px;
+    display: none;
+    border-radius: 22px;
+}
+
+#cerrarLink {
+    position: relative;
+    right: -440px;
+    top: -30px;
+}
+
+#cerrarLink span {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.usu {
+    position: relative;
+    right: -1300px;
+    top: -1px;
+}
+
+.alertaRutina {
+    background: green;
+    width: 50%;
+    text-align: center;
+    margin: 13px 0px;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    right: -50px;
+}
+
+#ordenID {
+    padding-top: 12%;
+    padding-left: 5%;
+    font-size: 50px;
+    color: #faf8f8;
+}
+
+#contadorID {
+    padding-top: 0%;
+    padding-top: 3%;
+    padding-left: 5%;
+    font-size: 50px;
+    color: #faf8f8;
+    padding-left: 12%;
+    font-size: 55px;
+}
