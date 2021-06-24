@@ -208,7 +208,6 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                 const responseU = await dbU.collection('Registrar_Usuario').doc(correoU).set({
                     nombreU,
                     correoU,
-                    passU,
                     numEntrenamiento,
                     fecRegistro,
                     Ejercicio: [{
