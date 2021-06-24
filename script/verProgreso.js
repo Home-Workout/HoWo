@@ -1,14 +1,14 @@
 const db = firebase.firestore();
 
-var sesion=false;
-var nombreUsuario="";
-var fec=new Date();
-var numEn=0;
-var registro=[new Map()];
-var correoUs='@gmail.com';
-let basico=[];
-let intermedio=[];
-let avanzado=[];
+var sesion = false;
+var nombreUsuario = "";
+var fec = new Date();
+var numEn = 0;
+var registro = [new Map()];
+var correoUs = '@gmail.com';
+let basico = [];
+let intermedio = [];
+let avanzado = [];
 
 var querystring = window.location.search;
 const params = new URLSearchParams(querystring);
@@ -20,117 +20,119 @@ window.addEventListener('load', function() {
     //document.getElementById("nombre").innerHTML = nombreUsuario;
     obtenerdatos();
 });
-function obtenerdatos(){
-    db.collection("Registrar_Usuario").where("correoU", "==",correoUs)
-    .get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+
+function obtenerdatos() {
+    db.collection("Registrar_Usuario").where("correoU", "==", correoUs)
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
                 flag = true;
                 //passUsuario = doc.data().passU;
                 nombreUsuario = doc.data().nombreU;
-                fec= doc.data().fecRegistro;
-                correoUS=doc.data().correoU;
-                numEn=doc.data().numEntrenamiento;
-                registro=doc.data().Ejercicio;
-                var i=0;
-                var j=0;
-                var k=0;
-                const unixTime =fec;
+                fec = doc.data().fecRegistro;
+                correoUS = doc.data().correoU;
+                numEn = doc.data().numEntrenamiento;
+                registro = doc.data().Ejercicio;
+                var i = 0;
+                var j = 0;
+                var k = 0;
+                const unixTime = fec;
                 const date = new Date(unixTime * 1000);
-
+                document.getElementById('nombreID').innerHTML = nombreUsuario;
                 document.getElementById("entrenar").innerHTML = numEn;
                 document.getElementById("fecha").innerHTML = date;
 
                 registro.forEach(element => {
                     console.log(element.nivel);
                     console.log(element.area);
-                    if(element.nivel=='Principiante'){
-                        basico[i]=element;
+                    if (element.nivel == 'Principiante') {
+                        basico[i] = element;
                         i++;
 
                     }
-                    if(element.nivel=='Intermedio'){
-                        intermedio[j]=element;
+                    if (element.nivel == 'Intermedio') {
+                        intermedio[j] = element;
                         j++;
 
                     }
-                    if(element.nivel=='Avanzado'){
-                        avanzado[k]=element;
+                    if (element.nivel == 'Avanzado') {
+                        avanzado[k] = element;
                         k++;
 
                     }
-                    
+
                 });
                 console.log(registro.length);
 
+            });
+
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
         });
 
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
-    
-    
+
 }
 
 var numero = 0
-function filterSelection(c){  
 
-            //var aux=registro[0].nivel;
-            if(c=='Basico'){
-                deleteTable();
-                basico.forEach(element => {
-                    numero++
-                    const unixTime = element.fecha;
-                    const date = new Date(unixTime * 1000);
-                    console.log(date.toLocaleDateString("en-US"));
-                    newRowTable(numero, element.nivel, element.area, date.toString())
-                });
-                console.log(basico);
-            //console.log(basico[1].nivel);
-            //codigo para mostrar principiante
-    
+function filterSelection(c) {
 
-            }
-            if(c=='Intermedio'){
-                deleteTable();
-                intermedio.forEach(element => {
-                    numero++
-                    const unixTime = element.fecha;
-                    const date = new Date(unixTime * 1000);
-                    console.log(date.toLocaleDateString("en-US"));
-                    newRowTable(numero, element.nivel, element.area, date.toString())
-                });
-                console.log(intermedio);
-            //console.log(basico[1].nivel);
-            //codigo para mostrar intermedio
-
-            }
-            if(c=='Avanzado'){
-                deleteTable();
-                avanzado.forEach(element => {
-                    numero++
-                    const unixTime = element.fecha;
-                    const date = new Date(unixTime * 1000);
-                    console.log(date.toLocaleDateString("en-US"));
-                    newRowTable(numero, element.nivel, element.area, date.toString())
-                });
-                console.log(avanzado);
-            //console.log(basico[1].nivel);
-            //codigo para mostrar avanzado
+    //var aux=registro[0].nivel;
+    if (c == 'Basico') {
+        deleteTable();
+        basico.forEach(element => {
+            numero++
+            const unixTime = element.fecha;
+            const date = new Date(unixTime * 1000);
+            console.log(date.toLocaleDateString("en-US"));
+            newRowTable(numero, element.nivel, element.area, date.toString())
+        });
+        console.log(basico);
+        //console.log(basico[1].nivel);
+        //codigo para mostrar principiante
 
 
-            }
-            //console.log(basico);
-            
+    }
+    if (c == 'Intermedio') {
+        deleteTable();
+        intermedio.forEach(element => {
+            numero++
+            const unixTime = element.fecha;
+            const date = new Date(unixTime * 1000);
+            console.log(date.toLocaleDateString("en-US"));
+            newRowTable(numero, element.nivel, element.area, date.toString())
+        });
+        console.log(intermedio);
+        //console.log(basico[1].nivel);
+        //codigo para mostrar intermedio
+
+    }
+    if (c == 'Avanzado') {
+        deleteTable();
+        avanzado.forEach(element => {
+            numero++
+            const unixTime = element.fecha;
+            const date = new Date(unixTime * 1000);
+            console.log(date.toLocaleDateString("en-US"));
+            newRowTable(numero, element.nivel, element.area, date.toString())
+        });
+        console.log(avanzado);
+        //console.log(basico[1].nivel);
+        //codigo para mostrar avanzado
+
+
+    }
+    //console.log(basico);
+
 }
 
 
-function newRowTable(Numero,Nivel,Area,Fecha) {
-console.log(Numero);
-console.log(Nivel);
-console.log(Area);
-console.log(Fecha);
+function newRowTable(Numero, Nivel, Area, Fecha) {
+    console.log(Numero);
+    console.log(Nivel);
+    console.log(Area);
+    console.log(Fecha);
 
     var Nro = Numero;
     var NIVEL = Nivel;
@@ -151,8 +153,9 @@ console.log(Fecha);
     cell4.innerHTML = '<p name ="FECHA_p[]" class = "non_margin">' + FECHA + '</p>';
 
 }
-function deleteTable(){
-    numero=0
+
+function deleteTable() {
+    numero = 0
     var tableHeaderRowCount = 1;
     var table = document.getElementById('rutinasRealizadas');
     var rowCount = table.rows.length;
@@ -191,9 +194,3 @@ function deleteTable(){
 
     $(this).parent().parent().fadeOut("slow", function () { $(this).remove(); });
 }*/
-
-
-
-
-
-
