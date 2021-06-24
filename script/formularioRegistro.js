@@ -73,8 +73,8 @@ function validarFormulario() {
         correo.style.backgroundColor = "green";
         document.getElementById("alerta").innerHTML = "";
     }
-    if (contrasenia.value == "") {
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña";
+    if (contrasenia.value == "" && contrasenia.value.length>=6) {
+        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña o Con mas de 5 de Caracteres ";
         contrasenia.style.backgroundColor = "red";
         contrasenia.value = "";
         contrasenia.focus();
@@ -86,7 +86,7 @@ function validarFormulario() {
         document.getElementById("alerta").innerHTML = "";
     }
     if (contrasenia2.value == "") {
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña";
+        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña o Con mas de 5 de Caracteres";
         contrasenia2.style.backgroundColor = "red";
         contrasenia2.value = "";
         contrasenia2.focus();
