@@ -75,7 +75,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                         flag = true;
-                        passUsuario = doc.data().passU;
+                        //passUsuario = doc.data().passU;
                         nombreUsuario = doc.data().nombreU;
                         correoUS=doc.data().correoU;
                 });
@@ -83,9 +83,35 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
             .catch((error) => {
                 console.log("Error getting documents: ", error);
             });
+            await firebase.auth().signInWithEmailAndPassword(correo, contraseña)
+            .then((userCredential) => {
+                // Signed in
+                var user = userCredential.user;
+                flag=true;
+                console.log(nombreUsuario, "gg");
+                var texto = "index.php?sesion=true&nombre=" + nombreUsuario;
+                window.location.href = texto;
+                console.log(nombreUsuario, "gg");
+                document.getElementById("correo").style.backgroundColor = "MEDIUMSEAGREEN";
+                document.getElementById("contraseña").style.backgroundColor = "MEDIUMSEAGREEN";
+                document.getElementById("alerta").innerHTML = "";
+                // ...
+            })
+            .catch((error) => {
+                console.log(error);
+                if(error.code=="auth/wrong-password"){
+                    document.getElementById("contraseña").style.backgroundColor = "red";
+                    document.getElementById("alerta").innerHTML = "Contraseña Incorrecta";
+                    document.getElementById("contraseña").value = "";
+                }else{
+                    
+                }
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
         console.log(flag);
         if (flag) {
-            if(passUsuario==contraseña){
+           /* if(passUsuario==contraseña){
                 console.log(nombreUsuario, "gg");
                 var texto = "index.php?sesion=true&nombre=" + nombreUsuario+"&correo="+correoUS;
                 window.location.href = texto;
@@ -97,7 +123,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
                 document.getElementById("contraseña").style.backgroundColor = "red";
                 document.getElementById("alerta").innerHTML = "Contraseña Incorrecta";
                 document.getElementById("contraseña").value = "";
-            }
+            }*/
         } else {
             document.getElementById("correo").style.backgroundColor = "red";
             swal("Oops!", "Usted no esta registrado", "error");  

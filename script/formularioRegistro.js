@@ -25,6 +25,7 @@ function mostrar2(){
   }
 var val = 0;
 const dbU = firebase.firestore();
+const aut = firebase.auth();
 
 function validarFormulario() {
     //alert("Todo en Orden");
@@ -207,6 +208,27 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                 const responseU = await dbU.collection('Registrar_Usuario').doc(correoU).set({
                     nombreU,
                     correoU,
+
+                    passU
+                })
+               
+                //console.log(responseU);
+                await firebase.auth().createUserWithEmailAndPassword(correoU, passU)
+                    .then((userCredential) => {
+                    // Signed in
+                    
+                    var user = userCredential.user;
+                    console.log(user);
+
+                    // ...
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    // ..
+                });
+                parrafo.innerHTML="";
+
                     passU,
                     numEntrenamiento,
                     fecRegistro,
@@ -222,11 +244,13 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
     
                 parrafo.innerHTML="";
                 //console.log(responseU._userDataWriter.id);
+
                 window.location.href = "IniciarSesion.php";
+
+                
             }else{ 
                 limpiarCampos();
                 parrafo.innerHTML = "Ya existe ese correo";
             }
-     }
-    
+    }
 });
