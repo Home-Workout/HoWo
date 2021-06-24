@@ -1,8 +1,13 @@
 //export var tipoRutinaPasar = "";
+const dbE = firebase.firestore();
 var sesion=false;
 var nombreUs="";
 var correoUS="";
 var querystring=window.location.search;
+
+var realizados=[];
+var listBasico=[];
+var listIntermedio=[];
 
 window.addEventListener('load', function() {
     new Glider(document.querySelector('.carousel__lista'), {
@@ -43,9 +48,9 @@ window.addEventListener('load', function() {
     document.getElementById("iniSesion").style.display = "none";
     document.getElementById("botonSerrarSesion").style.display = "none";
     if(sesion){
-    validarInicioSesion();
-    }
-    
+        validarInicioSesion();  
+        desbloquearNiveles(correoUS);     
+    }   
 });
 
 function abrir() {
@@ -66,8 +71,11 @@ function cerrar2() {
     document.getElementById("vent2").style.display = "none";
 }
 
+var bolIntermedio=false;
+var bolAvanzado=false;
+
 function abrirNivelBasico() {
-    document.getElementById("ventNivel").style.display = "block";
+    document.getElementById("ventNivel").style.display = "block";   
     cerrarNivelInter();
     cerrarNivelAvan();
 }
@@ -77,9 +85,13 @@ function cerrarNivelBasico() {
 }
 
 function abrirNivelIntermedio() {
-    document.getElementById("ventNivelI").style.display = "block";
-    cerrarNivelBasico();
-    cerrarNivelAvan();
+    if(bolIntermedio){
+        document.getElementById("ventNivelI").style.display = "block";
+        cerrarNivelBasico();
+        cerrarNivelAvan();
+
+    }
+    
 }
 
 function cerrarNivelInter() {
@@ -87,9 +99,12 @@ function cerrarNivelInter() {
 }
 
 function abrirNivelAvanzado() {
-    document.getElementById("ventNivelA").style.display = "block";
-    cerrarNivelBasico();
-    cerrarNivelInter();
+    if(bolAvanzado){
+        document.getElementById("ventNivelA").style.display = "block";
+        cerrarNivelBasico();
+        cerrarNivelInter();
+    }
+    
 }
 
 function cerrarNivelAvan() {
@@ -191,6 +206,45 @@ function verProgreso(){
     /*else{
         window.location.href = "IniciarSesion.php";
     }*/
+
+}
+
+async function desbloquearNiveles(correorevision){
+    await dbE.collection("Registrar_Usuario").where("correoU", "==", correorevision)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                        //nom = doc.data().nombreU;
+                        //fec= doc.data().fecRegistro;
+                        //numEn=doc.data().numEntrenamiento;
+                        var i = 0;
+                        var j = 0;
+                        realizados=doc.data().Ejercicio;
+                        realizados.forEach(element => {
+                            if (element.nivel == 'Principiante') {
+                                listBasico[i] = element;
+                                i++;
+        
+                            }
+                            if (element.nivel == 'Intermedio') {
+                                listIntermedio[j] = element;
+                                j++;
+        
+                            }
+        
+                        });
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+            if(listBasico.length==6){
+                bolIntermedio=true;
+            }
+            if(listIntermedio.length==6){
+                bolAvanzado=true;
+            }
+
 
 }
 
