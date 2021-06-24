@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="esp">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="..\styles\estiloRecuperarContra.css">
     <title> Recuperar Contraseña </title>
     <style>
@@ -15,32 +17,61 @@
         }
     </style>
 </head>
+
 <body>
-    <div class="t1">
-        <a href="index.html">
-            <h1 class="titulo">HoWo</h1>
-        </a>
-    </div>
-    <div class="imgTitulo">
-        <a href="index.html">
-            <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">
-        </a>
-    </div>
-    <div id="titulo">
-        <h1 id="tituloP"> Recuperar Contraseña</h1>
-    </div>
-    
-    <form id="formularioRec" class="forms" method="post" action="" >
-        <div id="alerta" class="alerta"></div>
-        <div id="label">
-            <label for="ingreseCorreo" > Ingrese el correo electrónico </label>
-            <h2></h2>
-            <input type="text" id="correo" class="controls" placeholder="Correo electrónico"><br><br>
+    <div class="container-fluid">
+        <div class="row" id="filaLogoID">
+            <div class="col-1" id="logoID">
+                <a href="index.html">
+                    <img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;">
+            </div>
+            <div class="col-2">
+                <a href="index.html">
+                    <h1 class="titulo" id="howoID">HoWo</h1>
+                </a>
+            </div>
+            <div class="col-9"></div>
+        </div>
+
+        <div class="row justify-content-center" id="tituloID">
+            <div class="col-12">
+                <h1 id="tituloP" class="text-center"> Recuperar Contraseña</h1>
+            </div>
+        </div>
+        <form id="formularioRec" class="forms" method="post" action=""></form>
+
+
+        <div class="row justify-content-center">
+
+            <div id="alerta" class="alerta"></div>
+        </div>
+
+
+        <div class="row justify-content-center text-center" id="filaIngreseID">
+            <div class="col-12">
+                <label for="ingreseCorreo" id="ingreseID"> Ingrese el correo electrónico </label>
+
+            </div>
 
         </div>
-        
-        <button class="boton" id="enviar" type="button" onclick="recuperar()"> Enviar </button>
-    </form>
+        <div class="row justify-content-center" id="label">
+
+            <input type="text" id="correo" class="text-center rounded" placeholder="Correo electrónico"><br><br>
+
+        </div>
+        <div class="row justify-content-center" id="botonFilaID">
+            <button class="btn-success text-center rounded" id="enviar" type="button" onclick="recuperar()"> Enviar </button>
+        </div>
+
+
+
+
+        </form>
+
+
+
+    </div>
+
 
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
 
@@ -50,7 +81,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 
-    
+
 
     <script>
         // Your web app's Firebase configuration
@@ -70,6 +101,7 @@
         firebase.analytics();
     </script>
     <script src='../script/recuperarcontra.js'></script>
-    
+
 </body>
+
 </html>
