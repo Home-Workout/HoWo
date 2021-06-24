@@ -24,10 +24,6 @@ body {
     padding-left: 0%;
 }
 
-#tituloRutina {
-    padding-left: 17%;
-}
-
 .tit1 {
     background: black;
     color: #fff;
@@ -128,12 +124,6 @@ body {
     color: #fff;
 }
 
-.usu {
-    position: relative;
-    right: -1300px;
-    top: -1px;
-}
-
 .alertaRutina {
     background: green;
     width: 50%;
@@ -159,4 +149,8 @@ body {
     color: #faf8f8;
     padding-left: 12%;
     font-size: 55px;
+}
+
+#Usuario {
+    padding-left: 10%;
 }
