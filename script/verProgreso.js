@@ -38,7 +38,10 @@ function obtenerdatos() {
                 var k = 0;
                 const unixTime = fec;
                 const date = new Date(unixTime * 1000);
-                document.getElementById('nombreID').innerHTML = nombreUsuario;
+
+                var u = document.getElementById("iniSesion").innerHTML;
+
+                document.getElementById('iniSesion').innerHTML = u+"  " +nombreUsuario;
                 document.getElementById("entrenar").innerHTML = numEn;
                 document.getElementById("fecha").innerHTML = date;
 
@@ -164,33 +167,23 @@ function deleteTable() {
     }
 }
 
-/*function delete(){
-   var_this = this;
-   var_array_fila = getRowSelected(_this);
+function homeSalir() {
+    swal({
+        title: "¿Está seguro de salir?",
+        text: "No completó la rutina!",
+        icon: "warning",
+        buttons: ['No', 'Si'],
+        //buttons: true,
+        dangerMode: true,
+        closeOnClickOutside: false,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                var r = "?sesion=true&nombre=" + nombreUs + "&correo=" + correoUs;
+                window.location.href = "index.php" + r;
+            } else {
 
-    calculateTotals(array_fila[3], array_fila[4], array_fila[3], array_fila[4],2)
+            }
+        });
 
-    $(this).parent.().parent().fadeOut("slow",function(){$(this).remove();})
-}*/
-
-/*function getRowSelected(objectPressed) {
-    //Obteniendo la linea que se esta eliminando
-    var a = objectPressed.parentNode.parentNode;
-    //b=(fila).(obtener elementos de clase columna y traer la posicion 0).(obtener los elementos de tipo parrafo y traer la posicion0).(contenido en el nodo)
-    var numero = a.getElementsByTagName("td")[0].getElementsByTagName("p")[0].innerHTML;
-    var codigo = a.getElementsByTagName("td")[1].getElementsByTagName("p")[0].innerHTML;
-    var descripcion = a.getElementsByTagName("td")[2
-
-}*/
-
-
-/*function deleteTable() {
-    //Obteniendo la fila que se esta eliminando
-    var a = this.parentNode.parentNode;
-    //Obteniendo el array de todos loe elementos columna en esa fila
-    //var b=a.getElementsByTagName("td");
-    var cantidad = a.getElementsByTagName("td")
-    console.log(a);
-
-    $(this).parent().parent().fadeOut("slow", function () { $(this).remove(); });
-}*/
+}
