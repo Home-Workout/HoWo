@@ -89,7 +89,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
                 var user = userCredential.user;
                 flag=true;
                 console.log(nombreUsuario, "gg");
-                var texto = "index.php?sesion=true&nombre=" + nombreUsuario;
+                var texto = "index.php?sesion=true&nombre=" + nombreUsuario+"&correo="+correoUS;
                 window.location.href = texto;
                 console.log(nombreUsuario, "gg");
                 document.getElementById("correo").style.backgroundColor = "MEDIUMSEAGREEN";

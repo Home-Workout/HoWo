@@ -208,11 +208,16 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                 const responseU = await dbU.collection('Registrar_Usuario').doc(correoU).set({
                     nombreU,
                     correoU,
+                    passU,
+                    numEntrenamiento,
+                    fecRegistro,
+                    Ejercicio: [{
 
-                    passU
-                })
-               
-                //console.log(responseU);
+                    }]              
+                });
+                
+    
+                //parrafo.innerHTML="";
                 await firebase.auth().createUserWithEmailAndPassword(correoU, passU)
                     .then((userCredential) => {
                     // Signed in
@@ -227,21 +232,6 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                     var errorMessage = error.message;
                     // ..
                 });
-                parrafo.innerHTML="";
-
-                    passU,
-                    numEntrenamiento,
-                    fecRegistro,
-                    Ejercicio: [{
-                        area,
-                        fecha,
-                        nivel
-
-                    }]
-                    
-                });
-                
-    
                 parrafo.innerHTML="";
                 //console.log(responseU._userDataWriter.id);
 

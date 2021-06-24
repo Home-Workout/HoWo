@@ -184,7 +184,15 @@ function w3RemoveClass(element, name) {
     element.className = arr1.join(" ");
 }
 
+function verProgreso(){
+    if(sesion){
+        window.location.href = "VerProgreso.html?sesion=true&nombre="+nombreUs+"&correo="+correoUS;
+    }
+    /*else{
+        window.location.href = "IniciarSesion.php";
+    }*/
 
+}
 
 
 
