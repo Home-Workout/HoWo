@@ -88,7 +88,8 @@ function filterSelection(c) {
             numero++
             const unixTime = element.fecha;
             const date = new Date(unixTime * 1000);
-            console.log(date.toLocaleDateString("en-US"));
+            console.log(date.toLocaleDateString("en-ES"));
+            
             newRowTable(numero, element.nivel, element.area, date.toString())
         });
         console.log(basico);

@@ -54,12 +54,7 @@ function mostrarDatos() {
 async function consulta() {
     document.getElementById("botonEmpezar").toggleAttribute('disabled', true);
     var i = 0;
-    var realizados = [];
-    var nom="";
-    var corr=correoUs;
-    var fec= new Date();
-    var con="";
-    var numEn=0;
+    
     await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel).where("areaT", "==", areaF)
         .get()
         .then((querySnapshot) => {
@@ -69,40 +64,7 @@ async function consulta() {
                 i++;
             });
         });
-        await dbE.collection("Registrar_Usuario").where("correoU", "==", corr)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                        con = doc.data().passU;
-                        nom = doc.data().nombreU;
-                        fec= doc.data().fecRegistro;
-                        numEn=doc.data().numEntrenamiento;
-                        realizados=doc.data().Ejercicio;
-                        doc.set({
-                            
-                        });
-                });
-            })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
-            });
-            realizados[numEn]={area : areaF,fecha : new Date(),nivel :nivel};
-            print(realizados.type);
-        const responseU = await dbE.collection('Registrar_Usuario').doc(corr).set({
-            nombreU: nom,
-            correoU:corr,
-            passU:con,
-            numEntrenamiento:numEn+1,
-            fecRegistro:fec,
-            Ejercicio: realizados
-            
-        })
-        .then(() => {
-            console.log("Document successfully written!");
-        })
-        .catch((error) => {
-            console.error("Error writing document: ", error);
-        });
+        
     console.log(datos);
     /*for(var j=0;j<datos.length;j++){
 
@@ -139,6 +101,12 @@ async function consulta() {
 }
 
 async function avanzar() {
+    var realizados = [];
+    var nom="";
+    var corr=correoUs;
+    var fec= new Date();
+    var con="";
+    var numEn=0;
     if (k < datos.length - 1) {
         k++;
         cerrarLink();
@@ -168,6 +136,40 @@ async function avanzar() {
             text: "Rutina Terminada",
             type: "success",
             closeOnClickOutside: false,
+        });
+        await dbE.collection("Registrar_Usuario").where("correoU", "==", corr)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                        con = doc.data().passU;
+                        nom = doc.data().nombreU;
+                        fec= doc.data().fecRegistro;
+                        numEn=doc.data().numEntrenamiento;
+                        realizados=doc.data().Ejercicio;
+                        doc.set({
+                            
+                        });
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+            realizados[numEn]={area : areaF,fecha : new Date(),nivel :nivel};
+            //print(realizados.type);
+        const responseU = await dbE.collection('Registrar_Usuario').doc(corr).set({
+            nombreU: nom,
+            correoU:corr,
+            passU:con,
+            numEntrenamiento:numEn+1,
+            fecRegistro:fec,
+            Ejercicio: realizados
+            
+        })
+        .then(() => {
+            console.log("Document successfully written!");
+        })
+        .catch((error) => {
+            console.error("Error writing document: ", error);
         });
         home();
     }
