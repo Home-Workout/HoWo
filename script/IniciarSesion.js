@@ -48,8 +48,8 @@ function validateForm() {
       //  correo.style.backgroundColor = "MEDIUMSEAGREEN";
       //  document.getElementById("alerta").innerHTML = "";
    // }
-    if (contraseña.value == "" || contraseña.value.length > 30) {
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña o con menos de 30 caracteres";
+    if (contraseña.value == "") {
+        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña";
         contraseña.style.backgroundColor = "lightcoral";
         contraseña.value = "";
         contraseña.focus();
