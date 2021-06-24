@@ -31,8 +31,8 @@ function validateForm() {
     var al = "Favor Ingresar Correo Electronico";
     var al2 = "Favor Ingresar Contraseña";
 
-    if (correo.value == "" || correo.value.length > 30) {
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Correo Electronico o con menos de 30 caracteres";
+    if (correo.value == "" || correo.value.length > 40) {
+        document.getElementById("alerta").innerHTML = "Favor Ingresar Correo Electronico o con menos de 40 caracteres";
         correo.style.backgroundColor = "lightcoral";
         correo.focus();
         val++;
@@ -48,8 +48,8 @@ function validateForm() {
       //  correo.style.backgroundColor = "MEDIUMSEAGREEN";
       //  document.getElementById("alerta").innerHTML = "";
    // }
-    if (contraseña.value == "" || contraseña.value.length > 30) {
-        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña o con menos de 30 caracteres";
+    if (contraseña.value == "") {
+        document.getElementById("alerta").innerHTML = "Favor Ingresar Contraseña";
         contraseña.style.backgroundColor = "lightcoral";
         contraseña.value = "";
         contraseña.focus();
