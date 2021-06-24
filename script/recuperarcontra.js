@@ -48,11 +48,12 @@ async function recuperar() {
                     .then((willDelete) => {
                         if (willDelete) {
                             document.getElementById('correo').value = "";
+                            window.location.href = "IniciarSesion.php";
                         } else {
 
                         }
                     });
-                window.location.href = "IniciarSesion.php";
+
             }).catch(function(error) {
                 // An error happened.
 
