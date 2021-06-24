@@ -1,124 +1,132 @@
-body {
-    width: 400px;
-    background-image: url(Fitness-centr.jpg);
-    padding: 60px;
-    margin: auto;
-    margin-top: 110px;
-    border-radius: 4px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.89);
-    font-size: 18px;
-}
-
-#title1 {
-    font-size: 40px;
-    margin-bottom: 70px;
-    margin-left: 0px;
-    font-size:40 px;
+    body {
+        width: 400px;
+        background-image: url(Fitness-centr.jpg);
+        padding: 60px;
+        margin: auto;
+        margin-top: 110px;
+        border-radius: 4px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.89);
+        font-size: 18px;
+    }
     
-}
-
-.controls {
-    width: 90%;
-    background: #5f6469;
-    padding: 10px;
-    padding-left: 15px;
-    border-radius: px;
-    margin-bottom: 16px;
-    border: 1px solid #f5f6f7;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-    color: white;
-    font-size: 22px;
-}
-
-.boton {
-    width: 97%;
-    background: #24303c;
-    border: none;
-    padding: 12px;
-    color: rgb(255, 255, 255);
-    margin: 20px 0;
-    font-size: 20px;
-    border-radius: 15px;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.boton:disabled {
-    background-color: #82a0a2;
-    border: 1px solid #82a0a2;
-    color: lightgray;
-}
-.botonR {
-    width: 97%;
-    background: #24303c;
-    border: none;
-    padding: 12px;
-    color: rgb(255, 255, 255);
-    margin: 20px 0;
-    font-size: 20px;
-    border-radius: 15px;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.btnIniciar {
-    background: rgba(0, 0, 102, 1);
-    width: 60%;
-    text-align: center;
-    margin: 15px 2px;
-    color: rgba(255, 255, 255, 1);
-    position: relative;
-    right: -45px;
-    top: -30px;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.alerta {
-    background: #f2ee1e;
-    width: 80%;
-    text-align: center;
-    margin: 13px 0px;
-    color: rgb(15, 14, 14);
-}
-
-.mostrarPass {
-    text-align: center;
-    background: #7f8c8d;
-    color: #fff;
-    display: inline-block;
-    font-size: 0.80em;
-    margin: 115px;
-    padding: 20 px 0px;
-    width: 75px;
-    text-decoration: none;
-    box-shadow: 0px 3px 0px #373c3c;
-    position: relative;
-    right: -280px;
-    top: -367px;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-
-::placeholder {
-    color: #e2dbdbd2;
-    font-size: 16px;
-}
-
-.imgTitulo {
-    position: absolute;
-    top: 13px;
-    left: 92px;
-}
-
-.t1 {
-    position: absolute;
-    right: 82%;
-    top: 3px;
-    font-size: 0.90em;
-}
-
-.forms label {
-    font-size: 18px;
-}
-
+    #title1 {
+        font-size: 40px;
+        margin-bottom: 70px;
+        margin-left: 0px;
+        font-size: 40 px;
+    }
+    
+    .controls {
+        width: 90%;
+        background: #5f6469;
+        padding: 10px;
+        padding-left: 15px;
+        border-radius: px;
+        margin-bottom: 16px;
+        border: 1px solid #f5f6f7;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 18px;
+        color: white;
+        font-size: 22px;
+    }
+    
+    .boton {
+        width: 97%;
+        background: #24303c;
+        border: none;
+        padding: 12px;
+        color: rgb(255, 255, 255);
+        margin: 20px 0;
+        font-size: 20px;
+        border-radius: 15px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    .boton:disabled {
+        background-color: #82a0a2;
+        border: 1px solid #82a0a2;
+        color: lightgray;
+    }
+    
+    .botonR {
+        width: 97%;
+        background: #24303c;
+        border: none;
+        padding: 12px;
+        color: rgb(255, 255, 255);
+        margin: 20px 0;
+        font-size: 20px;
+        border-radius: 15px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    .btnIniciar {
+        background: rgba(0, 0, 102, 1);
+        width: 60%;
+        text-align: center;
+        margin: 15px 2px;
+        color: rgba(255, 255, 255, 1);
+        position: relative;
+        right: -45px;
+        top: -30px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    .alerta {
+        background: #f2ee1e;
+        width: 80%;
+        text-align: center;
+        margin: 13px 0px;
+        color: rgb(15, 14, 14);
+    }
+    
+    .mostrarPass {
+        text-align: center;
+        background: #7f8c8d;
+        color: #fff;
+        display: inline-block;
+        font-size: 0.80em;
+        /*margin: 0px;
+        padding: 20 px 0px;
+        */
+        width: 75px;
+        text-decoration: none;
+        box-shadow: 0px 3px 0px #373c3c;
+        /*position: relative;
+        right: -280px;
+        top: -367px;
+        */
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+     ::placeholder {
+        color: #e2dbdbd2;
+        font-size: 16px;
+    }
+    
+    .imgTitulo {
+        position: absolute;
+        top: 13px;
+        left: 92px;
+    }
+    
+    .t1 {
+        position: absolute;
+        right: 82%;
+        top: 3px;
+        font-size: 0.90em;
+    }
+    
+    .forms label {
+        font-size: 18px;
+    }
+    
+    #olvidarID {
+        color: #fff;
+    }
+    
+    #mostrarID {
+        padding-top: 2%;
+    }
