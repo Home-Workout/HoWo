@@ -141,7 +141,6 @@ async function avanzar() {
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                        con = doc.data().passU;
                         nom = doc.data().nombreU;
                         fec= doc.data().fecRegistro;
                         numEn=doc.data().numEntrenamiento;
@@ -159,7 +158,6 @@ async function avanzar() {
         const responseU = await dbE.collection('Registrar_Usuario').doc(corr).set({
             nombreU: nom,
             correoU:corr,
-            passU:con,
             numEntrenamiento:numEn+1,
             fecRegistro:fec,
             Ejercicio: realizados
