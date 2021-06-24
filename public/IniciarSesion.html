@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
+
     <title>Iniciar Sesion</title>
 
     <!-- Firebase -->
@@ -18,19 +18,19 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
 
     <script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyBcxOuwrl0HjsB20NaDgQ67cnbuzVHXKU0",
-        authDomain: "home-workout-f0bc6.firebaseapp.com",
-        databaseURL: "https://home-workout-f0bc6-default-rtdb.firebaseio.com",
-        projectId: "home-workout-f0bc6",
-        storageBucket: "home-workout-f0bc6.appspot.com",
-        messagingSenderId: "657520560191",
-        appId: "1:657520560191:web:c32b3fdbc232c6e4b3d08a",
-        measurementId: "G-0D1GCR0116"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+        var firebaseConfig = {
+            apiKey: "AIzaSyBcxOuwrl0HjsB20NaDgQ67cnbuzVHXKU0",
+            authDomain: "home-workout-f0bc6.firebaseapp.com",
+            databaseURL: "https://home-workout-f0bc6-default-rtdb.firebaseio.com",
+            projectId: "home-workout-f0bc6",
+            storageBucket: "home-workout-f0bc6.appspot.com",
+            messagingSenderId: "657520560191",
+            appId: "1:657520560191:web:c32b3fdbc232c6e4b3d08a",
+            measurementId: "G-0D1GCR0116"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
     </script>
 </head>
 
@@ -42,40 +42,34 @@
         <h1 class="title">HoWo</h1>
     </div>
     <div class="imgTitulo">
-        <a href="index.php"><img src="../imagenes/HoWo.jpg" alt="icono howo"
-                style="float: left; width: 52px;height: 52px; border-radius: 50px;"></a>
+        <a href="index.php"><img src="../imagenes/HoWo.jpg" alt="icono howo" style="float: left; width: 52px;height: 52px; border-radius: 50px;"></a>
     </div>
     <form class="forms" id="form" method="post">
 
         <div class="alerta" id="alerta"></div>
         <label for="correo">Correo Electronico: </label>
         <input class="controls" type="email" id="correo" placeholder="Ingrese su correo electronico"><br><br>
-        
+
         <label for="contrasenia">Contraseña: </label>
-        <input class="controls" type="password" id="contraseña" onInput="limpiarAlertaPass()" placeholder="Ingrese su contraseña" onkeyup="validarTecleado()"><br><br>
+        <div style="float: left;">
+            <input class="controls" type="password" id="contraseña" onInput="limpiarAlertaPass()" placeholder="Ingrese su contraseña" onkeyup="validarTecleado()"><br><br>
 
-        <button class="boton" id="iniciar" type="button" style="cursor: pointer" onclick="validateForm()"
-            disabled>Iniciar Sesion</button>
-        <button class="botonR" id="registrarse" type="button" style="cursor: pointer" onclick="irARegistrarse()"
-            >Registrarse</button>
+        </div>
+        <div style="float: right;" id="mostrarID">
+            <input type="button" id="oculta" class="mostrarPass" style="float: right;" onclick="mostrar()" value="Mostrar"></input>
+        </div>
+        <button class="boton" id="iniciar" type="button" style="cursor: pointer" onclick="validateForm()" disabled>Iniciar Sesion</button>
+        <button class="botonR" id="registrarse" type="button" style="cursor: pointer" onclick="irARegistrarse()">Registrarse</button>
 
-        <input type="button" id="oculta" class="mostrarPass" onclick="mostrar()" value="Mostrar"></input>
+
         <div class="btnIniciar" id="iniciado"> </div>
 
-        <a class="panel" href="../public/RecuperarContraseña.html">
-            <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Olvidaste tu contraseña?</font>
-            </font>
-            <span>
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Recuperar Contraseña</font>
-                </font>
-            </span>
-        </a>
-
     </form>
-    <script src= "..\script\IniciarSesion.js"></script>
-    
+    <footer class="olvidar">
+        <a href="../public/RecuperarContraseña.html" id="olvidarID">¿Olvidaste tu contraseña? Recupera tu contraseña</a>
+    </footer>
+    <script src="..\script\IniciarSesion.js"></script>
+
 </body>
 
 </html>
