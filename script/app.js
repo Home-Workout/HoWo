@@ -8,6 +8,7 @@ var querystring=window.location.search;
 var realizados=[];
 var listBasico=[];
 var listIntermedio=[];
+var listAreas=["Piernas","Abdomen","Gluteos","Espalda","Hombro","Espalda","Brazos"];
 
 window.addEventListener('load', function() {
     new Glider(document.querySelector('.carousel__lista'), {
@@ -90,6 +91,17 @@ function abrirNivelIntermedio() {
         cerrarNivelBasico();
         cerrarNivelAvan();
 
+    }else{
+        swal({
+            title: "No permitido",
+            text: "Completa el Nivel Básico",
+            icon: "warning",
+            button:'Aceptar',          
+            //buttons: true,
+            dangerMode: true,
+            closeOnClickOutside: false,
+        });
+
     }
     
 }
@@ -103,6 +115,16 @@ function abrirNivelAvanzado() {
         document.getElementById("ventNivelA").style.display = "block";
         cerrarNivelBasico();
         cerrarNivelInter();
+    }else{
+        swal({
+            title: "No permitido",
+            text: "Completa el Nivel Intermedio",
+            icon: "warning",
+            button:'Aceptar',          
+            //buttons: true,
+            dangerMode: true,
+            closeOnClickOutside: false,
+        });
     }
     
 }
@@ -219,16 +241,23 @@ async function desbloquearNiveles(correorevision){
                         //numEn=doc.data().numEntrenamiento;
                         var i = 0;
                         var j = 0;
+                        var areaDif=true;
+                        var ar="";
                         realizados=doc.data().Ejercicio;
                         realizados.forEach(element => {
-                            if (element.nivel == 'Principiante') {
-                                listBasico[i] = element;
-                                i++;
-        
+                            if (element.nivel == 'Principiante') {                                
+                                if(!contains(listBasico,element.area)){
+                                    listBasico[i] = element.area;
+                                    i++;
+                                }
+       
                             }
                             if (element.nivel == 'Intermedio') {
-                                listIntermedio[j] = element;
-                                j++;
+                                if(!contains(listIntermedio,element.area)){
+
+                                    listIntermedio[j] = element.area;
+                                    j++;
+                                }      
         
                             }
         
@@ -238,6 +267,7 @@ async function desbloquearNiveles(correorevision){
             .catch((error) => {
                 console.log("Error getting documents: ", error);
             });
+            console.log(listBasico.length);
             if(listBasico.length==6){
                 bolIntermedio=true;
             }
@@ -246,6 +276,16 @@ async function desbloquearNiveles(correorevision){
             }
 
 
+}
+
+function contains(lista,valor){
+    var res=false;
+    lista.forEach(element => {
+        if(element==valor){
+            res=true;
+        }
+    });
+    return res;
 }
 
 
