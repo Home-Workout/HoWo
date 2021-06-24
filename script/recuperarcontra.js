@@ -36,7 +36,7 @@ async function recuperar() {
         if (existe) {
             await auth.sendPasswordResetEmail(emailAddress).then(function() {
                 // Email sent.
-                swal({
+                await swal({
                         title: "Se envió un correo de recuperación",
                         text: "Revisa tu buzón de entrada",
                         icon: "success",
@@ -52,7 +52,7 @@ async function recuperar() {
 
                         }
                     });
-                console.log("Email enviado");
+                window.location.href = "IniciarSesion.php";
             }).catch(function(error) {
                 // An error happened.
 
