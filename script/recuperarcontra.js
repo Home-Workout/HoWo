@@ -36,7 +36,7 @@ async function recuperar() {
         if (existe) {
             await auth.sendPasswordResetEmail(emailAddress).then(function() {
                 // Email sent.
-                await swal({
+                swal({
                         title: "Se envió un correo de recuperación",
                         text: "Revisa tu buzón de entrada",
                         icon: "success",
