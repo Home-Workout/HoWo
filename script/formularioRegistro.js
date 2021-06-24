@@ -203,14 +203,15 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                     correoU,
                     passU
                 })
-                parrafo.innerHTML="";
+               
                 //console.log(responseU);
-                window.location.href = "IniciarSesion.php";
-
-                aut.createUserWithEmailAndPassword(correoU, passU)
+                await firebase.auth().createUserWithEmailAndPassword(correoU, passU)
                     .then((userCredential) => {
                     // Signed in
+                    
                     var user = userCredential.user;
+                    console.log(user);
+
                     // ...
                 })
                 .catch((error) => {
@@ -218,6 +219,10 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                     var errorMessage = error.message;
                     // ..
                 });
+                parrafo.innerHTML="";
+                window.location.href = "IniciarSesion.php";
+
+                
             }else{ 
                 limpiarCampos();
                 parrafo.innerHTML = "Ya existe ese correo";
