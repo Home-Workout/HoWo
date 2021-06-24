@@ -1,6 +1,7 @@
 //export var tipoRutinaPasar = "";
 var sesion=false;
 var nombreUs="";
+var correoUS="";
 var querystring=window.location.search;
 
 window.addEventListener('load', function() {
@@ -36,6 +37,7 @@ window.addEventListener('load', function() {
     const params = new URLSearchParams(querystring);
     sesion=params.get('sesion')
     nombreUs=params.get('nombre');
+    correoUS=params.get('correo');
     console.log(sesion);
     //sesion=false;
     document.getElementById("iniSesion").style.display = "none";
@@ -139,7 +141,7 @@ function validarInicioSesion(){
 
 function irARutina(r){
     if(sesion){
-        window.location.href = r+"&sesion=true&nombre="+nombreUs;
+        window.location.href = r+"&sesion=true&nombre="+nombreUs+"&correo="+correoUS;
     }
     else{
         window.location.href = "IniciarSesion.php";

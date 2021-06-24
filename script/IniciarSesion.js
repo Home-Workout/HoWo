@@ -68,6 +68,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
     var passUsuario = "";
     var correo = document.getElementById('correo').value;
     var contraseña = document.getElementById('contraseña').value;
+    var correoUS="";
     if (validacionBoton()) {
         await db.collection("Registrar_Usuario").where("correoU", "==", correo)
             .get()
@@ -76,7 +77,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
                         flag = true;
                         //passUsuario = doc.data().passU;
                         nombreUsuario = doc.data().nombreU;
-                        
+                        correoUS=doc.data().correoU;
                 });
             })
             .catch((error) => {
@@ -112,7 +113,7 @@ document.getElementById("iniciar").addEventListener("click", async(e) => {
         if (flag) {
            /* if(passUsuario==contraseña){
                 console.log(nombreUsuario, "gg");
-                var texto = "index.php?sesion=true&nombre=" + nombreUsuario;
+                var texto = "index.php?sesion=true&nombre=" + nombreUsuario+"&correo="+correoUS;
                 window.location.href = texto;
                 console.log(nombreUsuario, "gg");
                 document.getElementById("correo").style.backgroundColor = "MEDIUMSEAGREEN";

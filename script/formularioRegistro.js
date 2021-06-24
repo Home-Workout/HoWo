@@ -171,7 +171,11 @@ document.getElementById("contrasenia").addEventListener("keyup", validacionBoton
 document.getElementById("contrasenia2").addEventListener("keyup", validacionBoton);
 
 
-
+var numEntrenamiento= 0 ;
+var fecRegistro=new Date();
+var area="";
+var fecha=new Date();
+var nivel="";
 document.getElementById("enviar").addEventListener("click", async(e) => {
     //aqui tiene que redirigir a la parte principal por lo pronto solo mostrara un mensaje
     const registroUsuario = document.getElementById("formulario1");
@@ -179,6 +183,8 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
     const nombreU = registroUsuario["name1"].value;
     const correoU = registroUsuario["correo"].value;
     const passU = registroUsuario["contrasenia"].value;
+    
+    
 
     e.preventDefault();
         if (validacionBoton()) {
@@ -198,9 +204,11 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
             if(flag==0){
                 parrafo.innerHTML = "Usted se ha registrado correctamente";
                 limpiarCampos();
-                const responseU = await dbU.collection('Registrar_Usuario').doc().set({
+               
+                const responseU = await dbU.collection('Registrar_Usuario').doc(correoU).set({
                     nombreU,
                     correoU,
+
                     passU
                 })
                
@@ -220,6 +228,23 @@ document.getElementById("enviar").addEventListener("click", async(e) => {
                     // ..
                 });
                 parrafo.innerHTML="";
+
+                    passU,
+                    numEntrenamiento,
+                    fecRegistro,
+                    Ejercicio: [{
+                        area,
+                        fecha,
+                        nivel
+
+                    }]
+                    
+                });
+                
+    
+                parrafo.innerHTML="";
+                //console.log(responseU._userDataWriter.id);
+
                 window.location.href = "IniciarSesion.php";
 
                 
