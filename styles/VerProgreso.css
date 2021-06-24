@@ -1,0 +1,207 @@
+body {
+    background-image: url(pexels-lukas2.jpg);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(10, 10, 10);
+}
+
+
+/*
+.btnCerrarSesion {
+    text-align: center;
+    color: rgb(10, 10, 10);
+    display: inline-block;
+    font-size: 1.20em;
+    margin: 30px;
+    padding: 20 px 0px;
+    width: 180px;
+    height: 0px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #373c3c;
+    position: relative;
+    right: -1250px;
+    top: -5px;
+}
+*/
+
+
+/*
+.imgTitulo {
+    position: absolute;
+    top: 40px;
+    left: 72px;
+}
+*/
+
+.t1 {
+    position: absolute;
+    right: 85%;
+    top: 30px;
+    font-size: 1.00em;
+    color: #fff
+}
+
+.forms label {
+    font-size: 18px;
+}
+
+
+
+.cuentaUsuario {
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    padding-left: 35%;
+}
+
+.cuentaUsuario2 {
+    text-align: left;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    
+}
+
+.nivel {
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    padding-top: 85%;
+}
+
+#nivel {
+    padding-left: 35%;
+}
+
+#nivel2 {
+    padding-top: 2%;
+    padding-left: 3%;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    background-color: #7a838523;
+    color: rgb(10, 10, 10);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #b8bbbb7e;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+.entrenamiento {
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    padding-top: 18%;
+}
+
+#entrenamiento {
+    padding-left: 35%;
+}
+
+#entrenamiento2 {
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.00em;
+    padding-top: 1%;
+    padding-left: 2%;
+}
+
+.fechaRegistro {
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    padding-top: 20%;
+}
+
+#fechaRegistro {
+    padding-left: 35%;
+}
+
+.fechaRegistro2 {
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    padding-top: 6%;
+    padding-left: 0%;
+}
+
+table {
+    background-color: rgba(167, 164, 164, 0.404);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#tabla1 {
+    overflow-y: auto;
+    height: 300px;
+}
+
+th {
+    background-color: #003566;
+    color: rgb(255, 255, 255);
+}
+
+#rutinaTitleID {
+    
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    padding-left: 35%;
+    padding-top: 3%;
+}
+
+
+/*
+th,
+td {
+    padding: 12px
+}
+*/
+
+#cerrarID {
+    padding-left: 85%;
+}
+
+#cabeza {
+    padding-top: 2%;
+}
+
+#logoID {
+    padding-left: 50%;
+}
+#tituloRutina{
+    font-size: 1.00em;
+    padding-left: 20%;
+}
+#filaID{
+    padding-top: 5%;
+
+}
+
+#progresoID{
+    padding-left: 40%;
+
+}
+#filaProgreso{
+    padding-top: 5%;
+}
+#howoID{
+    color: rgb(255, 255, 255);
+}
+.tableformat{
+    padding-left: 10%;
+}
+
+#entrenar{
+    font-size: 1.30em;
+}
