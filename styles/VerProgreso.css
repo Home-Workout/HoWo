@@ -103,7 +103,7 @@ body {
     text-align: center;
     color: rgb(10, 10, 10);
     font-size: 1.30em;
-    padding-top: 4%;
+    padding-top: 1%;
     padding-left: 2%;
 }
 .fechaRegistro {
@@ -123,14 +123,15 @@ body {
     padding-left: 0%;
 }
 table {
-    overflow: scroll;
     background-color: rgba(167, 164, 164, 0.404);
     text-align: center;
     width: 10%;
     height: 50px;
     color: rgb(255, 255, 255);
 }
-
+.tabla1{
+    overflow: scroll;
+}
 th {
     background-color: #003566;
 }
