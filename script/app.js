@@ -1,14 +1,14 @@
 //export var tipoRutinaPasar = "";
 const dbE = firebase.firestore();
-var sesion=false;
-var nombreUs="";
-var correoUS="";
-var querystring=window.location.search;
+var sesion = false;
+var nombreUs = "";
+var correoUS = "";
+var querystring = window.location.search;
 
-var realizados=[];
-var listBasico=[];
-var listIntermedio=[];
-var listAreas=["Piernas","Abdomen","Gluteos","Espalda","Hombro","Espalda","Brazos"];
+var realizados = [];
+var listBasico = [];
+var listIntermedio = [];
+var listAreas = ["Piernas", "Abdomen", "Gluteos", "Espalda", "Hombro", "Espalda", "Brazos"];
 
 window.addEventListener('load', function() {
     new Glider(document.querySelector('.carousel__lista'), {
@@ -35,23 +35,23 @@ window.addEventListener('load', function() {
                 slidesToScroll: 4
             }
         }]
-    });  
-    querystring= window.location.search.substr(1);
+    });
+    querystring = window.location.search.substr(1);
     //console.log(querystring) // '?q=pisos+en+barcelona&ciudad=Barcelona'
 
-// usando el querystring, creamos un objeto del tipo URLSearchParams
+    // usando el querystring, creamos un objeto del tipo URLSearchParams
     const params = new URLSearchParams(querystring);
-    sesion=params.get('sesion')
-    nombreUs=params.get('nombre');
-    correoUS=params.get('correo');
+    sesion = params.get('sesion')
+    nombreUs = params.get('nombre');
+    correoUS = params.get('correo');
     console.log(sesion);
     //sesion=false;
     document.getElementById("iniSesion").style.display = "none";
     document.getElementById("botonSerrarSesion").style.display = "none";
-    if(sesion){
-        validarInicioSesion();  
-        desbloquearNiveles(correoUS);     
-    }   
+    if (sesion) {
+        validarInicioSesion();
+        desbloquearNiveles(correoUS);
+    }
 });
 
 function abrir() {
@@ -72,11 +72,11 @@ function cerrar2() {
     document.getElementById("vent2").style.display = "none";
 }
 
-var bolIntermedio=false;
-var bolAvanzado=false;
+var bolIntermedio = false;
+var bolAvanzado = false;
 
 function abrirNivelBasico() {
-    document.getElementById("ventNivel").style.display = "block";   
+    document.getElementById("ventNivel").style.display = "block";
     cerrarNivelInter();
     cerrarNivelAvan();
 }
@@ -86,24 +86,24 @@ function cerrarNivelBasico() {
 }
 
 function abrirNivelIntermedio() {
-    if(bolIntermedio){
+    if (bolIntermedio) {
         document.getElementById("ventNivelI").style.display = "block";
         cerrarNivelBasico();
         cerrarNivelAvan();
 
-    }else{
+    } else {
         swal({
             title: "No permitido",
             text: "Completa el Nivel Básico",
             icon: "warning",
-            button:'Aceptar',          
+            button: 'Aceptar',
             //buttons: true,
             dangerMode: true,
             closeOnClickOutside: false,
         });
 
     }
-    
+
 }
 
 function cerrarNivelInter() {
@@ -111,76 +111,80 @@ function cerrarNivelInter() {
 }
 
 function abrirNivelAvanzado() {
-    if(bolAvanzado){
+    if (bolAvanzado) {
         document.getElementById("ventNivelA").style.display = "block";
         cerrarNivelBasico();
         cerrarNivelInter();
-    }else{
+    } else {
         swal({
             title: "No permitido",
             text: "Completa el Nivel Intermedio",
             icon: "warning",
-            button:'Aceptar',          
+            button: 'Aceptar',
             //buttons: true,
             dangerMode: true,
             closeOnClickOutside: false,
         });
     }
-    
+
 }
 
 function cerrarNivelAvan() {
     document.getElementById("ventNivelA").style.display = "none";
 }
 
-function abrirDesafioI(){
+function abrirDesafioI() {
     document.getElementById("ventDesfI").style.display = "block";
     cerrarDesafII();
     cerrarDesafIII();
 }
-function cerrarDesafI(){
+
+function cerrarDesafI() {
     document.getElementById("ventDesfI").style.display = "none";
 }
-function abrirDesafioII(){
+
+function abrirDesafioII() {
     document.getElementById("ventDesfII").style.display = "block";
     cerrarDesafI();
     cerrarDesafIII();
 }
-function cerrarDesafII(){
+
+function cerrarDesafII() {
     document.getElementById("ventDesfII").style.display = "none";
 }
-function abrirDesafioIII(){
+
+function abrirDesafioIII() {
     document.getElementById("ventDesfIII").style.display = "block";
     cerrarDesafI();
     cerrarDesafII();
 }
-function cerrarDesafIII(){
+
+function cerrarDesafIII() {
     document.getElementById("ventDesfIII").style.display = "none";
 }
 
 
 
-function validarInicioSesion(){
-    if(sesion){
+function validarInicioSesion() {
+    if (sesion) {
         console.log(sesion);
         document.getElementById("botonRegistrarse").style.display = "none";
         document.getElementById("botonIniciarSesion").style.display = "none";
-        document.getElementById("iniSesion").innerHTML=nombreUs;
-        document.getElementById("iniSesion").style.display = "inline"; 
-        document.getElementById("botonSerrarSesion").style.display ="inline";
+        document.getElementById("iniSesion").innerHTML = nombreUs;
+        document.getElementById("iniSesion").style.display = "inline";
+        document.getElementById("botonSerrarSesion").style.display = "inline";
 
 
-    }else{
+    } else {
         window.location.href = "IniciarSesion.php";
     }
-         
+
 }
 
-function irARutina(r){
-    if(sesion){
-        window.location.href = r+"&sesion=true&nombre="+nombreUs+"&correo="+correoUS;
-    }
-    else{
+function irARutina(r) {
+    if (sesion) {
+        window.location.href = r + "&sesion=true&nombre=" + nombreUs + "&correo=" + correoUS;
+    } else {
         window.location.href = "IniciarSesion.php";
     }
 }
@@ -221,9 +225,9 @@ function w3RemoveClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-function verProgreso(){
-    if(sesion){
-        window.location.href = "VerProgreso.html?sesion=true&nombre="+nombreUs+"&correo="+correoUS;
+function verProgreso() {
+    if (sesion) {
+        window.location.href = "VerProgreso.php?sesion=true&nombre=" + nombreUs + "&correo=" + correoUS;
     }
     /*else{
         window.location.href = "IniciarSesion.php";
@@ -231,58 +235,58 @@ function verProgreso(){
 
 }
 
-async function desbloquearNiveles(correorevision){
+async function desbloquearNiveles(correorevision) {
     await dbE.collection("Registrar_Usuario").where("correoU", "==", correorevision)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                        //nom = doc.data().nombreU;
-                        //fec= doc.data().fecRegistro;
-                        //numEn=doc.data().numEntrenamiento;
-                        var i = 0;
-                        var j = 0;
-                        var areaDif=true;
-                        var ar="";
-                        realizados=doc.data().Ejercicio;
-                        realizados.forEach(element => {
-                            if (element.nivel == 'Principiante') {                                
-                                if(!contains(listBasico,element.area)){
-                                    listBasico[i] = element.area;
-                                    i++;
-                                }
-       
-                            }
-                            if (element.nivel == 'Intermedio') {
-                                if(!contains(listIntermedio,element.area)){
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                //nom = doc.data().nombreU;
+                //fec= doc.data().fecRegistro;
+                //numEn=doc.data().numEntrenamiento;
+                var i = 0;
+                var j = 0;
+                var areaDif = true;
+                var ar = "";
+                realizados = doc.data().Ejercicio;
+                realizados.forEach(element => {
+                    if (element.nivel == 'Principiante') {
+                        if (!contains(listBasico, element.area)) {
+                            listBasico[i] = element.area;
+                            i++;
+                        }
 
-                                    listIntermedio[j] = element.area;
-                                    j++;
-                                }      
-        
-                            }
-        
-                        });
+                    }
+                    if (element.nivel == 'Intermedio') {
+                        if (!contains(listIntermedio, element.area)) {
+
+                            listIntermedio[j] = element.area;
+                            j++;
+                        }
+
+                    }
+
                 });
-            })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
             });
-            console.log(listBasico.length);
-            if(listBasico.length==6){
-                bolIntermedio=true;
-            }
-            if(listIntermedio.length==6){
-                bolAvanzado=true;
-            }
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
+    console.log(listBasico.length);
+    if (listBasico.length == 6) {
+        bolIntermedio = true;
+    }
+    if (listIntermedio.length == 6) {
+        bolAvanzado = true;
+    }
 
 
 }
 
-function contains(lista,valor){
-    var res=false;
+function contains(lista, valor) {
+    var res = false;
     lista.forEach(element => {
-        if(element==valor){
-            res=true;
+        if (element == valor) {
+            res = true;
         }
     });
     return res;

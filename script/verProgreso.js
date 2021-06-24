@@ -41,7 +41,7 @@ function obtenerdatos() {
 
                 var u = document.getElementById("iniSesion").innerHTML;
 
-                document.getElementById('iniSesion').innerHTML = u+"  " +nombreUsuario;
+                document.getElementById('iniSesion').innerHTML = u + "  " + nombreUsuario;
                 document.getElementById("entrenar").innerHTML = numEn;
                 document.getElementById("fecha").innerHTML = date;
 
@@ -89,7 +89,7 @@ function filterSelection(c) {
             const unixTime = element.fecha;
             const date = new Date(unixTime * 1000);
             console.log(date.toLocaleDateString("en-ES"));
-            
+
             newRowTable(numero, element.nivel, element.area, date.toString())
         });
         console.log(basico);
@@ -168,23 +168,8 @@ function deleteTable() {
     }
 }
 
-function homeSalir() {
-    swal({
-        title: "¿Está seguro de salir?",
-        text: "No completó la rutina!",
-        icon: "warning",
-        buttons: ['No', 'Si'],
-        //buttons: true,
-        dangerMode: true,
-        closeOnClickOutside: false,
-    })
-        .then((willDelete) => {
-            if (willDelete) {
-                var r = "?sesion=true&nombre=" + nombreUs + "&correo=" + correoUs;
-                window.location.href = "index.php" + r;
-            } else {
+function home() {
 
-            }
-        });
-
+    var r = "?sesion=true&nombre=" + nombreUsuario + "&correo=" + correoUs;
+    window.location.href = "index.php" + r;
 }
