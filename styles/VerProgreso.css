@@ -61,6 +61,14 @@ body {
     text-align: center;
     color: rgb(10, 10, 10);
     font-size: 1.30em;
+    padding-top: 85%;
+}
+#nivel{
+    padding-left: 35%;
+}
+#nivel2{
+    padding-top: 2%;
+    padding-left: 3%;
 }
 
 .btn {
@@ -86,14 +94,34 @@ body {
     text-align: center;
     color: rgb(10, 10, 10);
     font-size: 1.30em;
+    padding-top: 18%;
 }
-
+#entrenamiento{
+    padding-left: 35%;
+}
+#entrenamiento2{
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    padding-top: 4%;
+    padding-left: 2%;
+}
 .fechaRegistro {
     text-align: center;
     color: rgb(10, 10, 10);
     font-size: 1.30em;
+    padding-top: 20%;
 }
-
+#fechaRegistro{
+    padding-left: 35%;
+}
+.fechaRegistro2{
+    text-align: center;
+    color: rgb(10, 10, 10);
+    font-size: 1.30em;
+    padding-top: 6%;
+    padding-left: 0%;
+}
 table {
     overflow: scroll;
     background-color: rgba(167, 164, 164, 0.404);
