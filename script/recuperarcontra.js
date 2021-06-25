@@ -1,7 +1,19 @@
 const correo = document.getElementById("correo");
+
+function cargar(){
+document.getElementById('enviarR').toggleAttribute('disabled',true);
+}
+function verificar(){
+    if(correo.value.length>0){
+        document.getElementById('enviarR').toggleAttribute('disabled',false);
+    }else{
+        document.getElementById('enviarR').toggleAttribute('disabled',true);
+        }
+}
 async function recuperar() {
     var auth = firebase.auth();
     var emailAddress = document.getElementById('correo').value;
+
     contraseña = "contra";
     var dbE = firebase.firestore();
     var existe = false;
@@ -79,8 +91,6 @@ async function recuperar() {
                 });
         }
     }
-
-
     function validarCorreo(parametro) {
         var patron = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
         if (!patron.test(parametro)) {

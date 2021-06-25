@@ -19,7 +19,7 @@
     </style>
 </head>
 
-<body>
+<body onload='cargar()'>
     <div class="container-fluid">
         <div class="row" id="filaLogoID">
             <div class="col-1" id="logoID">
@@ -57,11 +57,11 @@
         </div>
         <div class="row justify-content-center" id="label">
 
-            <input type="text" id="correo" class="text-center rounded" placeholder="Correo electrónico"><br><br>
+            <input type="text" id="correo" class="" placeholder="ejemplo@gmail.com" onInput='verificar()'><br><br>
 
         </div>
         <div class="row justify-content-center" id="botonFilaID">
-            <button class="btn-success text-center rounded" id="enviar" type="button" onclick="recuperar()"> Enviar </button>
+            <button class="btn-success text-center rounded" id="enviarR" type="button" onclick="recuperar()"> Enviar </button>
         </div>
 
 

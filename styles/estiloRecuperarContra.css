@@ -38,13 +38,14 @@ label {
     font-size: 18px;
     color: white;
     width: 30%;
+    padding-left: 10px;
 }
 
 #botonFilaID {
     padding-top: 5%
 }
 
-#enviar {
+#enviarR {
     width: 20%;
     background: #24303c;
     border: 1px solid #f5f6f7;
