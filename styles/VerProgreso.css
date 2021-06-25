@@ -1,9 +1,9 @@
 body {
-    background-image: url(pexels-lukas2.jpg);
+    background-image: url(fondo\ progreso\ 0.jpg);
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     font-weight: bold;
-    color: rgb(10, 10, 10);
+    color: rgb(255, 255, 255);
 }
 
 
@@ -49,22 +49,22 @@ body {
 
 
 .cuentaUsuario {
-    color: rgb(10, 10, 10);
-    font-size: 1.30em;
+    color: rgb(255, 255, 255);
+    font-size: 1.50em;
     padding-left: 35%;
 }
 
 .cuentaUsuario2 {
     text-align: left;
-    color: rgb(10, 10, 10);
-    font-size: 1.30em;
+    color: rgb(255, 255, 255);
+    font-size: 1.50em;
     
 }
 
 .nivel {
     text-align: center;
-    color: rgb(10, 10, 10);
-    font-size: 1.30em;
+    color: rgb(255, 255, 255);
+    font-size: 1.50em;
     padding-top: 85%;
 }
 
@@ -82,7 +82,7 @@ body {
     outline: none;
     padding: 10px 15px;
     background-color: #7a838523;
-    color: rgb(10, 10, 10);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     font-weight: bold;
 }
@@ -98,8 +98,8 @@ body {
 
 .entrenamiento {
     text-align: center;
-    color: rgb(10, 10, 10);
-    font-size: 1.30em;
+    color: rgb(255, 255, 255);
+    font-size: 1.50em;
     padding-top: 18%;
 }
 
@@ -109,7 +109,7 @@ body {
 
 #entrenamiento2 {
     text-align: center;
-    color: rgb(10, 10, 10);
+    color: rgb(255, 255, 255);
     font-size: 1.00em;
     padding-top: 1%;
     padding-left: 2%;
@@ -117,8 +117,8 @@ body {
 
 .fechaRegistro {
     text-align: center;
-    color: rgb(10, 10, 10);
-    font-size: 1.30em;
+    color: rgb(255, 255, 255);
+    font-size: 1.50em;
     padding-top: 20%;
 }
 
@@ -128,8 +128,8 @@ body {
 
 .fechaRegistro2 {
     text-align: center;
-    color: rgb(10, 10, 10);
-    font-size: 1.30em;
+    color: rgb(255, 255, 255);
+    font-size: 1.50em;
     padding-top: 6%;
     padding-left: 0%;
 }
@@ -154,8 +154,8 @@ th {
 
 #rutinaTitleID {
     
-    color: rgb(10, 10, 10);
-    font-size: 1.30em;
+    color: rgb(255, 255, 255);
+    font-size: 1.50em;
     padding-left: 35%;
     padding-top: 3%;
 }
@@ -184,7 +184,7 @@ td {
     padding-left: 20%;
 }
 #filaID{
-    padding-top: 5%;
+    padding-top: 4%;
 
 }
 
@@ -193,7 +193,7 @@ td {
 
 }
 #filaProgreso{
-    padding-top: 5%;
+    padding-top: 3%;
 }
 #howoID{
     color: rgb(255, 255, 255);
@@ -203,5 +203,5 @@ td {
 }
 
 #entrenar{
-    font-size: 1.30em;
+    font-size: 1.50em;
 }
