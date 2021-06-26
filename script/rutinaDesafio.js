@@ -16,7 +16,7 @@ var numEjercicios = 4;
 var orden = 0;
 var counter;
 var ind = 10;
-var ordenText = "Preparate";
+var ordenText = "Prepárate";
 var inicio = 0;
 var descanso = 0;
 var listaArea = [];
@@ -38,7 +38,7 @@ function mostrarDatos() {
     document.getElementById("tipoRutinaID").innerHTML = noms;
     numEjercicios = 4;
     if (nivel == "Principiante") {
-        descanso=20;
+        descanso = 20;
         numEjercicios = 4;
     } else {
         if (nivel == "Avanzado") {
@@ -49,22 +49,22 @@ function mostrarDatos() {
             numEjercicios = 4;
         }
     }
-    if(noms == "Brazos"){
-        listaArea[0]="Brazos";
-        listaArea[1]="Hombro";
-    }else{
-        if(noms == "Piernas"){
-            listaArea[0]="Piernas";
-            listaArea[1]="Gluteos";
-        }else{
-            listaArea[0]="Espalda";
-            listaArea[1]="Abdomen";
-            listaArea[2]="Brazos";
-            listaArea[3]="Piernas";
+    if (noms == "Brazos") {
+        listaArea[0] = "Brazos";
+        listaArea[1] = "Hombro";
+    } else {
+        if (noms == "Piernas") {
+            listaArea[0] = "Piernas";
+            listaArea[1] = "Gluteos";
+        } else {
+            listaArea[0] = "Espalda";
+            listaArea[1] = "Abdomen";
+            listaArea[2] = "Brazos";
+            listaArea[3] = "Piernas";
         }
     }
-    console.log("prueba: "+noms);
-    console.log("Lista Area: " +listaArea.length);
+    console.log("prueba: " + noms);
+    console.log("Lista Area: " + listaArea.length);
 }
 
 async function presionarBoton() {
@@ -90,30 +90,30 @@ async function presionarBoton() {
 async function consulta() {
     var i = 0;
     var areaC;
-    for(var m=0;m<numEjercicios;m++){
+    for (var m = 0; m < numEjercicios; m++) {
         var j = m;
-        if(listaArea.length == 2 && m==1){
-            j=0;
+        if (listaArea.length == 2 && m == 1) {
+            j = 0;
         }
-        if(listaArea.length == 2 && m>=2 ){
-            j=1;
+        if (listaArea.length == 2 && m >= 2) {
+            j = 1;
         }
         areaC = listaArea[j];
-        console.log("areaC: " +areaC);
+        console.log("areaC: " + areaC);
         var flag = 0;
         await dbE.collection('Agregar_Ejercicio').where("nivelE", "==", nivel).where("areaT", "==", areaC)
-        .get()
-        .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                if(flag==0){
-                    datos[i] = doc.data();
-                    i++;
-                    flag++;   
-                }
-            });
-        })  
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    if (flag == 0) {
+                        datos[i] = doc.data();
+                        i++;
+                        flag++;
+                    }
+                });
+            })
     }
-  
+
     console.log(datos);
     var pru = datos[0];
 
@@ -170,7 +170,7 @@ async function timer() {
 
                 } else {
                     await avanzar();
-                    ordenText = "Preparate";
+                    ordenText = "Prepárate";
                     orden = 0;
                     ind = 10;
                 }
