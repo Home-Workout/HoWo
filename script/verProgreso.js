@@ -37,7 +37,8 @@ function obtenerdatos() {
                 var j = 0;
                 var k = 0;
                 const unixTime = fec;
-                const date = new Date(unixTime * 1000);
+                var date = new Date(unixTime * 1000);
+                date=fecEspañol(date);
 
                 var u = document.getElementById("iniSesion").innerHTML;
 
@@ -46,8 +47,6 @@ function obtenerdatos() {
                 document.getElementById("fecha").innerHTML = date;
 
                 registro.forEach(element => {
-                    console.log(element.nivel);
-                    console.log(element.area);
                     if (element.nivel == 'Principiante') {
                         basico[i] = element;
                         i++;
@@ -65,7 +64,6 @@ function obtenerdatos() {
                     }
 
                 });
-                console.log(registro.length);
 
             });
 
@@ -87,15 +85,11 @@ function filterSelection(c) {
         basico.forEach(element => {
             numero++
             const unixTime = element.fecha;
-            const date = new Date(unixTime * 1000);
-            console.log(date.toLocaleDateString("en-ES"));
+            var date = new Date(unixTime * 1000);
+            date=fecEspañol(date);
 
             newRowTable(numero, element.nivel, element.area, date.toString())
         });
-        console.log(basico);
-        //console.log(basico[1].nivel);
-        //codigo para mostrar principiante
-
 
     }
     if (c == 'Intermedio') {
@@ -103,13 +97,10 @@ function filterSelection(c) {
         intermedio.forEach(element => {
             numero++
             const unixTime = element.fecha;
-            const date = new Date(unixTime * 1000);
-            console.log(date.toLocaleDateString("en-US"));
+            var date = new Date(unixTime * 1000);
+            date=fecEspañol(date);
             newRowTable(numero, element.nivel, element.area, date.toString())
         });
-        console.log(intermedio);
-        //console.log(basico[1].nivel);
-        //codigo para mostrar intermedio
 
     }
     if (c == 'Avanzado') {
@@ -117,26 +108,17 @@ function filterSelection(c) {
         avanzado.forEach(element => {
             numero++
             const unixTime = element.fecha;
-            const date = new Date(unixTime * 1000);
-            console.log(date.toLocaleDateString("en-US"));
+            var date = new Date(unixTime * 1000);
+            date=fecEspañol(date);
             newRowTable(numero, element.nivel, element.area, date.toString())
         });
-        console.log(avanzado);
-        //console.log(basico[1].nivel);
-        //codigo para mostrar avanzado
-
-
     }
-    //console.log(basico);
 
 }
 
 
 function newRowTable(Numero, Nivel, Area, Fecha) {
-    console.log(Numero);
-    console.log(Nivel);
-    console.log(Area);
-    console.log(Fecha);
+
 
     var Nro = Numero;
     var NIVEL = Nivel;
@@ -172,4 +154,14 @@ function home() {
 
     var r = "?sesion=true&nombre=" + nombreUsuario + "&correo=" + correoUs;
     window.location.href = "index.php" + r;
+}
+
+function fecEspañol(fec){
+    fec.setFullYear(fec.getFullYear()-1969);
+    var dtf = new Intl.DateTimeFormat("es-ES", {
+        dateStyle: "full",
+        timeStyle: "full"
+      }).format(fec);
+    return dtf;  
+
 }
