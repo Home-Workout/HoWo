@@ -38,13 +38,13 @@ function obtenerdatos() {
                 var k = 0;
                 const unixTime = fec;
                 var date = new Date(unixTime * 1000);
-                date=fecEspañol(date);
+                date = fecEspañol(date);
 
                 var u = document.getElementById("iniSesion").innerHTML;
 
                 document.getElementById('iniSesion').innerHTML = u + "  " + nombreUsuario;
-                document.getElementById("entrenar").innerHTML = numEn;
-                document.getElementById("fecha").innerHTML = date;
+                document.getElementById("entrenarI").innerHTML = document.getElementById("entrenarI").innerHTML + " " + numEn;
+                document.getElementById("fechaR").innerHTML = document.getElementById("fechaR").innerHTML + " " + date;
 
                 registro.forEach(element => {
                     if (element.nivel == 'Principiante') {
@@ -86,7 +86,7 @@ function filterSelection(c) {
             numero++
             const unixTime = element.fecha;
             var date = new Date(unixTime * 1000);
-            date=fecEspañol(date);
+            date = fecEspañol(date);
 
             newRowTable(numero, element.nivel, element.area, date.toString())
         });
@@ -98,7 +98,7 @@ function filterSelection(c) {
             numero++
             const unixTime = element.fecha;
             var date = new Date(unixTime * 1000);
-            date=fecEspañol(date);
+            date = fecEspañol(date);
             newRowTable(numero, element.nivel, element.area, date.toString())
         });
 
@@ -109,7 +109,7 @@ function filterSelection(c) {
             numero++
             const unixTime = element.fecha;
             var date = new Date(unixTime * 1000);
-            date=fecEspañol(date);
+            date = fecEspañol(date);
             newRowTable(numero, element.nivel, element.area, date.toString())
         });
     }
@@ -156,12 +156,12 @@ function home() {
     window.location.href = "index.php" + r;
 }
 
-function fecEspañol(fec){
-    fec.setFullYear(fec.getFullYear()-1969);
+function fecEspañol(fec) {
+    fec.setFullYear(fec.getFullYear() - 1969);
     var dtf = new Intl.DateTimeFormat("es-ES", {
         dateStyle: "full",
         timeStyle: "full"
-      }).format(fec);
-    return dtf;  
+    }).format(fec);
+    return dtf;
 
 }
