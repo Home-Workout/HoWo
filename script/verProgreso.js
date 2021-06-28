@@ -88,7 +88,10 @@ function filterSelection(c) {
             var date = new Date(unixTime * 1000);
             date = fecEspañol(date);
 
-            newRowTable(numero, element.nivel, element.area, date.toString())
+            newRowTable(numero, element.nivel, element.area, date.toString());
+            document.getElementById("bas").style.backgroundColor="#003566";
+            document.getElementById("interme").style.backgroundColor="#7a838523";
+            document.getElementById("avan").style.backgroundColor="#7a838523";
         });
 
     }
@@ -99,7 +102,10 @@ function filterSelection(c) {
             const unixTime = element.fecha;
             var date = new Date(unixTime * 1000);
             date = fecEspañol(date);
-            newRowTable(numero, element.nivel, element.area, date.toString())
+            newRowTable(numero, element.nivel, element.area, date.toString());
+            document.getElementById("bas").style.backgroundColor="#7a838523";
+            document.getElementById("interme").style.backgroundColor="#003566";
+            document.getElementById("avan").style.backgroundColor="#7a838523";
         });
 
     }
@@ -110,7 +116,10 @@ function filterSelection(c) {
             const unixTime = element.fecha;
             var date = new Date(unixTime * 1000);
             date = fecEspañol(date);
-            newRowTable(numero, element.nivel, element.area, date.toString())
+            newRowTable(numero, element.nivel, element.area, date.toString());
+            document.getElementById("bas").style.backgroundColor="#7a838523";
+            document.getElementById("interme").style.backgroundColor="#7a838523";
+            document.getElementById("avan").style.backgroundColor="#003566";
         });
     }
 
