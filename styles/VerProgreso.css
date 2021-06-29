@@ -1,5 +1,5 @@
 body {
-    background-image: url(fondo-Progreso1.jpg);
+    background-image: url(fondo33.jpg);
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -41,6 +41,7 @@ body {
 
 .t1 {
     position: absolute;
+    font-weight: bold;
     right: 85%;
     top: 30px;
     font-size: 1.00em;
@@ -49,12 +50,14 @@ body {
 
 .forms label {
     font-size: 18px;
+    font-weight: bold;
 }
 
 .cuentaUsuario {
     color: rgb(255, 255, 255);
     font-size: 1.50em;
     padding-left: 35%;
+    font-weight: bold;
 }
 
 .cuentaUsuario2 {
@@ -68,6 +71,7 @@ body {
     color: rgb(255, 255, 255);
     font-size: 1.50em;
     padding-top: 74%;
+    font-weight: bold;
 }
 
 .botones {
@@ -111,11 +115,13 @@ body {
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: 1.50em;
+    font-weight: bold;
 }
 
 .fechaRegistro {
     color: rgb(255, 255, 255);
     font-size: 1.50em;
+    font-weight: bold;
 }
 
 #fechaRegistro {
@@ -170,6 +176,7 @@ td {
 #tituloRutina {
     font-size: 1.00em;
     padding-left: 20%;
+    font-weight: bold;
 }
 
 #filaID {
@@ -178,6 +185,11 @@ td {
 
 #progresoID {
     padding-left: 40%;
+    font-weight: bold;
+}
+#tituloP{
+    font-size: 2.50em;
+    font-weight: bold;
 }
 
 #filaProgreso {
