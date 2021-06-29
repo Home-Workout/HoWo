@@ -42,9 +42,9 @@ async function obtenerdatos() {
 
                 var u = document.getElementById("iniSesion").innerHTML;
 
-                document.getElementById('iniSesion').innerHTML = u + "  " + nombreUsuario;
-                document.getElementById("entrenarI").innerHTML = document.getElementById("entrenarI").innerHTML + " " + numEn;
-                document.getElementById("fechaR").innerHTML = document.getElementById("fechaR").innerHTML + " " + date;
+                document.getElementById('iniSesion').innerHTML = u + " " + nombreUsuario;
+                document.getElementById("entrenarI").innerHTML = document.getElementById("entrenarI").innerHTML + "   " + numEn;
+                document.getElementById("fechaR").innerHTML = document.getElementById("fechaR").innerHTML + "   " + date;
 
                 registro.forEach(element => {
                     if (element.nivel == 'Principiante') {
