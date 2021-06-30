@@ -20,11 +20,13 @@ var ordenText = "Prepárate";
 var inicio = 0;
 var descanso = 0;
 var listaArea = [];
+var correoUS;
 const params = new URLSearchParams(querystring);
 window.addEventListener('load', function() {
     querystring = window.location.search.substr(1);
     sesion = params.get('sesion');
     nombreUs = params.get('nombre');
+    correoUS = params.get('correo');
     document.getElementById("nombre").innerHTML = nombreUs;
 });
 
@@ -264,7 +266,8 @@ function homeSalir() {
         .then((willDelete) => {
             if (willDelete) {
                 var r = "?sesion=true&nombre=" + nombreUs;
-                window.location.href = "index.php" + r;
+                window.location.href = "index.php?sesion=true&nombre=" + nombreUs + "&correo=" + correoUS;
+
             } else {
 
             }
