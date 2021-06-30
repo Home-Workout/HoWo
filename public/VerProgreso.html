@@ -9,7 +9,11 @@
     <link rel="stylesheet" type='text/css' href='..\styles\VerProgreso.css'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
     <link rel="shortcut icon" href="../imagenes/HoWo.jpg">
+    <script src="https://kit.fontawesome.com/88a627f821.js" crossorigin="anonymous"></script>
+
+
     <title>VerProgreso</title>
     <style>
         table,
@@ -48,7 +52,7 @@
     <script src='..\script\verProgreso.js'></script>
 </head>
 
-<body>
+<body onload="filterSelection('Basico')">
     <div class="container-fluid">
         <div class="row justify-content-center" id="cabeza">
             <div class="col-1">
@@ -75,12 +79,12 @@
         </div>
         <div id="filaProgreso" class="row justify-content-center">
             <div id="progresoID" class="col-12">
-                <h2>Progreso de Entrenamiento</h2>
+                <h2 id="tituloP">Progreso de Entrenamiento</h2>
             </div>
         </div>
         <div id="filaID" class="row">
             <div class="col-12" id="usuario">
-                <h4 id="iniSesion" class="cuentaUsuario">Nombre de Usuario:</h4>
+                <h4 id="iniSesion" class="cuentaUsuario">Nombre de Usuario: &nbsp;</h4>
             </div>
 
 
@@ -88,14 +92,14 @@
 
         <div class="row">
             <div class="col-auto" id="fechaRegistro">
-                <h4 id="fechaR" class="fechaRegistro">Fecha de Registro:</h4>
+                <h4 id="fechaR" class="fechaRegistro">Fecha de Registro: &nbsp;</h4>
             </div>
 
 
         </div>
         <div class="row">
             <div class="col-auto" id="entrenamiento">
-                <h4 id="entrenarI" class="entrenamiento">Entrenamientos:</h4>
+                <h4 id="entrenarI" class="entrenamiento">Entrenamientos: &nbsp;</h4>
 
             </div>
 
@@ -104,12 +108,12 @@
 
         <div class="row">
             <div class="col-auto" id="nivel">
-                <h4 id="" class="nivelN">Nivel:</h4>
+                <h4 id="" class="nivelN">Nivel: </h4>
             </div>
             <div class="botones">
-                <button class="btn" onclick="filterSelection('Basico')"> Principiante</button>
-                <button class="btn" onclick="filterSelection('Intermedio')"> Intermedio</button>
-                <button class="btn" onclick="filterSelection('Avanzado')"> Avanzado</button>
+                <button class="btn" onclick="filterSelection('Basico')" id="bas"> Principiante</button>
+                <button class="btn" onclick="filterSelection('Intermedio')" id="interme"> Intermedio</button>
+                <button class="btn" onclick="filterSelection('Avanzado')" id="avan"> Avanzado</button>
             </div>
 
 

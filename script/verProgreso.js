@@ -21,8 +21,8 @@ window.addEventListener('load', function() {
     obtenerdatos();
 });
 
-function obtenerdatos() {
-    db.collection("Registrar_Usuario").where("correoU", "==", correoUs)
+async function obtenerdatos() {
+    await db.collection("Registrar_Usuario").where("correoU", "==", correoUs)
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
@@ -42,9 +42,9 @@ function obtenerdatos() {
 
                 var u = document.getElementById("iniSesion").innerHTML;
 
-                document.getElementById('iniSesion').innerHTML = u + "  " + nombreUsuario;
-                document.getElementById("entrenarI").innerHTML = document.getElementById("entrenarI").innerHTML + " " + numEn;
-                document.getElementById("fechaR").innerHTML = document.getElementById("fechaR").innerHTML + " " + date;
+                document.getElementById('iniSesion').innerHTML = u + " " + nombreUsuario;
+                document.getElementById("entrenarI").innerHTML = document.getElementById("entrenarI").innerHTML + "   " + numEn;
+                document.getElementById("fechaR").innerHTML = document.getElementById("fechaR").innerHTML + "   " + date;
 
                 registro.forEach(element => {
                     if (element.nivel == 'Principiante') {
@@ -71,14 +71,23 @@ function obtenerdatos() {
         .catch((error) => {
             console.log("Error getting documents: ", error);
         });
-
-
+        var num = 0
+        deleteTable();
+        basico.forEach(element => {
+            num++
+            const unixTime = element.fecha;
+            var date = new Date(unixTime * 1000);
+            date = fecEspañol(date);
+            newRowTable(num, element.nivel, element.area, date.toString());
+            document.getElementById("bas").style.backgroundColor="#003566";
+            document.getElementById("interme").style.backgroundColor="#7a838523";
+            document.getElementById("avan").style.backgroundColor="#7a838523";
+        });
 }
 
 var numero = 0
 
 function filterSelection(c) {
-
     //var aux=registro[0].nivel;
     if (c == 'Basico') {
         deleteTable();
@@ -87,8 +96,10 @@ function filterSelection(c) {
             const unixTime = element.fecha;
             var date = new Date(unixTime * 1000);
             date = fecEspañol(date);
-
-            newRowTable(numero, element.nivel, element.area, date.toString())
+            newRowTable(numero, element.nivel, element.area, date.toString());
+            document.getElementById("bas").style.backgroundColor="#003566";
+            document.getElementById("interme").style.backgroundColor="#7a838523";
+            document.getElementById("avan").style.backgroundColor="#7a838523";
         });
 
     }
@@ -99,7 +110,10 @@ function filterSelection(c) {
             const unixTime = element.fecha;
             var date = new Date(unixTime * 1000);
             date = fecEspañol(date);
-            newRowTable(numero, element.nivel, element.area, date.toString())
+            newRowTable(numero, element.nivel, element.area, date.toString());
+            document.getElementById("bas").style.backgroundColor="#7a838523";
+            document.getElementById("interme").style.backgroundColor="#003566";
+            document.getElementById("avan").style.backgroundColor="#7a838523";
         });
 
     }
@@ -110,7 +124,10 @@ function filterSelection(c) {
             const unixTime = element.fecha;
             var date = new Date(unixTime * 1000);
             date = fecEspañol(date);
-            newRowTable(numero, element.nivel, element.area, date.toString())
+            newRowTable(numero, element.nivel, element.area, date.toString());
+            document.getElementById("bas").style.backgroundColor="#7a838523";
+            document.getElementById("interme").style.backgroundColor="#7a838523";
+            document.getElementById("avan").style.backgroundColor="#003566";
         });
     }
 
@@ -118,8 +135,6 @@ function filterSelection(c) {
 
 
 function newRowTable(Numero, Nivel, Area, Fecha) {
-
-
     var Nro = Numero;
     var NIVEL = Nivel;
     var AREA_CORPORAL = Area;
