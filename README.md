@@ -17,7 +17,7 @@ Bienvenidos a esta aplicacion de rutinas de ejercicios
 
 Este proyecto fue realizado por un grupo de estudiantes de las carrearas de Ingeniería Informática y Sistemas de la Universidad Mayor de San Simón como proyecto semestral de la materia de Ingeniería de Software.
 
-<a href="https://www.youtube.com/watch?v=YqeW9_5kURI"><img src="../Howo.png" /></a>
+<a href="https://www.youtube.com/watch?v=YqeW9_5kURI"><img src="../imagenes/Howo.png" /></a>
 
 ## Cómo instalar localmente?
 
