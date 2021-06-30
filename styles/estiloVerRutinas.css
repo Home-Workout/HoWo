@@ -81,8 +81,31 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     font-weight: bold;
+    color: #fff;
+    background-color: #24303c;
+    border-color: antiquewhite;
+    
 }
-
+#botonSalir{
+    width: 65%;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #24303c;
+    border-color: antiquewhite;
+}
+#botonVideo{
+    width: 65%;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #24303c;
+    border-color: antiquewhite;
+}
 #botonSalirID {
     padding-top: 1%;
 }
