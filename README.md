@@ -1,7 +1,6 @@
 # Aplicación web para rutinas de ejercicios
 
 Bienvenidos a esta aplicacion de rutinas de ejercicios
-
 ## Contenido
 
 1. [Características](#sec1) </br>
