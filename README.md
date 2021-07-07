@@ -28,7 +28,7 @@ Bienvenidos a esta aplicacion de rutinas de ejercicios
 <a name="sec2"></a>
 ## Ver la aplicación
 
-Este proyecto fue realizado por un grupo de estudiantes de las carrearas de Ingeniería Informática y Sistemas de la Universidad Mayor de San Simón como proyecto semestral de la materia de Ingeniería de Software.
+Este proyecto fue realizado por un grupo de estudiantes de las carrearas de Ingeniería Informática y Sistemas de la Universidad Mayor de San Simón como proyecto semestral de la materia de Ingeniería de Software. Presiona la imagen para poder ver el uso de la aplicación
 
 <a href="https://www.youtube.com/watch?v=L5UxD4xDmMU"><img src="./Howo.png" /></a>
 
